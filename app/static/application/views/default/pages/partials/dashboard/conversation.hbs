@@ -1,0 +1,56 @@
+{{#each (get "conversations")}}
+<div class="px-3">
+ <div class="media mt-2 mb-3">
+    <div class="d-flex flex-grow-1">
+        <div class="mr-3 align-self-start align-self-sm-center mt-2 mt-sm-0 pos-rel">
+            {{#if color}}
+            <span class="d-inline-flex align-items-center justify-content-center radius-round bgc-{{color}} text-white font-bolder w-6 h-6">
+                <span>{{avatar}}</span>
+            </span>
+            {{else}}
+            <img src="assets/image/avatar/{{avatar}}" class="radius-round border-2 p-1px brc-primary-m1 w-6 h-6" />
+            {{/if}}
+
+            <span class="bgc-{{status}}-tp2 radius-round border-2 brc-white p-1 position-tr"></span>
+
+
+            <div class="dropdown d-inline-block  position-br mb-n3">
+                <button class="shadow-none btn btn-xs btn-outline-secondary btn-h-outline-yellow  btn-a-yellow border-0 py-0 px-1 action-btn dropdown-toggle" data-toggle="dropdown">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
+                <div class="dropdown-menu mw-auto dropdown-menu-right">
+                    <a class="dropdown-item" href="#" title="Approve" data-toggle="tooltip" data-placement="left" data-template='<div class="tooltip" role="tooltip"><div class="arrow brc-success"></div><div class="tooltip-inner text-110 pb-2 bgc-success"></div></div>'>
+                        <i class="fa fa-check text-success mx-1"></i>
+                        <span class="d-md-none">Approve</span>
+                    </a>
+                    <a class="dropdown-item" href="#" title="Reject" data-toggle="tooltip" data-placement="left" data-template='<div class="tooltip" role="tooltip"><div class="arrow brc-warning"></div><div class="tooltip-inner text-110 pb-2 bgc-warning"></div></div>'>
+                        <i class="fa fa-times text-orange mx-1"></i>
+                        <span class="d-md-none">Reject</span>
+                    </a>
+                    <a class="dropdown-item" href="#" title="Delete" data-toggle="tooltip" data-placement="left" data-template='<div class="tooltip" role="tooltip"><div class="arrow brc-danger"></div><div class="tooltip-inner text-110 pb-2 bgc-danger"></div></div>'>
+                        <i class="fa fa-trash text-danger mx-1"></i>
+                        <span class="d-md-none">Delete</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="media-body py-2 px-3 radius-r-1 flex-grow-1 bgc-white brc-default-l2 border-1 border-l-0 pos-rel">
+            <div class="position-tl h-102 border-l-2 brc-blue-m3 mt-n1px"></div>
+            <div class="d-flex justify-content-between">
+                <span class="text-info-d2 text-600 text-95">{{name}}</span>
+                <span class="text-90">
+                    <i class="far fa-clock text-grey mr-1"></i><span class="text-{{time-color}}-m1 font-bolder">{{time}}</span>
+                </span>
+            </div>
+            <div class="text-dark-m2 text-90">
+                {{{message}}}
+            </div>
+        </div>
+    </div>
+    
+
+    
+ </div>
+</div>
+{{/each}}

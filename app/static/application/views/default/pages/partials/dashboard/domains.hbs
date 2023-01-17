@@ -1,0 +1,42 @@
+<table class="table brc-secondary-l4">
+	<thead class="border-0">
+		<tr class="border-0 bg-transparent text-dark-tp4 te1xt-95">
+			<th class="border-0 font-normal">name</th>
+			<th class="border-0 font-normal">price</th>
+			<th class="border-0 font-normal">status</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		{{#each (get "domains")}}
+		<tr class="bgc-h-primary-l5">
+			<td class="text-dark-m1">{{name}}</td>
+			<td>
+				{{#if old_price}}
+				 <small><s class="text-danger-m1">{{old_price}}</s></small>
+				 <span class="text-success-m1 font-bolder">{{price}}</span>
+				{{else}}				
+				 <span class="text-blue-m1 font-bolder">{{price}}</span>
+				{{/if}}
+			</td>
+			<td>
+				{{#if on_sale}}
+				 <span class="badge text-75 badge-info arrowed-in arrowed-in-right">on sale</span>
+				{{/if}}
+				{{#if approved}}
+				 <span class="badge text-75 border-l-3 brc-black-tp8 bgc-success text-white">approved</span>
+				{{/if}}
+				{{#if pending}}
+				 <span class="badge text-75 border-l-3 brc-black-tp8 bgc-danger text-white">pending</span>
+				{{/if}}
+				{{#if out_of_stock}}
+				 <span class="badge bgc-secondary-l1 text-dark-tp4 border-1 brc-black-tp10"><s>out of stock</s></span>
+				{{/if}}
+				 {{#if sold}}
+				<span class="badge text-75 border-l-3 brc-black-tp8 bgc-warning text-white">SOLD</span>
+				{{/if}}
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

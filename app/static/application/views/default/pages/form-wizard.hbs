@@ -1,0 +1,147 @@
+<div class="page-header pb-1 mb-45">
+    <h1 class="page-title text-primary-d2">
+        Form Wizard
+         <small class="page-info text-secondary-d2">
+            &amp; Validation
+        </small>
+    </h1>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+            <span class="text-blue text-125">Wizard</span>
+
+            <div class="card-toolbar ml-auto no-border pr-2">
+                <label>
+                    <span class="align-middle d-block d-sm-inline">Validation:</span>
+                    <input autocomplete="off" type="checkbox" id="id-validate" class="float-right text-secondary-l1 bgc-success ml-1 ace-switch ace-switch-times ace-switch-check align-middle radius-1" />
+                </label>
+            </div>
+            <div class="card-toolbar pl-3">
+                <button id="wizard-1-prev" type="button" class="mx-2px btn btn-outline-default btn-h-outline-primary btn-bgc-white btn-a-primary border-2 radius-1" disabled>
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <button id="wizard-1-next" type="button" class="mx-2px btn btn-outline-default btn-h-outline-primary btn-bgc-white btn-a-primary border-2 radius-1">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+                <button id="wizard-1-finish" type="button" class="d-none mx-2px px-3 btn btn-outline-success btn-h-outline-success btn-bgc-white border-2 radius-1">
+                    <i class="fa fa-arrow-right"></i>                    
+                </button>
+            </div>
+        </div>
+
+        <div class="card-body px-2">
+
+            <div id="smartwizard-1" class="d-none">
+                <ul class="mx-auto">
+                    <li class="wizard-progressbar"></li>
+
+                    <li>
+                        <a href="#step-1">
+                            <span class="step-title">
+                                1
+                            </span>
+
+                            <span class="step-title-done">
+                                <i class="fa fa-check text-success-m1"></i>
+                            </span>
+                        </a>
+                        <span class="step-description">
+                            Validation States
+                        </span>
+                    </li>
+
+                    <li>
+                        <a href="#step-2">
+                            <span class="step-title">
+                                2
+                            </span>
+
+                            <span class="step-title-done">
+                                <i class="fa fa-check text-success-m1"></i>
+                            </span>
+                        </a>
+                        <span class="step-description">
+                            Alerts
+                        </span>
+                    </li>
+
+                    <li>
+                        <a href="#step-3">
+                            <span class="step-title">
+                                3
+                            </span>
+
+                            <span class="step-title-done">
+                                <i class="fa fa-check text-success-m1"></i>
+                            </span>                       
+                        </a>
+                        <span class="step-description">
+                            Payment Info
+                        </span>
+                    </li>
+
+                    <li>
+                        <a href="#step-4">
+                            <span class="step-title">
+                                4
+                            </span>
+
+                            <span class="step-title-done">
+                                <i class="fa fa-check text-success-m1"></i>
+                            </span>
+                        </a>
+                        <span class="step-description">
+                            Other Info
+                        </span>
+                    </li>
+                </ul>
+
+                <div class="px-2 py-2 mb-4">
+                    <div id="step-1" class="">
+
+                      <form novalidate>
+                        {{> page/validation-states}}
+                      </form>
+
+                      <!-- validate this form before going to next step -->
+                      <form class="needs-validation mt-4 d-none text-dark-m1" id="validation-form">
+                        <h4 class="text-success-m1 mb-4 ml-md-4">Enter the following information</h4>
+                        {{> page/validation-form}}
+                      </form>
+
+                    </div>
+
+                    <div id="step-2">
+                        {{> page/step2-alerts}}
+                    </div>
+
+                    <div id="step-3" class="text-center">
+                        <h3 class="font-light text-blue my-4">Select Payment Method</h3>
+                        {{> page/step3-payment}}
+                    </div><!-- step-3 -->
+
+                    <div id="step-4" class="text-center">            
+                        <h3 class="font-light text-success-m1 mt-4"> Congrats! </h3>
+                        Your product is ready to ship! Click finish to continue!
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+         </div>
+
+      </div>
+    </div> <!-- .card -->
+
+    </div>
+</div>
+
+

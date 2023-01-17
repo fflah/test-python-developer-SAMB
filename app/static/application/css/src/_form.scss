@@ -1,0 +1,252 @@
+
+.form-control {
+    color: $input-color;
+    background-color: $input-bg;
+
+    border: 1px solid $input-border;
+    border-radius: $input-radius;
+    
+    font-family: inherit;
+    
+    transition-duration: $transition-form-control;
+
+    &:hover {
+        border-color: $input-hover-border;
+    }
+    &:focus {
+        box-shadow: 0 0 0 2px rgba($input-focus-border, 0.2);//none;
+        color: $input-focus-color;
+        border-color: $input-focus-border;
+        background-color: $input-focus-bg;
+        
+        outline: none;
+    }
+
+    &[disabled] {
+        color: $input-disabled-color;
+        background-color: $input-disabled-bg;
+        &:hover {
+          border-color: $input-border;
+        }
+    }
+    &[readonly] {
+        color: $input-readonly-color;
+        background: $input-readonly-bg;
+        cursor:default;
+      
+        &:hover {
+          border-color: lighten($input-readonly-focus-border , 10%);
+        }
+        &:focus {
+          box-shadow: none;
+          border-color: $input-readonly-focus-border;
+          background-color: $input-readonly-focus-bg;
+        }
+    }
+
+    &::placeholder {
+      color: $input-placeholder-color;
+    }
+}
+
+
+@mixin form-control-colors($colorName, $colorValue) {
+  .form-control[class*="brc-#{$colorName}"]:focus:not(:disabled):not(.disabled) {
+    box-shadow: 0 0 0 2px rgba($colorValue, 0.2);
+  }
+}
+
+$input-colors: (
+  "success": map-get($background-colors, "success"),
+  "danger": map-get($background-colors, "danger"),
+  "warning": map-get($background-colors, "warning"),
+  "primary": map-get($background-colors, "primary"),
+  "info": map-get($background-colors, "info"),
+  "blue": map-get($background-colors, "blue")
+);
+
+@each $colorName, $colorValue in $input-colors {
+  @include form-control-colors($colorName, $colorValue);
+}
+
+
+
+
+//valid/invalid form state
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-color: $valid-border-color;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($valid-border-color, 0.2);
+  }
+}
+.valid-feedback {
+  color: $valid-text-color;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  border-color: $invalid-border-color;
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($invalid-border-color, 0.2);
+  }
+}
+.invalid-feedback {
+  color: $invalid-text-color;
+}
+
+
+
+//label
+label {
+  cursor: pointer;
+  &.disabled {
+    cursor: default;
+  }
+}
+input[type=checkbox], input[type=radio] {
+  &:disabled + label {
+    cursor: default;
+  }
+}
+
+
+//the button will have transparency when input is not focused
+.input-group-fade {
+  .input-group-append > .btn {
+    opacity: 0.55;
+    &:hover, &:active, &.active {
+      opacity: 1;
+    }
+  }
+
+  .form-control:focus + .input-group-append > .btn {
+    opacity: 1;
+  }
+}
+
+
+
+//input with placeholder that moves up when input is focused
+.input-floating-label {
+  position: relative;
+
+  .floating-label {
+    pointer-events: none;
+    
+    background-color: #fff;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include transition(all $transition-general);
+  }
+
+ 
+
+  input:focus ~ .floating-label , input.has-content ~ .floating-label , .floating-label.active {
+    top: 0;
+    font-size: $floating-label-focus-size;
+    opacity: 0.85;
+  }
+
+  &[class*="text-"] {
+    input:focus ~ .floating-label {
+      color: inherit !important;
+      opacity: 0.95;
+    }
+  }
+
+  &[class*="brc-"] {
+    input:focus {
+      border-color: inherit;
+    }
+  }
+}
+
+
+
+
+//
+//select boxes
+select {
+  &.form-control {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+
+    option {
+      padding: 0.3125rem 0.3125rem 0.375rem;
+    }
+  }
+
+
+
+@if $custom-select == true {
+  &.ace-select {
+    position: relative;
+    cursor: pointer;
+
+    appearance: none;
+
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2rem;
+    padding-left: 0.5rem;
+
+    border: 2px solid $custom-select-border;
+    border-radius: 3px;
+    background-color: #FFf;
+
+
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%), linear-gradient(to right, $custom-select-sep-color, $custom-select-sep-color);
+    background-position: calc(100% - #{$custom-select-caret-margin + $custom-select-caret-size} - 0.5px) center, calc(100% - #{$custom-select-caret-margin} - 0.5px) center,  calc(100% - #{$custom-select-caret-margin*2 + $custom-select-caret-size*2}) center;
+    background-size: $custom-select-caret-size $custom-select-caret-size, $custom-select-caret-size $custom-select-caret-size, 1px 1.5rem;
+    background-repeat: no-repeat;
+
+    &.double-caret {
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%), linear-gradient(135deg, transparent 50%, currentColor 50%), linear-gradient(45deg, currentColor 50%, transparent 50%), linear-gradient(to right, $custom-select-sep-color, $custom-select-sep-color);
+      background-position: calc(100% - #{$custom-select-caret-margin + $custom-select-double-caret-size} - 0.5px) calc(50% + #{$custom-select-double-caret-size*0.8}), calc(100% - #{$custom-select-caret-margin} - 0.5px) calc(50% + #{$custom-select-double-caret-size*0.8}), calc(100% - #{$custom-select-caret-margin + $custom-select-double-caret-size} - 0.5px) calc(50% - #{$custom-select-double-caret-size*0.8}), calc(100% - #{$custom-select-caret-margin} - 0.5px) calc(50% - #{$custom-select-double-caret-size*0.8}), calc(100% - #{$custom-select-caret-margin*2 + $custom-select-double-caret-size*2}) center;
+      background-size: $custom-select-double-caret-size $custom-select-double-caret-size, $custom-select-double-caret-size $custom-select-double-caret-size, $custom-select-double-caret-size $custom-select-double-caret-size, $custom-select-double-caret-size $custom-select-double-caret-size, 1px 1.5rem;
+    }
+
+    option {
+      background-color: #fff;
+      color: $custom-select-option-text;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.no-border {
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    }
+    &.double-caret.no-border {
+      background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%), linear-gradient(135deg, transparent 50%, currentColor 50%), linear-gradient(45deg, currentColor 50%, transparent 50%);
+    }
+  }//.ace-select
+}//@if custom-select
+
+
+}
+
+
+///////
+
+
+//form popover
+.form-text.popover {
+  left: auto;
+  margin-top: 0;
+  z-index: auto;
+}
+.form-text.bs-popover-right > .arrow, .form-text.bs-popover-auto[x-placement^="right"] > .arrow {
+  top: 50%;
+  margin-top: -0.5rem;
+}
+

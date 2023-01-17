@@ -1,0 +1,181 @@
+<div class="page-header">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+        <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            fontawesome, material icons, etc
+        </small>
+    </h1>
+</div>
+
+{{#if useCDN}}
+ {{{include-css href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"}}}
+{{else}}
+<style>
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Material Icons'),
+         local('MaterialIcons-Regular'),
+         url(assets/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+         url(assets/fonts/MaterialIcons-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Material Icons Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: local('MaterialIcons-Outlined'),
+         url(assets/fonts/MaterialIcons-Outlined.woff2) format('woff2'),
+         url(assets/fonts/MaterialIcons-Outlined.woff) format('woff');
+}
+</style>
+{{/if}}
+
+<div class="row">
+    <div class="col-12 text-center">
+        <div class="alert bgc-success-l3 text-dark-tp3 border-1 border-l-3 brc-success-m4 text-105 d-inline-block">
+            In this demo FontAwesome is used by default but you can use any icon set in your app
+        </div>
+    </div>
+</div>
+
+<div class="my-3"></div>
+
+<div class="row">
+    <div class="col-12 col-md-6 mt-2 mt-md-0">
+        <div class="card brc-blue-l1 shadow-sm">
+            <div class="card-body py-3 px-4">
+                <h3 class="text-blue-d1 mb-4 border-b-1 brc-blue-l1 text-150 pb-1">
+                    Material Icons
+                </h3>
+                <p>
+                    <i class="material-icons-outlined bgc-primary-l3 text-primary-m2 radius-1 p-1">archive</i>
+                    <i class="material-icons-outlined bgc-brown-l3 text-brown-m2 radius-1 p-1">build</i>
+                    <i class="material-icons-outlined bgc-danger-l3 text-danger-m2 radius-1 p-1">delete</i>
+                    <i class="material-icons-outlined bgc-blue-l3 text-blue-m2 radius-1 p-1">info</i>
+                    <i class="material-icons-outlined bgc-success-l3 text-success-m2 radius-1 p-1">eco</i>
+                    <i class="material-icons-outlined bgc-info-l3 text-info-m2 radius-1 p-1">search</i>
+                    <i class="material-icons-outlined bgc-warning-l3 text-warning-m2 radius-1 p-1">report_problem</i>
+                    <i class="material-icons-outlined bgc-purple-l3 text-purple-m2 radius-1 p-1">question_answer</i>
+                </p>
+
+                <p>
+                    <i class="material-icons text-primary-m2 border-1 brc-primary-m3 p-1 radius-2">archive</i>
+                    <i class="material-icons text-brown-m2 border-1 brc-brown-m3 p-1 radius-2">build</i>
+                    <i class="material-icons text-danger-m2 border-1 brc-danger-m3 p-1 radius-2">delete</i>
+                    <i class="material-icons text-blue-m2 border-1 brc-blue-m3 p-1 radius-2">info</i>
+                    <i class="material-icons text-success-m2 border-1 brc-success-m3 p-1 radius-2">eco</i>
+                    <i class="material-icons text-info-m2 border-1 brc-info-m3 p-1 radius-2">search</i>
+                    <i class="material-icons text-warning-m2 border-1 brc-warning-m3 p-1 radius-2">report_problem</i>
+                    <i class="material-icons text-purple-m2 border-1 brc-purple-m3 p-1 radius-2">question_answer</i>
+                </p>
+
+                <hr class="border-dotted brc-blue-l1" />
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-primary text-95 btn-sm btn-wide" id="id-material">try Material Icons on sidebar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-2 mt-md-0">
+        <div class="card brc-success-l1 shadow-sm">
+            <div class="card-body py-3 px-4">
+                <h3 class="text-orange-d1 mb-4 border-b-1 brc-success-l1 text-150 pb-1">
+                    Jam Icons
+                </h3>
+
+                <p class="text-default-d2">
+                    <i class="jam jam-alarm-clock text-150 p-1 radius-2 bgc-purple text-white-tp2"></i>
+                    <i class="jam jam-archive text-150 p-1 radius-2 bgc-brown text-white-tp2"></i>
+                    <i class="jam jam-bell-off text-150 p-1 radius-2 bgc-warning text-white-tp2"></i>
+                    <i class="jam jam-bug text-150 p-1 radius-2 bgc-danger text-white-tp2"></i>
+                    <i class="jam jam-clipboard text-150 p-1 radius-2 bgc-default text-white-tp2"></i>
+                    <i class="jam jam-dashboard text-150 p-1 radius-2 bgc-success text-white-tp2"></i>
+                    <i class="jam jam-flask text-150 p-1 radius-2 bgc-pink text-white-tp2"></i>
+                </p>
+
+                <p class="text-default-d2">
+                    <i class="jam jam-alarm-clock text-160 p-1 text-purple-m2"></i>
+                    <i class="jam jam-archive text-160 p-1 text-brown-m2"></i>
+                    <i class="jam jam-bell-off text-160 p-1 text-warning-m2"></i>
+                    <i class="jam jam-bug text-160 text-danger-m2"></i>
+                    <i class="jam jam-clipboard text-160 text-default-m2"></i>
+                    <i class="jam jam-dashboard text-160 text-success-m2"></i>
+                    <i class="jam jam-flask text-160 p-1 text-pink-m2"></i>
+                </p>
+                
+                <hr class="border-dotted brc-success-l1" />
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-warning text-95 btn-sm btn-wide" id="id-jamicons">try Jam Icons on sidebar</button>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6 mt-2 mt-md-4">
+        <div class="card brc-default-l1 shadow-sm">
+            <div class="card-body py-3 px-4">
+                <h3 class="text-purple-m1 mb-4 border-b-1 brc-default-l1 text-150 pb-1">
+                    Eva Icons
+                </h3>
+
+                <p>
+                    <i class="eva eva-home-outline text-160 radius-round bgc-blue-l4 text-blue p-2 border-2 brc-blue-m3"></i>
+                    <i class="eva eva-archive-outline text-160 radius-round bgc-purple-l4 text-purple p-2 border-2 brc-purple-m3"></i>
+                    <i class="eva eva-charging-outline text-160 radius-round bgc-danger-l4 text-danger-d1 p-2 border-2 brc-danger-m3"></i>
+                    <i class="eva eva-gift-outline text-160 radius-round bgc-primary-l4 text-primary p-2 border-2 brc-primary-m3"></i>
+                    <i class="eva eva-paper-plane-outline text-160 radius-round bgc-success-l4 text-success p-2 border-2 brc-success-m3"></i>
+                    <i class="eva eva-wifi-outline text-160 radius-round bgc-brown-l4 text-brown-m1 p-2 border-2 brc-brown-m3"></i>
+                    <i class="eva eva-settings-2-outline text-160 radius-round bgc-warning-l4 text-orange-d1 p-2 border-2 brc-warning-m3"></i>
+                </p>
+
+                
+                <hr class="border-dotted brc-default-l1" />
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-purple text-95 btn-sm btn-wide" id="id-evaicons">try Jam Eva on sidebar</button>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-2 mt-md-4">
+        <div class="card brc-default-l1 shadow-sm">
+            <div class="card-body py-3 px-4">
+                <h3 class="text-default mb-4 border-b-1 brc-default-l1 text-150 pb-1">
+                    FontAwesome
+                </h3>
+                <p>
+                    <span class="d-inline-block radius-round bgc-yellow py-2 px-1 text-center border-2 brc-dark-tp3">
+                        <i class="fa fa-flask w-4 text-110 text-dark-tp3"></i>
+                    </span>
+
+                    <span class="d-inline-block radius-round bgc-success py-2 px-1 text-center border-2 brc-white-tp3 shadow-sm">
+                        <i class="fa fa-home w-4 text-110 text-white-tp1"></i>
+                    </span>
+
+                    <span class="d-inline-block radius-round bgc-primary py-2 px-1 text-center border-2 brc-white-tp3 shadow-sm">
+                        <i class="fa fa-edit w-4 text-110 text-white-tp1"></i>
+                    </span>
+
+                    <span class="d-inline-block radius-round bgc-purple py-2 px-1 text-center border-2 brc-white-tp3 shadow-sm">
+                        <i class="fa fa-calendar w-4 text-110 text-white-tp1"></i>
+                    </span>
+
+                    <span class="d-inline-block radius-round bgc-warning py-2 px-1 text-center border-2 brc-white-tp3 shadow-sm">
+                        <i class="fa fa-cog w-4 text-110 text-white-tp1"></i>
+                    </span>
+                </p>
+
+                <hr class="border-dotted brc-default-l1" />
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-default text-95 btn-sm btn-wide" id="id-fontawesome">try FontAwesome on sidebar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

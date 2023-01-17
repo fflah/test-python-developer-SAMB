@@ -1,0 +1,383 @@
+<div class="page-header">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+        <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            overview &amp; stats
+        </small>
+    </h1>
+
+    <div class="page-tools">
+        <button type="button" class="btn btn-sm btn-lighter-default btn-h-lighter-purple btn-a-lighter-purple border-b-2">
+            <i class="fa fa-save text-120 text-purple-m1"></i>
+        </button>
+        <button type="button" class="btn btn-sm btn-lighter-default btn-h-lighter-success btn-a-lighter-success border-b-2">
+            <i class="fa fa-undo text-110 text-success-m1"></i>
+        </button>
+
+        <div class="btn-group dropdown dd-backdrop dd-backdrop-none-md">
+			<button type="button" class="btn btn-sm btn-lighter-info btn-a-outline-info dropdown-toggle border-b-2" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-search text-110"></i>
+			</button>
+			<div class="dropdown-menu dropdown-menu-right dropdown-caret dropdown-animated animated-2 dd-slide-up dd-slide-none-md"><div class="dropdown-inner">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Separated link</a>
+			</div></div>
+		</div>
+    </div>
+</div>
+
+<!-- the welcmome to Ace message -->
+<div class="d-none fade show alert alert-lg bgc-success-l2 border-0 border-l-4 brc-success-m1 m-2 mx-lg-4 py-3 text-105 text-dark-tp3">
+    <button type="button" class="close" data-dismiss="alert">
+        <i class="text-70 fa fa-times align-top text-grey"></i>
+    </button>
+
+    <i class="fas fa-check mr-1 text-120 text-success-m1"></i>
+
+    Welcome to
+    <span class="text-success-d2 font-bolder text-105">
+        Ace
+        <small>(v2.1)</small>
+    </span>
+    , a lightweight, feature-rich and easy to use admin template.
+</div>
+
+
+<div class="h-1 my-1"></div>
+
+
+
+<div class="row">
+ <div class="col-lg-7">
+    <div class="row px-3 px-lg-4">
+ 
+    
+     <div class="col-12 mb1-25">
+      <div class="row  h-100 l5 border-2 border-b-0 bgc-white brc-default-l2 radius-t-1 d-flex py-35">
+        <div class="col-12 col-sm-4 px-lg-4 text-center text-sm-left">
+            <span class="text-95">Today's sales</span>
+            <div class="text-secondary-d3">
+                <span class="text-110">$</span> <span class="text-180">98,450</span>
+                <span class="text-blue">+5.25% <i class="fa fa-caret-up"></i></span>
+            </div>
+            
+            <button type="button" class="btn btn-blue btn-bold px-4 py-1 mt-45">View Report</button>
+        </div>
+
+        {{#each (get "stats2")}}
+            {{> page/infobox2}}
+        {{/each}}
+      </div>
+     </div>
+
+
+     <div class="row w-100 border-2 border-t-1 brc-default-l2 bgc-white mx-0 radius-b-1 overflow-hidden">
+     {{#each (get "stats1")}}
+	  {{> page/infobox}}
+	 {{/each}}
+     </div>
+
+
+    </div>
+ </div>
+
+ <div class="col-lg-5 mt-4 mt-lg-0">
+    <div class="card border-0 h-100">
+        <div class="card-header border-0 bgc-primary-d1 card-header-sm">
+            <h6 class="card-title pt-0">
+                <i class="mr-1 fa fa-signal text-white-tp2"></i>
+                <span class="text-110 text-white">Traffic Sources</span>
+            </h6>
+
+            <div class="card-toolbar no-border">
+                <div class="dropdown dd-backdrop dd-backdrop-none-md">
+                    <a class="btn btn-white border-0 btn-bold radius-1 btn-xs dropdown-toggle text-80" href="#" role="button" data-toggle="dropdown"  data-display="static" aria-haspopup="true" aria-expanded="false">
+                        This Week
+                        <i class="fa fa-caret-down"></i>
+                    </a>
+
+                    <div class="dropdown-menu shadow-sm dropdown-menu-right dropdown-caret dropdown-animated dd-slide-up dd-slide-none-md radius-1 brc-secondary-l1"><div class="dropdown-inner">
+                        <a class="dropdown-item active btn btn-a-lighter-blue btn-a-bold mx-1" href="#">This Week</a>
+                        <a class="dropdown-item btn btn-a-lighter-blue text-secondary mx-1" href="#">Last Week</a>
+                        <a class="dropdown-item btn btn-a-lighter-blue text-secondary mx-1" href="#">This Month</a>
+                        <a class="dropdown-item btn btn-a-lighter-blue text-secondary mx-1" href="#">Last Month</a>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body px-0 bgc-white border-2 border-t-0 brc-primary-m4 pb-0 flex-grow-1 d-flex flex-column">
+           <div class="flex-grow-1 d-flex align-items-center px-2">
+                <canvas class="mw-100" id="piechart" height="110"></canvas>
+            </div>
+            <div>
+                <hr class="brc-default-l1 w-95 mt-3 mb-0" />
+            </div>
+            <div class="row mx-0 pb-2 pt-1">
+                <div class="col-12 col-sm-4 d-inline-flex">
+                    <div class="h-100 d-flex align-items-center px-2">
+                        <i class="fab fa-facebook-square fa-2x text-blue"></i>
+                    </div>
+                    <div class="pl-1 pt-2">
+                        <span class="text-150 text-grey-d2">626</span>
+                        <br />
+                        <span class="text-grey-m1">likes</span>
+                    </div>
+
+                    <div class="position-rc h-75 border-l-1 brc-default-l1 d-none d-sm-block"></div>
+                    <div class="position-bc w-90 border-t-1 brc-default-l2 d-sm-none mb-n1"></div>
+                </div>
+
+                <div class="col-12 col-sm-4 d-inline-flex">
+                    <div class="h-100 d-flex align-items-center px-2">
+                        <i class="fab fa-twitter-square fa-2x text-blue2-m3"></i>
+                    </div>
+                    <div class="pl-1 pt-2">
+                        <span class="text-150 text-grey-d2">260</span>
+                        <br />
+                        <span class="text-grey-m1">retweets</span>
+                    </div>
+
+                    <div class="position-rc h-75 border-l-1 brc-default-l1 d-none d-sm-block"></div>
+                    <div class="position-bc w-90 border-t-1 brc-default-l2 d-sm-none mb-n1"></div>
+                </div>
+                
+                <div class="col-12 col-sm-4 d-inline-flex">
+                    <div class="h-100 d-flex align-items-center px-2">
+                        <i class="fab fa-instagram fa-2x text-purple-m2"></i>
+                    </div>
+                    <div class="pl-1 pt-2">
+                        <span class="text-150 text-grey-d2">401</span>
+                        <br />
+                        <span class="text-grey-m1">likes</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+ </div>
+
+</div>
+
+<hr class="brc-white my-15 d-none d-lg-block" />
+<hr class="brc-white my-3 my-lg-4" />
+
+<div class="row">
+    <div class="col-lg-5 order-last order-lg-first">
+        <div class="card border-0">
+            <div class="card-header bg-transparent border-0 pl-1">
+                <h5 class="card-title mb-2 mb-md-0 text-120">
+                    <i class="fa fa-star mr-1 text-warning text-90"></i>
+                    <span class="text-105">Popular Domains</span>
+                </h5>
+
+                <div class="card-toolbar align-self-center">
+					<a href="#" data-action="toggle" class="card-toolbar-btn text-grey text-110"><i class="fa fa-chevron-up"></i></a>                    
+				</div>
+            </div>
+            <div class="card-body p-0 border-t-2 brc-default-l2">
+                {{> page/domains}}
+            </div>
+        </div>        
+    </div>
+
+    <div class="col-lg-7 mb-4 mb-lg-0">
+        <div class="card border-0 h-100">
+            <div class="card-header border-0 bg-transparent pl-1">
+                <h5 class="card-title mb-2 mb-md-0 text-120">
+                    <i class="fas fa-chart-line text-purple-m2 mr-1 text-105"></i>
+                    <span class="text-110">Sale Stats</span>
+                </h5>
+
+                <div class="card-toolbar no-border dd-backdrop dd-backdrop-none-md">
+                    <a href="#" class="btn btn-xs btn-light-secondary border-1 text-600 px-4 radius-round dropdown-toggle" role="button" data-toggle="dropdown"  data-display="static" aria-haspopup="true" aria-expanded="false">
+                        2020
+                    </a>
+
+                    <div class="dropdown-menu shadow-sm dropdown-menu-right dropdown-caret dropdown-animated dd-slide-center dd-slide-none-md radius-1 brc-secondary-l1 px-1 mw-auto">
+                        <div class="dropdown-inner">
+                            <a class="dropdown-item active" href="#">2020</a>
+                            <a class="dropdown-item" href="#">2019</a>
+                            <a class="dropdown-item" href="#">2018</a>
+                        </div>
+                    </div>
+				</div>
+
+                <div class="card-toolbar align-self-center">
+                    <a href="#" data-action="reload" class="card-toolbar-btn text-success-m2 text-100"><i class="fas fa-sync-alt"></i></a>
+				</div>
+            </div>
+            <div class="card-body p-0 bg-white border-t-2 brc-default-l2 px-1 mx-n2 mx-md-0 h-100 d-flex align-items-center">
+                <div class="mx-n2 px-0 mx-md-0 my-2 flex-grow-1">
+                    <canvas id="saleschart" height="115"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="border-dotted my-3 mt-lg-4 mb-lg-4" />
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="card border-0">
+            <div class="card-header bg-transparent border-b-1 brc-primary-m4 px-1 flex-column flex-md-row">
+                <h5 class="card-title mb-2 mb-md-0">
+                    <i class="fa fa-rss text-orange mr-1 text-105"></i>
+                    <span class="text-105">Recent Activity</span>
+                </h5>
+
+				<div class="card-toolbar no-border tabs-above pl-0 pl-md-2">
+					<ul class="nav nav-tabs card-header-tabs mr-0 flex-nowrap">
+						<li class="nav-item">
+							<a class="nav-link active radius-0"  data-toggle="tab" href="#tab-1" role="tab">Tasks</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link radius-0"  data-toggle="tab" href="#tab-2" role="tab">Members</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link radius-0"  data-toggle="tab" href="#tab-3" role="tab">Comments</a>
+						</li>
+					</ul>
+				</div>
+            </div>
+
+			<div class="card-body bg-white p-0"><div class="tab-content border-0 card-inner px-0 py-3">
+					<div class="tab-pane show active fade px-1" id="tab-1">
+						<h5 class="font-light text-success mb-3">
+				            <i class="fa fa-list"></i>
+							Sortable Lists <span class="text-75 text-grey-m2">drag &amp; drop</span>
+						</h5>
+
+                        <div class="row">
+                            <div class="col-12 px-3" id="tasks">
+                            {{> page/tasks}}
+                            </div>
+                        </div>
+
+                        <div class="text-center px-1px pos-rel">
+                            <button type="button" class="mt-n1px btn btn-outline-info btn-sm btn-block border-b-2 radius-0">
+                                <i class="fa fa-plus mr-1"></i>
+                                Add A Task                                
+                            </button>
+                        </div>
+                    </div>
+
+					<div class="tab-pane fade px-2" id="tab-2">
+                        <div class="row">
+                           {{> page/members}}
+                        </div>
+                        <hr class="border-double" />
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-info btn-sm btn-wide">
+                                See All Members
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+					</div>
+
+                    <div class="tab-pane fade px-0" id="tab-3">
+						<div ace-scroll='{"height": 280, "smooth":true}'>
+                           {{> page/comments}}
+                        </div>
+                        <hr class="border-double" />
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-info btn-sm btn-wide">
+                                See All Comments
+                                <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+					</div>
+
+			</div></div><!-- /.card-body -->
+
+        </div>
+    </div>
+
+
+
+    <div class="col-12 col-lg-6">
+        <div class="card border-0 mt-3">
+
+            <div class="card-header bgc-blue-tp1">
+                <h6 class="card-title text-white font-normal">
+                    <i class="far fa-comment-dots text-130 mr-1"></i>
+                    <span class="text-110">Conversation</span>
+                    <span class="text-95 d-block d-sm-inline text-center">(6 online)</span>
+                </h6>
+
+                <div class="card-toolbar align-self-center text-white text-90 no-border p-2px">
+                    Alexa is typing 
+                    <div class="typing-dots text-160 text-white mx-md-1">
+                        <span class="typing-dot">.</span>
+                        <span class="typing-dot">.</span>
+                        <span class="typing-dot">.</span>
+                    </div>
+				</div>
+                <div class="card-toolbar align-self-center">
+                    <a href="#" data-action="reload" class="card-toolbar-btn text-white "><i class="fas fa-sync-alt"></i></a>
+				</div>
+            </div>
+
+            <div class="card-body border-x-1 border-b-1 brc-blue-l1 bgc-default-l4 px-1px py-0" ace-scroll='{"height": 450, "smooth":true}'>
+                {{> page/conversation}}
+            </div>
+
+            <div class="card-footer p-0 bgc-white border-1 border-t-0 brc-blue-l1 pos-rel" style="box-shadow: 0 -1px 2px 0px rgba(221, 223, 228, 0.45);">
+                <div class="p-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg radius-l-round brc-blue-m4" placeholder="Type something ..." />
+                        <div class="input-group-append">
+                            <button class="btn btn-blue btn-md radius-r-round px-4" type="button"><i class="fas fa-forward"></i></button>
+                        </div>
+
+                        <div class="btn-group ml-2 dropup">
+                            <button type="button" class="btn btn-xs px-1 border-0 btn-lighter-warning btn-bgc-tp dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa-stack">
+                                    <i class="fas fa-circle text-grey-l1 fa-stack-1x text-160"></i>
+                                    <i class="fas fa-circle text-dark fa-stack-1x text-120"></i>                                    
+                                    <i class="fas fa-smile text-warning-m3 text-150 fa-stack-1x"></i>
+                                </span>
+                            </button>
+
+                            <div class="dropdown-menu dropdown-menu-right p-1">
+                                <div class="d-flex ">
+                                    <a class="dropdown-item px-25" href="#">
+                                        <span class="fa-stack w-auto">
+                                            <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                            <i class="fas fa-smile text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                        </span>
+                                    </a>
+
+                                    <a class="dropdown-item px-25" href="#">
+                                        <span class="fa-stack w-auto">
+                                            <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                            <i class="fas fa-smile-beam text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                        </span>
+                                    </a>
+
+                                    <a class="dropdown-item px-25" href="#">
+                                        <span class="fa-stack w-auto">
+                                            <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                            <i class="fas fa-smile-wink text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+

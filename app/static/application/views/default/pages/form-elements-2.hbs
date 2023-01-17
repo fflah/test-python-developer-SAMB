@@ -1,0 +1,131 @@
+<div class="page-header text-blue-d2">
+    <h1 class="page-title">
+        More Form Elements
+    </h1>
+</div>
+
+<form>
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right">
+            Star Rating
+        </div>
+
+        <div class="col-sm-9">
+            <input name="rating1" class="star-rating" />
+
+            <hr />
+        </div>
+    </div>
+  
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-typeahead">Autocomplete</label>
+        </div>
+
+        <div class="col-sm-9">
+            <input class="form-control typeahead scrollable" type="text" placeholder="States of USA" id="id-typeahead" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="select-picker-1">Bootstrap select</label>
+        </div>
+
+        <div class="col-sm-9">
+            <select class="form-control w-50" data-style="btn-outline-primary btn-h-outline-primary btn-a-outline-primary" multiple id="select-picker-1">
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+            </select>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="state">Select2</label>
+        </div>
+
+        <div class="col-sm-4 col-12 tag-input-style" id="select2-parent">
+            <select multiple id="state" name="state" class="select2 form-control " data-placeholder="Click to Choose...">
+                {{#each (get "states")}}
+                 <option value='{{abbr}}'>{{name}}</option>
+                {{/each}}
+            </select>
+
+            <hr />
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="form-field-chosen-1">Chosen</label>
+        </div>
+
+        <div class="col-sm-4 col-12">
+            <select id="form-field-chosen-1" data-placeholder="Choose a state..." class="chosen-select form-control">
+                <option value=""></option>
+                {{#each (get "states")}}
+                    <option value='{{abbr}}'>{{name}}</option>
+                {{/each}}
+            </select>
+
+            <div class="my-3"></div>
+
+            <select multiple id="form-field-chosen-2" class="chosen-select form-control">
+               {{#each (get "states")}}
+                    <option value='{{abbr}}'>{{name}}</option>
+                {{/each}}
+            </select>
+
+            <hr />
+        </div>
+    </div>
+
+
+                
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="tag-input">Tag input</label>
+        </div>
+
+        <div class="col-sm-4 col-12">
+            <input type="text" id="tag-input" class="form-control" />
+        </div>
+    </div>
+
+
+    <hr />
+
+    
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            Dual listbox
+        </div>
+
+        <div class="col-sm-9">
+           <select multiple="multiple" size="10" name="duallistbox_demo1[]" id="duallist">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3" selected="selected">Option 3</option>
+                <option value="option4">Option 4</option>
+                <option value="option5">Option 5</option>
+                <option value="option6" selected="selected">Option 6</option>
+                <option value="option7">Option 7</option>
+                <option value="option8">Option 8</option>
+                <option value="option9">Option 9</option>
+                <option value="option0">Option 10</option>
+            </select>
+
+            <hr />
+        </div>
+    </div>
+
+
+</form>
+

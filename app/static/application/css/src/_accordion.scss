@@ -1,0 +1,81 @@
+
+.accordion {
+    .card {
+        border: 1px solid $accordion-border-color;
+
+        &:first-of-type , &:not(:first-of-type):not(:last-of-type) {
+            border-bottom: 1px solid $accordion-border-color;
+        }
+    }
+
+    .card[class*="brc-"] .card-header {
+        border-bottom-width: 0;
+    }
+    
+    .card + .card {
+        margin-top: 0.125rem;
+    }
+
+
+    .card-header {
+        border-bottom-color: $accordion-border-color;
+        padding: 0;
+
+        .card-title {
+            font-size: 1rem;
+        }
+        .accordion-toggle {
+            display: block;
+            width: 100%;
+            
+            padding: 0.75rem 1.25rem 0.875rem;
+
+            font-weight: $font-semibold;
+            color: $accordion-text-color;
+            background-color: $accordion-bg-color;
+
+            position: relative;
+            overflow: hidden;
+
+            &.collapsed {
+                font-weight: $font-normal;
+                color: $accordion-collapsed-text-color;
+                background-color: $accordion-collapsed-bg-color;
+            }
+
+
+            &:hover {
+                color: $accordion-collapsed-hover-text-color;
+                background-color: $accordion-collapsed-hover-bg-color;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+a[data-toggle="collapse"] {
+    &.collapsed { 
+        .toggle-icon {
+            transform: none;
+        }
+    }
+
+    .toggle-icon {
+        @include transition(transform $accordion-toggle-transition);      
+    }
+
+    &:not(.collapsed) {
+        .toggle-icon {            
+            &[class*="-down"] {
+                transform: rotate(-180deg);
+            }
+            &[class*="-left"] {
+                transform: rotate(-90deg);
+            }
+            &[class*="-right"] {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}

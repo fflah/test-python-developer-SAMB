@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> layout/_head}}
+    {{{include-css files="dist/css/ace-themes.css@ace"}}}
+  </head>
+
+  <body>
+    <div class="body-container">
+      {{> layout/landing/navbar.landing-2}}
+      
+      <div class="main-container">
+
+        <div role="main" class="main-content">
+          <div class="page-content p-0">
+            {{{body}}}
+          </div>
+        </div><!-- /main -->
+      
+      </div><!-- /.main-container -->
+
+      {{> layout/_tail}}
+   </div><!-- /.body-container -->
+  </body>
+</html>

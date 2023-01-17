@@ -1,0 +1,33 @@
+[
+ {
+ "color" : "purple",
+ "title" : "Answering customer questions",
+ "progress" : 35
+ } ,
+ {
+ "color" : "danger",
+ "title" : "Fixing bugs",
+ "toolbar" : true
+ } ,
+ {
+ "color" : "secondary",
+ "title" : "Adding new features",
+ "menu" : true
+ } ,
+ {
+ "color" : "info",
+ "title" : "Upgrading scripts used in template"
+ } ,
+ {
+ "color" : "grey",
+ "title" : "Adding new skins"
+ } ,
+ {
+ "color" : "success",
+ "title" : "Updating server software up"
+ } ,
+ {
+ "color" : "warning",
+ "title" : "Cleaning up"
+ }
+]

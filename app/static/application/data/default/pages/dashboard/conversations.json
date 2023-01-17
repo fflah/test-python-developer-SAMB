@@ -1,0 +1,54 @@
+[
+ {
+ "name" : "Alexa",
+ "avatar" : "avatar1.png",
+ "time" : "4 sec",
+ "time-color" : "success",
+ "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.",
+ "status": "success"
+ } ,
+ {
+ "name" : "John",
+ "avatar" : "avatar.png",
+ "time" : "38 sec",
+ "time-color" : "blue",
+ "message" : "<span class='fa-stack w-auto'> <i class='fas fa-circle text-dark fa-stack-1x text-100'></i> <i class='fas fa-smile-beam text-warning-m3 text-125 fa-stack-1x pos-rel'></i> </span> Raw denim you probably haven't heard of them jean shorts Austin.",
+ "status": "success"
+ } ,
+ {
+ "name" : "Bob Doe",
+ "avatar" : "BD",
+ "color": "warning",
+ "admin" : true,
+ "time" : "2 min",
+ "time-color" : "orange",
+ "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.",
+ "status": "warning"
+ } ,
+ {
+ "name" : "Jim",
+ "avatar" : "avatar4.png",
+ "time" : "3 min",
+ "time-color" : "grey",
+ "message" : "Raw denim you probably haven't heard of them jean shorts Austin.",
+ "status": "info"
+ } ,
+ {
+ "name" : "Alexa",
+ "avatar" : "avatar1.png",
+ "time" : "4 min",
+ "time-color" : "success",
+ "message" : "Lorem ipsum dolor sit amet. <span class='fa-stack w-auto'> <i class='fas fa-circle text-dark fa-stack-1x text-100'></i> <i class='fas fa-grin-alt text-warning-m3 text-125 fa-stack-1x pos-rel'></i> </span>",
+ "status": "secondary"
+ } ,
+ {
+ "name" : "Gary",
+ "avatar" : "GG",
+ "color": "purple",
+ "admin" : true,
+ "time" : "5 min",
+ "time-color" : "purple",
+ "message" : "Quisque commodo massa sed ipsum porttitor facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+ "status": "grey"
+ }
+]

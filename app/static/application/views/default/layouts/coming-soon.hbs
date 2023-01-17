@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> layout/_head}}
+  </head>
+
+  <body>
+    <div class="body-container pos-rel" style="background-image: url('assets/image/body-bg-1.jpg')">
+      <div class="position-tl w-100 h-100 bgc-black-tp4"><!-- the black dark layer over background image --></div>
+
+      <div class="main-container">
+
+         <div role="main" class="main-content px-0">
+          <div class="d-flex flex-grow-1">
+             {{{body}}}
+          </div>
+         </div><!-- /main -->
+      
+      </div><!-- /.main-container -->
+
+      {{> layout/_tail}}
+   </div><!-- /.body-container -->
+  </body>
+</html>

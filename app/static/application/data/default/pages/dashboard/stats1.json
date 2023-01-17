@@ -1,0 +1,33 @@
+[
+ {
+  "color" : "success",
+  "textColor": "success",
+  "icon" : "fa fa-envelope",
+  "number" : "64",
+  "content" : ["messages"],
+  "stat-success" : "8%"
+ } ,
+ {
+  "color" : "blue",
+  "textColor": "blue",
+  "icon" : "fab fa-twitter",
+  "number" : "88",
+  "content" : ["new followers"],
+  "badge-success" : "32%"
+ } ,
+ {
+  "color" : "purple",
+  "textColor": "purple",
+  "icon" : "fa fa-shopping-cart",
+  "number" : "120",
+  "content" : ["new orders"],
+  "stat-important" : "4%"
+ } ,
+ {
+  "color" : "pink",
+  "textColor": "danger",
+  "icon" : "fa fa-flask",
+  "number" : "7",
+  "content" : ["experiments"]
+ }
+]

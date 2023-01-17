@@ -1,0 +1,698 @@
+<div class="page-header">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+         <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            Common form elements
+        </small>
+    </h1>
+</div>
+
+
+<form>
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-form-field-1" class="mb-0">Text field</label>
+        </div>
+
+        <div class="col-sm-9">
+            <input type="text" class="form-control col-sm-8 col-md-6" id="id-form-field-1" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="mb-1 mb-sm-0 col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-form-field-2" class="mb-0">Floating placeholder</label>
+        </div>
+
+        <div class="col-sm-9 input-floating-label text-blue-d1 brc-blue-m1">
+            <input type="text" class="form-control form-control-lg col-sm-8 col-md-6 shadow-none" autocomplete="off"  id="id-form-field-2" />
+            <span class="floating-label text-grey-m3">Placeholder</span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-form-field-3" class="mb-0">Password field</label>
+        </div>
+
+        <div class="col-sm-9">
+            <input type="password" class="form-control col-sm-8 col-md-6 d-inline-block" placeholder="Password" id="id-form-field-3" />
+            <span class="form-text d-inline-block text-95 text-grey ml-sm-2">Inline help text</span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-form-field-password-toggle" class="mb-0">Password toggle</label>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="d-inline-flex pos-rel">
+                <input type="password" class="form-control form-control-lg pr-5" placeholder="Password" id="id-form-field-password-toggle"  />
+                <a href="#" id="toggle-password" type="button" class="btn btn-sm border-0 btn-white bgc-h-warning-l2 text-125 position-tr mt-1 mr-1 no-underline radius-1 d-style">
+                    <i class="fa fa-eye-slash text-90 d-n-active w-3"></i>
+                    <i class="fa fa-eye text-90 d-active w-3"></i>
+                </a>
+            </div>
+        </div>        
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-disable-me" class="mb-0">Readonly field</label>
+        </div>
+
+        <div class="col-sm-9">
+            <input readonly id="id-disable-me" type="text" class="form-control col-sm-8 col-md-6 d-inline-block" value="This text field is readonly!" />
+
+            <label class="mt-1 mt-sm-0 ml-sm-3">
+                <input type="checkbox" class="mr-1" id="id-checkbox-disable-it" autocomplete="off" />
+                Disable it!
+            </label>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            Relative sizing
+        </div>
+
+        <div class="col-sm-9">
+            <input type="text" class="form-control form-control-lg col-md-4 d-inline-block mb-1 mb-md-0" placeholder=".form-control-lg" />
+            <input type="text" class="form-control col-md-3 d-inline-block mb-1 mb-md-0" placeholder=".form-control" />
+            <input type="text" class="form-control form-control-sm col-md-2 d-inline-block" placeholder=".form-control-sm" />
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+            <label for="id-form-field-5" class="mb-0">Input with icon</label>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="d-inline-flex pos-rel">
+                <i class="fa fa-leaf text-blue text-125 position-tl mt-25 ml-15"></i>
+                <input type="text" class="form-control form-control-lg px-45" placeholder="Icons" id="id-form-field-5"  />
+                <i class="fa fa-leaf text-success text-125 position-tr mt-25 mr-15"></i>
+            </div>
+
+            <div class="d-inline-flex ml-sm-0 pos-rel mt-2 mt-md-0">
+                <i class="fa fa-search text-grey position-lc ml-2"></i>
+                <input type="text" class="form-control pl-425" placeholder="Search">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label text-sm-right pr-0">
+             <label for="tooltip-1" class="mb-0">Tooltip and help button</label>
+        </div>
+
+        <div class="col-sm-9">
+            <input id="tooltip-1" type="text" class="form-control col-5 d-inline-block" placeholder="Tooltip on Hover" title="Tooltip on Hover" />
+            <span class="form-text d-inline-block ml-2">
+                <button id="popover-1" title="Title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." type="button" class="btn btn-xs btn-info border-2 brc-white-tp2 shadow-sm radius-round text-125 px-25">?</button>
+            </span>
+        </div>
+    </div>
+
+
+
+
+    <div class="my-5 border-t-1 brc-grey-l1 bgc-grey-l3 py-3">
+        <div class="offset-md-3 col-md-9">
+            <button class="btn btn-info" type="button">
+                <i class="fa fa-check mr-1"></i>
+                Submit
+            </button>
+            
+            <button class="btn btn-secondary ml-3" type="reset">
+                <i class="fa fa-undo mr-1"></i>
+                Reset
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<form>
+    <div class="form-group row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-blue text-125">Text Area</span>
+                </div>
+
+                <div class="card-body">
+                     <div>
+                        <textarea class="form-control" id="id-textarea-limit1" maxlength="50" placeholder="50 character limit"></textarea>
+                    </div>
+
+                    <div class="h-1 my-1"></div>
+
+                    <div>
+                        <textarea class="form-control" id="id-textarea-limit2" maxlength="100" placeholder="100 character limit"></textarea>
+                    </div>
+
+                    <hr />
+
+                    <textarea class="form-control" id="id-textarea-autosize" placeholder="Autosize ...&#10;Automatic textarea height" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal;"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-3 mt-lg-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-blue text-125">Masked Input</span>
+                </div>
+                <div class="card-body">
+                   
+                    <label for="form-field-mask-1">
+                        Date
+						<small class="text-success">99/99/9999</small>
+					</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" id="form-field-mask-1" />
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary" type="button"><i class="fa fa-calendar mr-1"></i> Go!</button>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <label for="form-field-mask-2">
+                        Phone
+						<small class="text-brown">(999) 999-9999</small>
+					</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                        </div>
+                        <input type="text" class="form-control form-control-lg" id="form-field-mask-2" />
+                    </div>
+
+                    <hr />
+
+                    <label for="form-field-mask-3">
+                        Product Key
+						<small class="text-muted">a*-999-a999</small>
+					</label>
+                    <div class="input-group">                        
+                        <input type="text" class="form-control form-control-lg" id="form-field-mask-3" />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <label for="form-field-mask-4">
+                        Eye Script
+						<small class="text-success">~9.99 ~9.99 999</small>
+					</label>
+                    <div class="input-group input-group-fade">
+                        <input type="text" class="form-control form-control-lg" id="form-field-mask-4" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-default btn-bold" type="button">Verify</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mt-3 mt-lg-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-blue text-125">Select Box</span>
+                </div>
+                <div class="card-body">
+
+                    <label for="form-field-select-1">Default</label>
+					<select class="form-control" id="form-field-select-1">
+						  <option value=""></option>
+						  {{#each (get "states")}}
+							<option value='{{abbr}}'>{{name}}</option>
+						  {{/each}}
+					</select>
+
+                    <hr />
+
+                    <label for="form-field-select-11">Custom Style</label>
+					<select class="ace-select text-dark-m1 bgc-default-l5 bgc-h-warning-l3  brc-default-m3 brc-h-warning-m1" id="form-field-select-11">
+						  <option value=""></option>
+						  {{#each (get "states")}}
+							<option value='{{abbr}}'>{{name}}</option>
+						  {{/each}}
+					</select>
+
+               
+					<select class="mt-4 ace-select no-border text-dark-tp2 bgc-grey-l4 bgc-h-success-l3 brc-grey-m4 brc-h-success-m2 radius-round border-1" id="form-field-select-22">
+						  <option value=""></option>
+						  {{#each (get "states")}}
+							<option value='{{abbr}}'>{{name}}</option>
+						  {{/each}}
+					</select>
+
+                    <select class="mt-4 ace-select no-border double-caret text-dark-tp3 bgc-success-l3 bgc-h-success-l2 radius-2 border-0" id="form-field-select-33">
+						  <option value=""></option>
+						  {{#each (get "states")}}
+							<option value='{{abbr}}'>{{name}}</option>
+						  {{/each}}
+					</select>
+
+                    <hr />
+
+                    <label for="form-field-select-2">Multiple</label>
+					<select class="form-control" id="form-field-select-2" multiple>
+						  {{#each (get "states")}}
+							<option value='{{abbr}}'>{{name}}</option>
+						  {{/each}}
+					</select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="h-1 my-2"></div>
+
+    <h4 class="font-light text-blue mb-4">
+		Checkbox &amp; Radio
+		<small class="text-70 text-muted">Custom styles</small>
+	</h4>
+
+    <div class="row">
+        <div class="col-md-5 col-12">
+            <div class="font-bolder text-blue mb-2">Checkbox</div>
+
+            <div class="pl-2">
+                <div>
+                    <label>
+                        <input type="checkbox" />
+                        Choice Default
+                    </label>
+                </div>
+
+                <div>
+                    <label class="radius-round ml-n2 pl-2 pr-1 pt-1 pb-2 bgc-h-success-l2">
+                      <input type="checkbox" class="text-success" id="id-check-success" />
+                    </label>
+                    <label for="id-check-success">Choice Success <small>(with highlight)</small></label>
+                </div>
+
+                <div>
+                    <label class="p-2 ml-n2 bgc-h-warning-l2 radius-1">
+                        <input type="checkbox" class="bgc-danger brc-h-danger-m1" />
+                        Choice Danger
+                    </label>
+                </div>
+
+                <div>
+                    <label class="text-600 text-uppercase text-95 text-secondary">
+                        <input type="checkbox" class="input-lg text-danger-m1 brc-on-checked brc-success brc-h-success-m1 border-2" />
+                        Choice Bold
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox" class="align-middle input-sm text-pink" checked />
+                        <span class="align-middle">Choice Small</span>
+                    </label>
+                </div>
+
+
+                <div>
+                    <label>
+                        <input type="checkbox" class="input-lg bgc-blue" checked />
+                        Choice Large
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="checkbox" class="input-xlg text-purple" checked />
+                        And Larger
+                    </label>
+                </div>
+
+                <div>
+                    <label class="disabled text-grey-m1">
+                        <input type="checkbox" class="input-lg text-purple" checked disabled />
+                        Disabled
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <div class="font-bolder text-blue mb-2">Radio</div>
+
+            <div class="pl-2">
+                <div>
+                    <label>
+                        <input type="radio" name="option" />
+                        Option Default
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="option" class="text-success" />
+                        Option Success
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="option" class="bgc-danger brc-h-danger-m1" />
+                        Option Danger
+                    </label>
+                </div>
+
+                <div>
+                    <label class="text-600 text-uppercase text-95 text-secondary">
+                        <input type="radio" name="option" class="input-lg text-danger-m1 brc-on-checked brc-success brc-h-success-m1 border-2" />
+                        Option Bold
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="option" class="input-sm text-pink" />
+                        <span class="align-middle">Option Small</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="option" class="input-lg bgc-blue" />
+                        Option Large
+                    </label>
+                </div>
+
+                <div>
+                    <label>
+                        <input type="radio" name="option" class="input-xlg text-purple" />
+                        Very Large
+                    </label>
+                </div>
+
+                <div>
+                    <label class="disabled text-grey-m1">
+                        <input type="radio" name="option" class="input-lg text-purple" disabled />
+                        Disabled
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="border-dotted" />
+
+    <div class="row">
+        <div class="col-12 col-md-3 text-left text-md-right">
+            On/Off Switches
+            <div class="text-grey-m2 text-85">Not supported on older browsers</div>
+        </div>
+        <div class="col-12 col-md-9">
+            <input type="checkbox" class="ace-switch" />
+            <input type="checkbox" class="ace-switch " disabled checked />
+
+            <input type="checkbox" class="ace-switch input-sm" />
+            <input type="checkbox" class="ace-switch input-lg" />
+
+            <input type="checkbox" class="ace-switch input-lg ace-switch-yesno bgc-purple-d1" checked />
+            <input type="checkbox" class="ace-switch input-lg ace-switch-onoff bgc-blue-d2 radius-1" />
+
+            <input type="checkbox" class="ace-switch input-lg ace-switch-bars-h  ace-switch-check ace-switch-times text-grey-l2 bgc-warning-d2 radius-2px" checked />
+
+            <input type="checkbox" class="ace-switch input-lg ace-switch-bars bgc-success" />
+
+            <input type="checkbox" class="ace-switch input-lg text-grey-l1 brc-primary" />
+
+            <div class="h-2"></div>
+
+            <label>
+                <input type="checkbox" class="ace-switch ace-switch-thin" />
+            </label>
+
+            <label>
+                <input type="checkbox" class="ace-switch ace-switch-thin text-grey-l2 bgc-pink-d1" />
+            </label>
+
+            <label class="text-orange-d2">
+                <input type="checkbox" class="ace-switch ace-switch-thin bgc-warning-d1 mr-1" />
+                Label
+            </label>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-blue text-120">Custom File Input</span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <input type="file" class="ace-file-input" id="ace-file-input1" autocomplete="off" />
+                        <br />
+                        <input type="file" class="ace-file-input" id="ace-file-input2" multiple autocomplete="off" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-orange-d2 text-120">Range Slider</span>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2">
+                            <div id="id-slider-1" class="noUi-toggle-tooltip slider-sm slider-tooltip-right slider-tooltip-caret"></div>
+                        </div>
+
+                        <div class="col-10">
+                            <div id="id-slider-2" class="noUi-toggle-tooltip mb-5 slider-thin"></div>
+
+                            <div id="id-slider-3" class="noUi-toggle-tooltip my-5"></div>
+
+                            <div id="id-slider-4" class="noUi-toggle-tooltip slider-sm my-5"></div>
+
+                            <div id="id-slider-5" class="noUi-toggle-tooltip my-5 slider-thin"></div>
+
+                            <div class="mt-5 mb-2">
+                                <input type="text" id="id-ionslider-1" name="slider-1" value="" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-purple text-120">Input Spinner</span>
+                </div>
+
+                <div class="card-body">
+                    <input class="form-control form-control-lg" id="id-spinner-1" type="text" value="55" name="id-spinner-1">
+
+                    <hr />
+
+                    <input class="form-control btn-group-inside-spinner form-control-lg" id="id-spinner-2" type="text" value="" name="id-spinner-2">
+
+                    <hr />
+
+                    <div class="w-50">
+                        <input class="form-control text-center" id="id-spinner-3" type="text" value="" name="id-spinner-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="my-4 border-dotted" />
+
+
+    <div class="row">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-blue text-120">Date/Range Picker</span>
+                </div>
+                <div class="card-body">
+                    <div class="form-field">
+                        <div class="pos-rel">
+                            <input type="text" class="form-control" id="id-date-1" />
+
+                            <input placeholder="modal mode..." type="text" class="form-control mt-2" id="id-date-2" />
+
+                            <label for="id-date-3" class="mt-3 mb-2px text-grey-d2">Native datepicker on small devices.</label>
+                            <input type="text" class="form-control" id="id-date-3" />
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div id="id-daterange-wrapper" class="pos-rel">
+                        <div class="form-row">
+                            <div class="col">
+                                <input id="id-daterange-from" class="form-control ex-inputs-start" placeholder="From date" />
+                            </div>
+                            <div class="text-grey-l2">_</div>
+                            <div class="col">
+                                <input id="id-daterange-to" class="form-control ex-inputs-end" placeholder="To date" />
+                            </div>
+                        </div>
+
+                        <div id="id-daterange-container" class="dp-daterange-picker dp-daterange-above"></div>
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <div class="form-group">
+                            <label for="id_time_el">Date/Time picker:</label>
+                            <div class="input-group date" id="id-timepicker">
+                                <input type="text" name="end_time" value="05:12:00" class="form-control" id="id_time_el" />
+                                <div class="input-group-addon input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="far fa-clock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="form-group">
+                            <a href="#" class="btn btn-outline-info border-2" id="id-popover-timepicker">Time picker inside popover</a>
+
+                            <div id="id-popover-timepicker-html" class="d-none">
+                                <!-- the html content of this element will be shown inside popover -->
+                                <div class="d-flex">
+                                    <select class="mx-1 pl-3 no-border double-caret ace-select border-2 radius-1 brc-default-l1 brc-h-default-m2 bgc-default-l4 text-secondary-d2 text-600 text-110" style="width: 5rem;">
+                                        <option selected>H</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                    <span class="text-600 text-150">:</span>
+                                    <select class="mx-1 pl-3 no-border double-caret ace-select border-2 radius-1 brc-default-l1 brc-h-default-m2 bgc-default-l4 text-secondary-d2 text-600 text-110" style="width: 5rem;">
+                                        <option selected>M</option>
+                                        <option>00</option>
+                                        <option>05</option>
+                                        <option>10</option>
+                                        <option>15</option>
+                                        <option>20</option>
+                                        <option>25</option>
+                                        <option>30</option>
+                                        <option>35</option>
+                                        <option>40</option>
+                                        <option>45</option>
+                                        <option>50</option>
+                                        <option>55</option>
+                                    </select>
+
+                                    <div class="mx-1 btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-bold radius-1 btn-smd btn-light-blue btn-a-light-primary d-style">
+                                            <input type="checkbox" value="1" />
+                                            <span class="d-n-active">AM</span>
+                                            <span class="d-active">PM</span>
+                                        </label>
+		                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-orange-d2 text-120">Color Picker</span>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text border-0 radius-0" id="id-color-picker-1-update"></span>
+                        </div>
+                        <input type="text" class="form-control" id="id-color-picker-1" />
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <div id="color-picker-container"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-purple text-120">Knob Input</span>
+                </div>
+
+                <div class="card-body">
+
+                   <div class="row">
+                        <div class="col-6 text-center">
+                            <input type="text" class="knob border-0 mw-100" value="15" data-min="0" data-max="100" data-step="10" data-width="80" data-height="80" data-thickness=".2" />
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <input type="text" class="knob border-0 mw-100" value="41" data-min="0" data-max="100" data-width="80" data-height="80" data-thickness=".2" data-fgcolor="#87B87F" data-displayprevious="true" data-anglearc="250" data-angleoffset="-125" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <div class="d-inline-block">
+                                <input type="text" class="knob border-0 mw-100" value="1" data-min="0" data-max="10" data-width="150" data-height="150" data-thickness=".2" data-fgcolor="#B8877F" data-angleoffset="90" data-cursor="true" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,199 @@
+//fixed navbar
+.navbar-fixed > .navbar-inner {
+    position: fixed;
+    top: 0;//IE requires this
+    left: 0;
+    right: 0;
+}
+@include media-breakpoint-up($navbar-desktop-min-width) {
+ //when inside container
+ .navbar-fixed.container {
+    .navbar-inner {
+        left: auto;
+        right: auto;
+    }
+ }
+
+ .main-content .navbar-fixed {
+     box-shadow: none;
+ }
+ .main-content .navbar-fixed .navbar-inner {
+    left: 0;
+    right: 0;
+    width: auto;
+ }
+}
+
+.main-content .navbar {
+    z-index: $zindex-navbar - 2;//because .main-container .sidebar-fixed is 'zindex - 1'
+}
+@include media-breakpoint-down($sidebar-mobile-max-width) {
+    .main-content .navbar {
+        z-index: $zindex-navbar - 1;//to appear above settings, etc
+    }
+}
+
+
+//fixed navbar only on specific widths
+.navbar-fixed {
+    $nw: breakpoint-max($navbar-mobile-max-width);
+    @each $breakpoint in map-keys($grid-breakpoints) {
+        $next: breakpoint-next($breakpoint, $grid-breakpoints);
+        $infix: breakpoint-infix($next, $grid-breakpoints);
+
+        
+        @if $next != null and $next != 'xl' {
+            &#{$infix} > .navbar-inner {
+                @include media-breakpoint-down($breakpoint) {
+                    position: fixed;
+                    top: 0;//IE requires this
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+//@each $name, $width in $grid-breakpoints {
+//    .navbar-static#{breakpoint-infix($name, $grid-breakpoints)} > .navbar-inner {
+//        @include media-breakpoint-up($name) {
+//            position: relative;
+//            top: auto;
+//            left: auto;
+//            right: auto;
+//        }
+//    }
+//}
+
+
+
+//if navbar is inside .main-content (like in dashboard 2)
+@include media-breakpoint-up($sidebar-desktop-min-width) {
+
+    .main-content .navbar-fixed .navbar-inner {
+        left: map-get($sidebar-common, 'width');
+        left: var(--sidebar-width);
+
+        @include transition(left $expandable-transition-duration);
+    }
+
+    .container .main-content .navbar-fixed {
+        direction: rtl;//so that .navbar-inner starts from right side ... there are other ways, but IE10+ seemingly only works this way
+    }
+    .container .main-content .navbar-fixed .navbar-inner.container {
+        left: auto;
+        right: auto;
+        width: 100%;
+        direction: ltr;
+
+        @include transition(padding-left $expandable-transition-duration);
+
+        padding-left: map-get($sidebar-common, 'width');
+        padding-left: var(--sidebar-width);
+    }
+
+    .sidebar.collapsed ~ .main-content .navbar-fixed .navbar-inner {
+        left: map-get($sidebar-common, 'collapsed-width');
+        left: var(--sidebar-collapsed-width);
+    }
+    .container .sidebar.collapsed ~ .main-content .navbar-fixed  .navbar-inner.container {
+        left: auto;
+        right: auto;
+
+        padding-left: map-get($sidebar-common, 'collapsed-width');
+        padding-left: var(--sidebar-collapsed-width);
+    }
+
+    @if $hideable == true {
+        .sidebar.collapsed.hideable ~ .main-content .navbar-fixed .navbar-inner {
+            left: 0;
+        }
+        .container .sidebar.collapsed.hideable ~ .main-content .navbar-fixed  .navbar-inner.container {    
+            padding-left: 0;
+        }
+    }
+    
+}
+
+@include media-breakpoint-down($sidebar-mobile-max-width) {
+    .main-content .navbar-fixed  .navbar-inner ,
+    .container .main-content .navbar-fixed  .navbar-inner {
+        //so that it moves with sidebar and content as they get pushed
+        left: auto; 
+        right: auto;
+        width: 100%;
+    }
+}
+
+
+
+
+//fixed sidebar
+.sidebar-fixed {
+    z-index: $zindex-navbar;
+}
+.sidebar-fixed .sidebar-inner {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    height: auto;
+}
+ //if sidebar is inside .main-content (like in two menus 1)
+.main-container .sidebar-fixed {
+    z-index: $zindex-navbar - 1;
+}
+.main-content .sidebar-fixed {
+    z-index: $zindex-navbar - 3;
+}
+
+@include media-breakpoint-up($sidebar-desktop-min-width) {
+    .navbar ~ .main-container .sidebar-fixed  {
+        > .sidebar-inner {
+            top: map-get($navbar-common, 'height');
+            top: var(--navbar-height);
+        }
+    }
+    @if map-get($navbar-common, 'sm-height') != null {
+        .navbar-sm ~ .main-container .sidebar-fixed  {
+            > .sidebar-inner {
+                top: map-get($navbar-common, 'sm-height');
+                top: var(--navbar-sm-height);
+            }
+        }
+    }
+}
+
+
+
+//mobile view
+@include media-breakpoint-down($sidebar-mobile-max-width) {
+    .sidebar-fixed {
+        z-index: $zindex-navbar;
+
+        @if map-get($navbar-common, 'mobile-height') != null {
+            @at-root .navbar ~ .main-container .sidebar-fixed > .sidebar-inner,
+                     .navbar ~ .sidebar-fixed > .sidebar-inner 
+            {
+                top: map-get($navbar-common, 'mobile-height');
+                top: var(--navbar-mobile-height);                
+            }
+        }
+
+        &.sidebar-top > .sidebar-inner {
+            top: 0 !important;
+        }
+
+        
+        //@at-root .main-content .sidebar-fixed,
+        &.sidebar-top {
+            z-index: $zindex-navbar + 2 !important;
+        }
+    }
+
+    .main-container .sidebar-fixed {
+        z-index: $zindex-navbar;
+    }
+}
+

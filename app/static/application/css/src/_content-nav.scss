@@ -1,0 +1,29 @@
+.content-nav {
+    position: relative;
+    min-height: $breadcrumbs-height;
+
+    margin: 0.75rem 1rem;
+    padding: 0 0.5rem;
+
+    border-radius: 0.325rem;
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+    background-color: transparent;
+}
+.breadcrumb-item {
+    font-size: 0.95rem;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\203A";
+    font-size: 1.25rem;
+    vertical-align: baseline;
+    line-height: 0;
+    height: 0;
+
+    opacity: 0.85;
+}
+.breadcrumb-item[class*="text-"]::before {
+    color: inherit !important;    
+}

@@ -1,0 +1,46 @@
+<div class="col-12 col-sm-6 col-lg-3 p-0 p-md-1 my-2 my-sm-0">
+ <div class="px-2 py-2 py-lg-3 d-flex pos-rel mx-1 justify-content-start justify-content-lg-center">
+	{{#unless @last}}
+		<div class="d-none d-lg-block border-r-1 brc-secondary-l1 position-rc h-75"></div>
+		<div class="d-sm-none mb-n1 border-b-1 brc-secondary-l1 position-bc w-90"></div>
+	{{/unless}}
+	{{#if icon}}
+	<div class="pl-1">
+		<span class="d-inline-block bgc-{{color}}-m1 p-3 radius-round text-center">
+        	<i class="{{icon}} text-white text-180 w-4"></i>
+        </span>
+	</div>
+	{{/if}}
+	
+	<div class="pl-25">
+		{{#if number}}
+		<div class="d-flex align-items-center justify-content-between justify-content-md-start">
+			<span class="text-secondary-d3 text-160 mr-4">{{number}}</span>
+			{{#if stat-success}}
+			<!-- #section:pages/dashboard.infobox.stat -->
+			<div class="text-success-m1 pr-1 font-bolder">
+				{{stat-success}}
+				<i class="fas fa-level-up-alt"></i>	 	
+			</div>
+			<!-- /section:pages/dashboard.infobox.stat -->
+			{{/if}}	
+			{{#if stat-important}}
+			<div class="text-danger-m2 pr-1 font-bolder">		
+				{{stat-important}}
+				<i class="fas fa-long-arrow-alt-down text-120"></i>
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+		{{#if text}}
+		<div class="text-blue-d2 text-105">{{text}}</div>
+		{{/if}}
+
+		{{#if content}}{{! sometimes we have two content texts like in smaller infoboxes, so use a loop }}
+		<div class="text-nowrap">{{#each content}}{{{this}}}{{/each}}</div>
+		{{/if}}
+
+		
+	</div>
+ </div>
+</div>

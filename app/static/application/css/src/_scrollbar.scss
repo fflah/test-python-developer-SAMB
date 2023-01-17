@@ -1,0 +1,170 @@
+//always scrollbars for mobile devices
+.ace-scroll-mob {
+    overflow-y: auto;
+}
+//simple scrollbars
+.ace-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thumb $scrollbar-track;
+
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+   
+    &::-webkit-scrollbar {
+        width: 8px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $scrollbar-track;
+    }
+}
+@media (hover: hover) {
+ .ace-scrollbar:not(.ace-scroll-mob) {
+    scrollbar-width: thin;
+    scrollbar-color: $scrollbar-thumb $scrollbar-track;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-thumb;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $scrollbar-track;
+    }
+ }
+}
+
+.ace-scroll {
+    overflow-y: hidden;    
+
+    &:hover {
+        overflow-y: auto;//scroll;
+        overflow-y: overlay;
+    }
+}
+
+.ace-scroll-lock {
+    overscroll-behavior-y: none;
+    -ms-scroll-chaining: none;
+}
+
+
+
+
+//smooth scrollbars
+//.ace-scroll.ace-scroll-wrapp
+//it has a wrapper inside it (.ace-scroll-inner) ... in JS before adding this class to .ace-scroll we pass its 'color' to .ace-scroll-inner
+
+
+.ace-scroll-wrap {
+    overflow-x: hidden;
+}
+
+//for webkit
+@supports (-webkit-appearance: none) and (overflow: overlay) {
+    .ace-scroll-wrap {
+        overflow-y: overlay;
+
+        color: transparent;
+        @include transition(color $scrollbar-transition-duration $scrollbar-transition-delay);
+
+        //display: flex;
+        //flex-direction: column;//so that .ace-scroll-inner's height is 100% (using flex-grow)
+
+        &:hover {
+            color: $scrollbar-thumb;
+            transition-delay: $scrollbar-transition-delay2;
+        }
+
+        //&::-webkit-scrollbar {
+        //    width: 8px;
+        //}
+
+        &::-webkit-scrollbar-thumb {
+            background-color: currentColor;//i.e. .ace-scroll-wrap's "color"
+            border-radius: 0.5rem;
+            border: 1px solid $scrollbar-background;
+            background-clip: content-box;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $scrollbar-background;//default background color of ace-scroll, which should be updated somehow, if it's not white
+        }
+    }
+}
+
+//for firefox
+@supports (-moz-appearance: none) and (scrollbar-width: none) {
+    :root {
+        --moz-scrollbar-thin: 8px;
+    }
+    
+    .ace-scroll-wrap {
+        overflow-y: scroll;
+
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+        @include transition(scrollbar-color $scrollbar-transition-duration $scrollbar-transition-delay);
+
+        //display: flex;
+        //flex-direction: column;//so that .ace-scroll-wrapper's height is 100% (using flex-grow: 1)
+
+        > .ace-scroll-inner {
+            //overflow-x: hidden;//to hide horizontal scrollbars when we increase width of its children
+            min-width: calc(100% + var(--moz-scrollbar-thin));
+        }
+    
+        &:hover {
+            overflow-y: scroll;//required
+
+            scrollbar-color: $scrollbar-thumb $scrollbar-background;
+            transition-delay: $scrollbar-transition-delay2;
+        }
+    }
+
+    .ace-scroll:not(.ace-scroll-wrap) {
+        overflow-x: hidden;//to hide horizontal scrollbars when we increase width of its children
+        &:hover {
+            > div, > p {
+                min-width: calc(100% + var(--moz-scrollbar-thin));//increase .ace-scroll's children's width (as much as size of thin scrollbar) so that content is not pushed when scrollbars become visible
+            }
+        }
+    }
+    //exclude sidebar
+    .sidebar .ace-scroll:not(.ace-scroll-wrap) {
+        &:hover {
+            > div , > p {
+                min-width: auto;
+            }
+        }
+    }
+}
+
+@supports (-moz-appearance: none) and (not(scrollbar-width: none)) {
+    :root {
+        --moz-scrollbar-thin: 17px;// will be overwritten in JS
+    }
+    .ace-scroll {
+        overflow-x: hidden;//to hide horizontal scrollbars when we increase width of its children
+        &:hover {
+            overflow-y: scroll;
+            > div, > p {
+                min-width: calc(100% + var(--moz-scrollbar-thin));//increase .ace-scroll's children's width (as much as size of thin scrollbar) so that content is not pushed when scrollbars become visible
+            }
+        }
+    }
+    //exclude sidebar
+    .sidebar .ace-scroll {
+        &:hover {
+            overflow-y: auto;
+            > div , > p {
+                min-width: auto;
+            }
+        }
+    }
+}

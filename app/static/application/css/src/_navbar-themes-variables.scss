@@ -1,0 +1,371 @@
+$navbar-common: (
+   'height': 4.5rem,
+   'sm-height': 4rem,
+   'mobile-height': 4rem,
+
+   'brand-font-size': 1.5rem,
+
+   'link-padding': 0.75rem,
+
+   'input-font-size': 0.95rem,
+
+   'input-border-width': 0 0 1px,
+
+   'link-show-border': rgba(255, 255, 255, 0.73),
+   'link-show-border-offset': 2px,
+   'link-show-border-height': 3px
+);
+
+$navbar-default: map-merge($navbar-common, (
+    'background': #2087c5, //#258cc7, //#2788bf, //#308cc0,
+
+    'intro-background': rgba(0,0,0,0.075),
+
+    'toggler-hover-background': rgba(255,255,255,0.1),
+    'toggler-active-background': rgba(0,0,0,0.1),
+
+
+
+    'link-color': rgba(255,255,255,0.92),
+    'link-background': transparent,
+
+    'link-hover-background': rgba(255,255,255, 0.1),
+    'link-active-background':  rgba(0,0,0,0.1),
+    'link-show-background': rgba(0,0,0,0.15),
+    'link-disable-color': rgba(255,255,255,0.6),
+   
+    //the line separating items
+    'item-border': rgba(0,0,0,0.1),
+    'item-active-border': rgba(0,0,0,0.2),
+
+
+    //inputs such as search
+    'input-background': transparent,
+    'input-color': #fff,
+
+    'input-border': transparent,
+    'input-focus-border': rgba(255,255,255,0.7),
+    'input-hover-border': rgba(255,255,255,0.7),
+
+    //mobile view
+    'mobile-menu-border': rgba(34, 85, 117, 0.2),
+    'mobile-nav-item-background': rgba(0,0,0,0.1),
+
+    'mobile-nav-item-border': rgba(255,255,255,0.1),
+
+));
+
+
+$navbar-white: map-merge($navbar-default, (
+    'background': #FFF,
+    'border': #eee,
+
+    'intro-background': null,
+    'intro-border': #f0f0f0,
+
+    'toggler-active-background': #f0f5f9,
+
+
+    'link-color': #798ba4,
+    'link-hover-background': #f0f5f9,
+    'link-active-background': #f0f5f9,
+    'link-show-background': #f0f5f9,
+
+    'link-show-border': #8eb8d9,
+  
+    'item-border': null,
+
+    'brand-font-size': 1.5rem,
+
+    //inputs such as search
+    'input-background': transparent,
+    'input-color': rgba(0, 0, 0, 0.73),
+    'input-font-size':1rem,
+
+    'input-border-width': 0 0 1px,
+    'input-border': transparent,
+    'input-focus-border': rgba(0,0,0,0.2),
+    'input-hover-border': rgba(0,0,0,0.125),
+
+    'mobile-nav-item-background': rgba(232, 239, 245, 0.5),
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': rgba(69, 124, 168, 0.13),
+    'mobile-nav-item-border': rgba(69, 124, 168, 0.13),
+
+));
+
+
+$navbar-white2: map-merge($navbar-white, (
+    'link-color': lighten(#5f6368, 4%),
+    'link-hover-background': #f0f3f6,
+    'link-active-background': #f0f3f6,
+    'link-show-background': #f0f3f6,
+    'link-show-color': #687892,
+
+    'link-show-border': #a7b2ca
+));
+
+$navbar-light: map-merge($navbar-white, (
+    'background': whitesmoke,
+    'intro-border': null,
+
+    'toggler-active-background': #f0f5f9,
+
+    'link-color': rgba(0, 0, 0, 0.5),
+    'link-hover-background': rgba(232, 239, 245, 0.5),
+    'link-active-background': rgba(232, 239, 245, 0.5),
+    'link-show-background': rgba(232, 239, 245, 0.5),
+
+    'link-show-border': null,
+    'mobile-nav-item-background': null,
+
+));
+
+
+
+
+$navbar-dark: map-merge($navbar-default, (
+    'background': #565f68
+));
+$navbar-color: map-merge($navbar-dark, (
+    'link-color': rgba(255,255,255,0.95),
+    'link-hover-background': rgba(255, 255, 255, 0.125),
+    'link-active-background': rgba(0,0,0,0.075),
+    'link-show-background': rgba(0,0,0,0.1),
+));
+
+
+$navbar-orange: map-merge($navbar-color, 
+(
+    'background': #eda449,
+));
+
+$navbar-purple: map-merge($navbar-color, 
+(
+    'background': #7b6cb5
+));
+$navbar-plum: map-merge($navbar-color, 
+(
+    'background': #8a5188
+));
+
+$navbar-secondary: map-merge($navbar-color, 
+(
+    'background': #91a7b4
+));
+$navbar-teal: map-merge($navbar-color, 
+(
+    'background': teal
+));
+$navbar-steelblue: map-merge($navbar-color, 
+(
+    'background': #4182b8
+));
+
+$navbar-slategrey: map-merge($navbar-color, 
+(
+    'background': slategrey
+));
+$navbar-mediumseagreen: map-merge($navbar-color, 
+(
+    'background': mediumseagreen
+));
+$navbar-cadetblue: map-merge($navbar-color, 
+(
+    'background': cadetblue
+));
+$navbar-darkseagreen: map-merge($navbar-color,
+(
+    'background': darkseagreen
+));
+$navbar-lightslategrey: map-merge($navbar-color, 
+(
+    'background': lightslategrey
+));
+$navbar-burlywood: map-merge($navbar-color, 
+(
+    'background': #dab07b,
+    'link-color': #fff,
+    'link-hover-background': rgba(0,0,0, 0.1),
+));
+$navbar-skyblue: map-merge($navbar-color, 
+(
+    'background': #63b1e0,// #53b4dc,//#69c2e7,
+    'intro-background': #5aa0cb,//#4ba1c5,//#54b0d6,
+
+    'link-color': #fff,
+    //'link-color': rgba(0, 0, 0, 0.5),//or make it dark
+
+    'link-hover-color': rgba(255, 255, 255, 0.87),
+    'link-hover-background': rgba(0, 0, 0, 0.125),
+
+    'link-active-color': rgba(255, 255, 255, 0.93),
+    'link-active-background': rgba(0, 0, 0, 0.15),
+
+    'link-show-color': #FFF,
+    'link-show-background': rgba(0, 0, 0, 0.15),
+
+    'mobile-nav-item-border': rgba(255,255,255,0.3),
+));
+
+$navbar-blue: map-merge($navbar-skyblue, 
+(
+    'background': #5fb1e6,//#26a3d9 
+    'intro-background':rgba(0,0,0,0.1)
+));
+
+
+
+//light navbars
+$navbar-lightblue: map-merge($navbar-light, 
+(
+    'background': #f2f8fd,//#f0f8ff,
+    'border': #dfedf8,//#d6e8f6,
+    
+    'intro-background': #fdfeff,//#dfeefa,//#d3e3f2,//rgba(70, 130, 180, 0.12),
+    'intro-border': #e5edf5,
+
+    'link-color': #5688b0,//#6a7c86
+
+    'link-hover-color': #fff,
+    'link-hover-background': #7ea5c4,//rgba(176, 204, 229, 0.33),
+
+    'link-active-color': #fff,
+    'link-active-background': #8aaeca,
+
+    'link-show-color': #fff,
+    'link-show-background': #749ebf,
+
+    
+    'mobile-link-show-color': #fff,    
+
+    'mobile-menu-border': #dae5ee,
+    'mobile-nav-item-border': #dae5ee,
+
+));
+
+$navbar-lightpurple: map-merge($navbar-light, 
+(
+    'background': #f2f1f9,
+    'border': #e8e5f0,
+
+    'intro-background': #fdfdfe,
+    'intro-border': #efedf5,
+
+    'link-color': #756999,//#897eab,//#6f6d76,
+
+    'link-hover-color': #fff,
+    'link-hover-background': #a091c8,//rgba(143, 98, 181, 0.67),
+
+    'link-active-color': #fff,
+    'link-active-background': #a698cc,//rgba(143, 98, 181, 0.6),
+
+    'link-show-color': #fff,
+    'link-show-background': #9d8ec7,//rgba(143, 98, 181, 0.73),
+
+    //'mobile-nav-item-background': rgba(143, 98, 181, 0.73),
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': #f2eff7,//rgba(143, 98, 181, 0.13),
+    'mobile-nav-item-border': #f2eff7,//rgba(143, 98, 181, 0.13),
+));
+
+$navbar-lightgreen: map-merge($navbar-light, 
+(
+    'background': #effced,
+    'border': #e7f1e5,
+
+    'intro-background': #fcfffc,
+    'intro-border': #e7f1e5,
+
+    'link-color': #717b75,
+
+    'link-hover-color': #fff,
+    'link-hover-background': #85c28c,
+
+    'link-active-color': #fff,
+    'link-active-background': #85c28c,
+
+    'link-show-color': #fff,
+    'link-show-background': darken(#85c28c, 5%),
+
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': #eff7f0,//rgba(69, 168, 83, 0.13),
+    'mobile-nav-item-border': #eff7f0,//rgba(69, 168, 83, 0.13),
+));
+$navbar-lightgrey: map-merge($navbar-light, 
+(
+    'background': #f4f5f7,//#f5f5f5,
+    'border': null,
+
+    'intro-background': #3cb371,
+
+    'link-color': #6f747c,
+
+    'link-hover-color': #fff,
+    'link-hover-background': #99a3a8,//rgba(141, 159, 167, 0.93)
+
+    'link-active-color': #fff,
+    'link-active-background': #99a3a8,
+
+    'link-show-color': #fff,
+    'link-show-background': #8d9fa7,
+
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': #f1f3f3,//rgba(92, 142, 165, 0.2),
+    'mobile-nav-item-border': #f1f3f3,
+));
+
+$navbar-lightyellow: map-merge($navbar-light, 
+(
+    'background': #fffcdc,
+    'border': #fbf3c9,
+    'intro-background': #f8f0ad,
+
+    'link-color': rgba(0, 0, 0, 0.6),
+
+    'link-hover-color': #fff,
+    'link-hover-background': #b89a8b,//rgba(166, 105, 99, 0.63),
+
+    'link-active-color': #fff,
+    'link-active-background': #b89a8b,
+
+    'link-show-color': #fff,
+    'link-show-background': #bc8e80,//rgba(166, 105, 99, 0.75),  
+    
+    //'mobile-nav-item-background': rgba(166, 105, 99, 0.75),
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': #f6f2f0,//rgba(166, 105, 99, 0.2),
+    'mobile-nav-item-border': #f6f2f0,//rgba(166, 105, 99, 0.2)
+));
+$navbar-khaki: map-merge($navbar-lightyellow, 
+(
+    'background': khaki,
+    'border': null,
+    'intro-background': #e1d56e,
+
+    'link-color': #7c6348,
+
+
+    'mobile-nav-item-background': #bc8e80,
+    'mobile-link-show-color': #fff,
+
+    'mobile-menu-border': rgba(0,0,0,0.125),
+    'mobile-nav-item-border': rgba(0,0,0,0.125),
+));
+
+
+//$navbar-lightgradient1: map-merge($navbar-light, 
+//(
+//    'background': #dedaec,
+//    'background-image': linear-gradient(to right, rgb(205, 202, 216) 0%, rgb(185, 209, 230) 25%, rgb(214, 206, 221) 50%, rgb(215, 207, 223) 75%, rgb(213, 216, 232) 100%),
+//    'intro-background': rgba(255, 255, 255, 0.27),
+//));
+
+
+
+

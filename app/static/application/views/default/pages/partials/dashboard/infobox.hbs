@@ -1,0 +1,53 @@
+<div class="col-12 col-sm-6 px-0">
+ <div class="py-25 px-2 d-flex bgc-white border-1 brc-default-l2 m-n2px">
+	{{#if icon}}
+	<div class="pl-1 align-self-center align-self-md-start">
+		<i class="bgc-{{color}}-d1 py-25 px-3 radius-round icon-glossy brc-black-tp10 border-1">
+    		<i class="{{icon}} text-white w-3 mx-n3px mb-1 text-140"></i>
+		</i>
+	</div>
+	{{/if}}
+	
+	<div class="flex-grow-1 pl-25">
+		{{#if number}}
+		  <div class="text-grey-d2 text-160">{{number}}</div>
+		{{/if}}
+		{{#if text}}
+		  <div class="text-blue-d2 text-105">{{text}}</div>
+		{{/if}}
+
+		{{#if content}}{{! sometimes we have two content texts like in smaller infoboxes, so use a loop }}
+		  <div class="text-nowrap text-grey-d2">{{#each content}}{{{this}}}{{/each}}</div>
+		{{/if}}
+	</div>
+
+	{{#if stat-success}}
+	 <div class="text-success-m1 pr-1 font-bolder">
+		 {{stat-success}}
+		<i class="fas fa-level-up-alt"></i>	 	
+	 </div>
+	{{/if}}	
+    {{#if stat-important}}
+	 <div class="text-danger-m2 pr-1 font-bolder">		
+	 	{{stat-important}}
+		 <i class="fas fa-long-arrow-alt-down text-120"></i>
+	</div>
+	{{/if}}
+	
+    {{#if badge-success}}
+	 <div class="pr-1">
+		<span class="badge badge-success radius-1">
+		 {{badge-success}} <i class="ml-1 fa fa-arrow-up"></i>
+		</span>
+	 </div>
+	{{/if}}
+	
+    {{#if badge-important}}
+	 <div class="pr-1">
+		<span class="badge badge-danger">
+		 {{badge-important}} <i class="ml-1 fa fa-arrow-down"></i>
+		</span>
+	</div>
+	{{/if}}
+ </div>
+</div>

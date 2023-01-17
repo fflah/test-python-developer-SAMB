@@ -1,0 +1,98 @@
+$fullcalendar-border: bgc-color('primary', 'l1');
+$fullcalendar-day-color: text-color('secondary', 'd2');
+$fullcalendar-axis-bg: bgc-color('default', 'l3');
+$fullcalendar-axis-color: text-color('default', 'd2');
+$fullcalendar-highlight-bg: bgc-color('blue', 'm4');
+
+@if $plugin-fullcalendar == true {
+
+
+//calendar
+.fc-bootstrap {
+    th, td, hr, thead, tbody, .fc-row, .fc-popover {
+        border-color: $fullcalendar-border;
+	}
+
+	.fc-event {
+		border-width: 0;
+		border-radius: 0.125rem;
+	}
+	
+	.fc-day-number {
+		color: $fullcalendar-day-color;
+	}
+	.fc-axis {
+		background: $fullcalendar-axis-bg;
+		color: $fullcalendar-axis-color;
+	}
+	.fc-highlight {
+		background: $fullcalendar-highlight-bg;
+	}
+
+	
+	
+	//from @fullcalendar/bootstrap/main.css
+	a {
+		text-decoration: none;
+		&[data-goto]:hover {
+			text-decoration: underline;
+		}
+	}
+
+	hr.fc-divider {
+		border-color: inherit;
+	}
+
+	.fc-today.alert {
+		border-radius: 0;
+	}
+
+	a.fc-event:not([href]):not([tabindex]) {
+		color: #fff;
+	}
+
+	.fc-popover.card {
+		position: absolute;
+	}
+
+	.fc-popover .card-body {
+		padding: 0;
+	}
+
+	.fc-time-grid .fc-slats table {
+		/* some themes have background color. see through to slats */
+		background: none;
+	}
+}
+
+.fc-scroller {
+	scrollbar-width: thin;
+	&::-webkit-scrollbar {
+        width: 8px;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+ .fc-toolbar  {
+	flex-direction: column;
+	> .fc-center {
+		margin-top: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	> .fc-left {
+		align-self: flex-end;
+		order: 10;
+	}
+	> .fc-right {
+		align-self: flex-start;
+		order: -1;
+	}
+ }
+}
+
+
+
+}//@if $plugin-fullcalendar

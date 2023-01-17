@@ -1,0 +1,346 @@
+$base-font: ('Open Sans');
+
+$desktop-min-width: lg;
+$mobile-max-width: md;
+
+$navbar-mobile-max-width: md;
+$navbar-desktop-min-width: lg;// desktop navbar only on lg screen and above
+
+$sidebar-mobile-max-width: lg;
+$sidebar-desktop-min-width: xl;// desktop sidebar only on xl screen and above
+
+$container-max-width: $sidebar-mobile-max-width;// container (boxed layout) only on lg screen and above
+
+
+$zindex-navbar: $zindex-sticky;
+$zindex-sidebar: 999;
+$zindex-footer: $zindex-sidebar - 1;
+
+
+$transition-general: .15s;
+
+//navbar
+//$navbar-height: 4.5rem;
+//$navbar-sm-height: 4rem;//3.875rem
+//$navbar-mobile-height: 4rem;
+
+$transition-navbar-mobile: 250ms;
+$navlink-transition-duration: 150ms;
+
+$btn-burger-transition: $transition-general;
+$navbar-toggler-hover-bg: rgba(255,255,255,0.15);
+
+
+//sidebar
+$sidebar-small-device-width: 320px;//set to false to disable. otherwise on small devices, sidebar will become 75% of screen width, max-width: 320px
+
+$expandable-hide-delay: 400ms;
+$expandable-show-delay: 80ms;
+
+$expandable-transition-duration: 150ms;
+$hoverable-transition-duration: 150ms;
+$hideable-transition-duration: 150ms;
+$sidebar-appear-transition: 300ms;
+
+$subarrow-transition-duration: 150ms;
+$submenu-delay: 800ms;
+
+$sidebar-link-transition: 150ms;
+
+$sidebar-active-border-width: 0.25rem;
+$sidebar-h-active-border-width: 3px; //horizonal sidebar
+$sidebar-active-border-right-offset: 1px;//should be set to 0px if you want sidebar-default (with shadow instead of border) to have active border on right
+
+
+
+
+
+
+//footer
+$footer-height: 4.75rem;
+$footer-sm-height: 3.375rem;
+$footer-background: #f5f5f5;
+
+
+//fonts
+$base-font-size: 1rem;
+$font-size-grid-pager: 1.3rem;
+
+//body
+$body-text-color: #484b51;//#3f3f3f;
+$body-background: #e4e6e9;
+$body-container-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.05);
+
+
+
+//page content
+$page-content-padding-x: 1rem;
+$page-content-padding-md-x: 1.25rem;
+$page-content-padding-xl-x: 1.5rem;
+
+
+$content-background: #fff;
+$content-header-border: #e2e2e2;
+$content-header-color: #2679b5;
+$content-header-small-color: #8089a0;
+
+$breadcrumbs-height: 2.5rem;
+
+
+//font weights
+$font-bold: 700;
+$font-semibold: 600;// you might want to change this according to your font if doesn't support semi bold font weight
+$font-medium: 500;
+$font-normal: 400;
+$font-light: 300;
+
+
+//scrollbars
+$scrollbar-thumb: #9dbad5;//#a0b7c6;
+$scrollbar-track: #dce3ea;//#c6d1da
+$scrollbar-hide-delay: 2s;//used for sidebar only
+//smooth scrollbars
+$scrollbar-transition-duration: 0.15s;
+$scrollbar-transition-delay: 0.4s;//delay when hiding scrollbars
+$scrollbar-transition-delay2: 0s;//delay when showing scrollbars
+$scrollbar-background: transparent;
+
+
+
+//text colors
+$text-primary: #2d7bd0;
+$text-blue: #478fcc;
+$text-blue2: #3299ed;
+$text-info: #2daccb;
+$text-secondary: #6f829d;
+$text-default: #6b97af;
+$text-success: #6bae47;
+$text-danger: #da3737;
+$text-warning: #feb902;
+$text-orange: #ff9716;
+$text-brown: #c36446;
+$text-yellow: #f3d61f;
+$text-purple: #8e58b8;// #975abd
+$text-pink: #d3407f;
+$text-grey: #6e7074;
+$text-dark: #323337;
+
+//$text-green: #43c18c;
+//$text-red: #e72e2e;
+
+$text-colors: () !default;
+$text-colors: map-merge((
+  "primary" : $text-primary,
+  "blue" : $text-blue,
+  "blue2" : $text-blue2,
+  "info" : $text-info,
+
+  "secondary" : $text-secondary,
+  "default" : $text-default,
+
+  "success" : $text-success,
+  //"green" : $text-green,
+
+  "danger" : $text-danger,
+  //"red" : $text-red,
+
+  "warning" : $text-warning,
+  "orange" : $text-orange,
+  "brown" : $text-brown,
+  "yellow" : $text-yellow,
+
+  "purple" : $text-purple,
+  "pink" : $text-pink,
+
+  "grey" : $text-grey,
+  "dark" : $text-dark
+), $text-colors);
+
+
+
+
+
+//background colors
+$bgc-default: #79a9c5;
+$bgc-primary: #5899ca;
+$bgc-secondary: #91a3ac;
+$bgc-info: #57b5da;
+$bgc-success: #73bd73;
+$bgc-danger: #dd6a57;
+$bgc-warning: #efae43;
+$bgc-dark: #515559;
+$bgc-light: #f5f6f9;
+$bgc-white: #fff;
+$bgc-black: #313539;
+$bgc-grey: #8d8f95;
+
+//some extra colors
+$bgc-purple: #8d7bbd;
+$bgc-pink: #d65c8b;
+$bgc-yellow: #f4e47c;
+$bgc-lightgrey: #a9adb3;
+$bgc-brown: #c59c6b;
+$bgc-blue: #53abe4;
+$bgc-red: #ed6565;
+$bgc-green: #62cb9f;
+
+
+
+
+$background-colors: () !default;
+$background-colors: map-merge((
+  "default":     $bgc-default,
+  "primary":     $bgc-primary,
+  "secondary":     $bgc-secondary,
+  "info":       $bgc-info,
+  "success":       $bgc-success,
+  "danger":      $bgc-danger,
+  "warning":      $bgc-warning,  
+  "dark":     $bgc-dark,
+  "light":     $bgc-light,
+  "white":     $bgc-white,
+  "black":     $bgc-black,
+  "grey":       $bgc-grey,
+
+  //some extras
+  "purple":     $bgc-purple,  
+  "pink":       $bgc-pink,
+  "yellow":       $bgc-yellow,
+  "lightgrey":       $bgc-lightgrey,
+
+  "brown": $bgc-brown,
+  "blue": $bgc-blue,
+  "red": $bgc-red,
+  "green": $bgc-green,
+
+), $background-colors);
+
+
+
+
+$button-colors: () !default;
+$button-colors: map-merge((
+  "default":     lighten($bgc-default, 5%),
+  "primary":     $bgc-primary,
+  "secondary":     lighten($bgc-secondary, 3%),
+  "info":       $bgc-info,
+  "success":       $bgc-success,
+  "danger":      $bgc-danger,
+  "warning":      $bgc-warning,  
+  "dark":     $bgc-dark,
+  "light":     $bgc-light,
+  "white":     $bgc-white,
+  "black":     $bgc-black,
+  "grey":       $bgc-grey,
+
+  //some extras
+  "purple":     lighten($bgc-purple, 2%),
+  "pink":       $bgc-pink,
+  "yellow":       $bgc-yellow,
+  "lightgrey":       $bgc-lightgrey,
+
+  "brown": $bgc-brown,
+  "blue": lighten($bgc-blue, 2%),
+  "red": $bgc-red,
+  "green": $bgc-green,
+
+), $button-colors);
+
+$button-hover-bgs: () !default;
+$button-hover-bgs: map-merge((
+  "light": #eaecf2,
+  "white": #fff,//#f2f3f4
+), $button-hover-bgs);
+
+$button-active-bgs: () !default;
+$button-active-bgs: map-merge((
+  "white": #fff,
+), $button-active-bgs);
+
+
+$button-text-colors: () !default;
+$button-text-colors: map-merge((
+  "yellow": #996633,
+  "light": #757984,
+  "white": #606060
+), $button-text-colors);
+
+$button-focus-text-colors: () !default;
+$button-focus-text-colors: map-merge((
+  "warning": #fff
+), $button-focus-text-colors);
+
+$button-active-colors: () !default;
+$button-active-colors: map-merge((
+  "light": #6c717f,
+  "warning": #fff
+), $button-active-colors);
+
+$button-border-colors: () !default;
+$button-border-colors: map-merge((
+  "yellow": #f4d859,
+  "light": #dddfe4,
+  "white": #eee,
+), $button-border-colors);
+
+
+//outline colors
+$button-outline-text-colors: () !default;
+$button-outline-text-colors: map-merge((
+  "yellow":  #b17131,  
+  "light":  #555,
+  "grey" : #666,
+  "lightgrey" : #81868b,
+  "white": #fff
+), $button-outline-text-colors);
+
+$button-outline-border-colors: () !default;
+$button-outline-border-colors: map-merge((
+  "default": #a9bdc9,
+  "white": #fff,
+  "black": #414549,
+  "lightgrey": #d0d5da
+), $button-outline-border-colors);
+
+$button-outline-border-hover-colors: () !default;
+$button-outline-border-hover-colors: map-merge((
+  "white": #fff,
+), $button-outline-border-hover-colors);
+
+$button-outline-border-active-colors: () !default;
+$button-outline-border-active-colors: map-merge((
+  "white": #fff,
+), $button-outline-border-active-colors);
+
+
+//exclude the light version for thiese
+$button-light-exclude: () !default;
+$button-light-exclude: map-merge((
+  "white": true,
+), $button-light-exclude);
+
+
+
+
+
+$badge-colors: () !default;
+$badge-colors: map-merge((
+  "default":     lighten($bgc-default, 5%),
+  "primary":     $bgc-primary,
+  "secondary":   lighten($bgc-secondary, 3%),
+  "info":       $bgc-info,
+  "success":       $bgc-success,
+  "danger":      $bgc-danger,
+  "warning":      $bgc-warning,
+  "dark":     $bgc-dark,
+  "light":    $bgc-light,
+), $badge-colors);
+
+$badge-text-colors: $button-text-colors !default;
+$badge-border-colors: () !default;
+
+
+
+//.d-style transitions
+$d-style-transition: 120ms;
+

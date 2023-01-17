@@ -1,0 +1,102 @@
+/*!
+ * Ace Admin Template v2.1.4
+ * Copyright 2013-2020
+ * You need a commercial license to use this product
+ * https://bit.ly/35ciMLb
+ */
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+
+@import "variables";
+@import "functions";
+@import "variables-more";
+
+@import "features";
+
+@import "navbar-themes-variables";
+@import "sidebar-themes-variables";
+
+@import "base";
+@import "typography";
+@import "color";
+@import "spacing";
+@import "scrollbar";
+
+@import "navbar";
+@import "navbar-toggler";
+@import "navbar-link";
+@import "navbar-mobile";
+
+@import "sticky";
+
+@import "sidebar";
+@import "sidebar-scrollbar";
+@import "sidebar-expandable";
+@import "sidebar-hoverable";
+@import "sidebar-hideable";
+@import "sidebar-liststyle";
+@import "sidebar-mobile";
+
+@import "sidebar-horizontal";
+
+@import "sidebar-active";
+
+@import "sidebar-spaced";
+
+@import "ace-default-themes.scss";////include only the sidebar/navbar theme you want
+//@import "ace-themes.scss";//include all themes ... not recommended
+
+
+@import "footer";
+@import "fixed";
+
+@import "content-nav";
+
+
+@import "card";
+
+@import "button";
+
+@import "form";
+@import "form-checkbox";
+@import "form-file";
+
+@import "badge";
+@import "dropdown";
+
+@import "pagination";
+
+
+@import "tab";
+@import "accordion";
+
+@import "tooltip";
+@import "alert";
+@import "aside-modal";
+
+@import "table";
+
+
+@import "misc";
+
+@import "icon-animation";
+
+
+
+@import "plugin-treeview";
+@import "plugin-bootstraptable";
+@import "plugin-datatables";
+@import "plugin-jqgrid";
+@import "plugin-chosen";
+@import "plugin-select2";
+@import "plugin-wizard";
+@import "plugin-calendar";
+
+
+@import "plugin-date";
+@import "plugin-spin";
+@import "plugin-slider";
+@import "plugin-form";//dropzone, summernote, wysiwyg, tagsinput, markdown, rating, typeahead

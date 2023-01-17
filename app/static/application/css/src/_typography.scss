@@ -1,0 +1,189 @@
+$dark-text-color-count: 3;
+$medium-text-color-count: 3;
+$light-text-color-count: 5;
+
+@each $name, $value in $text-colors {
+    .text-#{$name} {
+        color: $value !important;
+        
+        @at-root a.text-#{$name}[href]:hover , a.text-#{$name}[href]:focus {
+            color: darken($value, 5%) !important;
+        }
+    }
+
+    @for $i from 1 through $medium-text-color-count {
+        .text-#{$name}-m#{$i} {
+            $val: medium-text-color($name, $i);
+            color: $val !important;
+
+            @at-root a.text-#{$name}-m#{$i}:hover , a.text-#{$name}-m#{$i}:focus {
+                color: darken($val, 5%) !important;
+            }
+        }        
+    }
+
+    @for $i from 1 through $dark-text-color-count {
+        .text-#{$name}-d#{$i} {
+            $val: dark-text-color($name, $i);
+            color: $val !important;
+    
+            @at-root a.text-#{$name}-d#{$i}:hover , a.text-#{$name}-d#{$i}:focus {
+                color: darken($val, 5%) !important;
+            }
+        }
+    }
+
+    @for $i from 1 through $light-text-color-count {
+        .text-#{$name}-l#{$i} {
+            $val: light-text-color($name, $i);
+            color: $val !important;
+
+            @at-root a.text-#{$name}-l#{$i}:hover , a.text-#{$name}-l#{$i}:focus {
+                color: darken($val, 5%) !important;
+            }
+        }
+    }
+
+}
+
+
+.text-white-tp1 {
+    color: rgba(255, 255, 255, 0.93) !important;
+}
+.text-white-tp2 {
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+.text-white-tp3 {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+.text-white-tp4 {
+    color: rgba(255, 255, 255, 0.73) !important;
+}
+.text-dark-tp1 {
+    color: rgba(0, 0, 0, 0.9) !important;
+}
+.text-dark-tp2 {
+    color: rgba(0, 0, 0, 0.79) !important;
+}
+.text-dark-tp3 {
+    color: rgba(0, 0, 0, 0.68) !important;
+}
+.text-dark-tp4 {
+    color: rgba(0, 0, 0, 0.57) !important;
+}
+.text-dark-tp5 {
+    color: rgba(0, 0, 0, 0.46) !important;
+}
+
+
+.text-body {
+    color: $body-text-color !important;
+}
+
+.opacity-1 {
+    opacity: 0.91;
+}
+.opacity-2 {
+    opacity: 0.82;
+}
+.opacity-3 {
+    opacity: 0.73;
+}
+.opacity-4 {
+    opacity: 0.64;
+}
+
+
+
+a {
+    color: $text-primary;
+    &:hover {
+        color: darken($text-primary, 5%);
+    }
+}
+
+
+@for $i from 4 through 20 {
+ .text-#{$i*10} {
+    font-size: percentage($i/10) !important;
+ }
+}
+.text-95 {
+    font-size: 95% !important;
+}
+.text-85 {
+    font-size: 85% !important;
+}
+.text-75 {
+    font-size: 75% !important;
+}
+.text-105 {
+    font-size: 105% !important;
+}
+.text-115 {
+    font-size: 115% !important;
+}
+.text-125 {
+    font-size: 125% !important;
+}
+.text-xs {
+    font-size: 0.625rem !important;
+}
+.text-sm {
+    font-size: 0.875rem !important;
+}
+.text-md {
+    font-size: 1rem !important;
+}
+.text-lg {
+    font-size: 1.25rem !important;
+}
+.text-xl {
+    font-size: 1.5rem !important;
+}
+
+
+//@for $i from 1 through 6 {
+//    .text-#{$i}px {
+//        font-size: $i*1px !important;
+//    }
+//}
+
+
+.text-700, .font-bold {
+    font-weight: $font-bold !important;
+}
+.text-600 , .font-bolder {
+    font-weight: $font-semibold !important;
+}
+.text-500 , .font-medium {
+    font-weight: 500 !important;
+}
+.text-400 , .font-normal {
+    font-weight: $font-normal !important
+}
+.text-300, .font-light, .font-lighter {
+    font-weight: $font-light !important;
+}
+
+
+
+
+.no-underline {
+    text-decoration: none !important;
+}
+.line-through {
+    text-decoration: line-through !important;
+}
+.line-height-n {
+    line-height: normal !important;
+}
+
+.letter-spacing {
+    letter-spacing: 0.5px !important;
+}
+@for $i from 1 through 4 {
+    .letter-spacing-#{$i} {
+        letter-spacing: ($i*0.5+0.5)*1px !important;
+    }
+}

@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-12 col-md-6">
+
+      <h5 class="text-success-m1 b-underline-4 mb-4">
+        Bootstrap Modals
+      </h5>
+      <p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-md btn-default my-1" data-toggle="modal" data-target="#exampleModal">
+          Default Modal
+        </button>
+
+        <button type="button" class="btn btn-md btn-outline-danger my-1" data-toggle="modal" data-target="#dangerModal">
+          White Backdrop
+        </button>
+        
+        <button type="button" class="btn btn-md btn-outline-warning my-1" data-toggle="modal" data-target="#warningModal">
+          Center
+        </button>
+
+        <button type="button" class="btn btn-md btn-purple my-1" data-toggle="modal" data-target="#feedbackModal">
+          Feedback
+        </button>
+      </p>
+
+      <p>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-md btn-primary my-1" data-toggle="modal" data-target="#modalWithScroll1">
+          With Scrollbars
+        </button>
+
+        <button type="button" class="btn btn-md btn-success my-1" data-toggle="modal" data-target="#modalWithScroll2">
+          Scrollbars Inside
+        </button>
+
+        <button type="button" class="btn btn-md btn-info my-1" data-toggle="modal" data-target="#modalFullscreen">
+          Fullscreen
+        </button>
+      </p>
+
+      <hr class="border-dotted my-4" />
+
+      <h5 class="text-blue-m1 b-underline-4 mb-4">
+        Bootbox.js
+      </h5>
+      <p>
+        <!-- Bootbox -->
+        <button type="button" class="btn btn-md btn-default my-1" id="id-bootbox-alert">
+          Alert
+        </button>
+
+        <button type="button" class="btn btn-md btn-secondary my-1" id="id-bootbox-confirm">
+          Confirm
+        </button>
+
+        <button type="button" class="btn btn-md btn-success my-1" id="id-bootbox-prompt">
+          Prompt
+        </button>
+
+        <button type="button" class="btn btn-md btn-info my-1" id="id-bootbox-custom">
+          Custom Buttons
+        </button>
+      </p>
+
+  </div>
+
+  <div class="col-12 col-md-6">
+      <hr class="border-dotted d-md-none" />
+      <h5 class="mb-4">
+        <span class="text-purple-m1 b-underline-5">
+          Content sliders based on Modals
+        </span>
+      </h5>
+
+      <p>
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-1">
+          Right + Dismissible
+        </button>
+
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-2">
+          Inside Container Below Navbar
+        </button>
+
+        <br />
+
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-top-1">
+        Top
+        </button>
+
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-top-2">
+        Below Navbar
+        </button>
+      </p>
+
+      <p>
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-bottom-1">
+          Draggable + Resizable
+        </button>
+
+        <button type="button" class="btn btn-secondary my-1" data-toggle="modal" data-target="#aside-bottom-2">
+          Right + Blocking
+        </button>
+      </p>
+      
+      <p>
+        <button type="button" class="btn btn-pink my-1" data-toggle="modal" data-target="#aside-cookie">
+          Cookie Dialog
+        </button>
+
+        <button type="button" class="btn btn-warning my-1" data-toggle="modal" data-target="#id-ace-settings-modal">
+          Settings Dialog
+        </button>
+      
+        <br />
+
+        <button type="button" class="btn btn-success my-1" data-toggle="modal" data-target="#aside-support">
+          Customer Support Dialog
+        </button>
+      </p>
+
+      <p class="alert bgc-success-l3 border-1 brc-success-l1">
+        The shortcuts menu on the right is shown on hover.
+      </p>
+  </div>
+</div>
+
+<div class="d-none d-lg-block">
+  <hr />
+
+  <div class="alert bgc-secondary-l4 brc-secondary-l1 text-dark-tp3 text-105 py-3">
+  A long element to enable body scrollbars to see how it works with modals!
+  </div>
+  <div style="height: 100vh;">
+  </div>
+</div>
+
+
+<!-- aside examples -->
+{{> page/modals-part2}}
+
+<!-- modal examples -->
+{{> page/modals-part1}}
+
+

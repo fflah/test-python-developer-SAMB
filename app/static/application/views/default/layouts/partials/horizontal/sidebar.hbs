@@ -1,0 +1,25 @@
+<div class="sidebar-inner border-r-0 border-b-1 brc-primary-l1 shadow-md invisible">
+ <div class="container container-plus px-0 d-flex flex-column flex-xl-row">
+
+  <div class="flex-grow-1 d-xl-flex flex-xl-row ace-scroll" ace-scroll>
+      <div class="sidebar-section">
+        {{> layout/horizontal/sidebar-header}}
+      </div>
+
+      <div class="nav nav-spaced nav-fill text-center nav-active-sm has-active-border active-on-top" role="navigation" aria-label="Main">
+      {{#each sidebarItems}}
+        {{> layout/sidebar-item}}
+      {{/each}}
+      </div>
+  </div>
+
+  <div class="sidebar-section d-none d-xl-flex ml-xl-auto pl-xl-5">
+    {{> layout/horizontal/sidebar-footer}}
+  </div>
+
+  <div class="sidebar-section d-xl-none ml-xl-auto">
+    {{> layout/sidebar-footer}}
+  </div>
+
+ </div>
+</div>

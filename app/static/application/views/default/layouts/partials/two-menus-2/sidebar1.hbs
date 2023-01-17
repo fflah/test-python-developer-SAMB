@@ -1,0 +1,11 @@
+<div class="sidebar-inner">
+
+  <div class="pt-2 flex-grow-1 ace-scroll" ace-scroll>
+      <div class="nav flex-column mt-2 has-active-border active-on-right" role="navigation" aria-label="Main">
+      {{#each sidebarItems}}
+        {{> layout/sidebar-item}}
+      {{/each}}
+      </div>
+  </div><!-- /.ace-scroll -->
+
+</div>

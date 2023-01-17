@@ -1,0 +1,329 @@
+//pagination
+$pagination-color: #4491c0;
+$pagination-bg: #fdfeff;
+$pagination-border-color: #cde7f2;
+
+$pagination-hover-color: #5894bc;
+$pagination-hover-bg: #f0f8fe;
+$pagination-hover-border-color: #a5ccda;
+
+$pagination-active-color: #fff;
+$pagination-active-bg: #4da4cb;
+$pagination-active-border-color: #4da4cb;
+
+$pagination-disabled-color: #798087;
+$pagination-disabled-bg: #fff;
+$pagination-disabled-border-color: #dee2e6;
+
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+$state-success-text:             #3c763d;
+$state-success-bg:               #dff0d8;
+$state-success-border:           scale-color($state-success-bg, $lightness: -5%);
+
+$state-info-text:                #31708f;
+$state-info-bg:                  #d9edf7;
+$state-info-border:              scale-color($state-info-bg, $lightness: -7%);
+
+$state-warning-text:             #8a6d3b;
+$state-warning-bg:               #fcf8e3;
+$state-warning-border:           scale-color($state-warning-bg, $lightness: -5%);
+
+$state-danger-text:              #a94442;
+$state-danger-bg:                #f2dede;
+$state-danger-border:            scale-color($state-danger-bg, $lightness: -5%);
+
+
+
+//form elements
+$input-border: #d5d5d5;
+$input-bg: #fff;
+$input-color: #696b6f;//#858585;
+$input-radius: 0.125rem;
+
+$input-hover-border: #b5b5b5;
+
+$input-focus-border: #F59942;
+$input-focus-bg: #FFF;
+$input-focus-color: #696969;
+
+$input-placeholder-color:#999;
+$input-readonly-color:#939192;
+$input-readonly-bg:#f5f5f5;
+$input-readonly-focus-border:#aaa;
+$input-readonly-focus-bg:#f9f9f9;
+
+$input-disabled-color:#848484;
+$input-disabled-bg:#eee;
+
+
+//form
+$transition-form-control: 120ms;
+
+
+//custom select boxes
+$custom-select-caret-size: 0.375rem;
+$custom-select-double-caret-size:  0.3125rem;
+$custom-select-caret-margin: 0.75rem;
+$custom-select-sep-color: rgba(0,0,0,0.2);
+$custom-select-border: #eee;
+$custom-select-option-text: $body-text-color;
+
+
+//valid/invalid form element state colors
+$valid-border-color: map-get($background-colors, 'success');
+$valid-text-color: map-get($text-colors, 'success');
+
+$invalid-border-color: map-get($background-colors, 'danger');
+$invalid-text-color: map-get($text-colors, 'danger');
+
+$floating-label-focus-size: 80%;
+
+
+
+//checkbox and switch
+$custom-control-bg: #fff;
+$custom-control-border: #adb8c0;
+
+$custom-control-radius: 0.2rem;//~3px
+
+$custom-control-hover-border: #ff893c;
+$custom-control-focus-border: desaturate(lighten(#ff893c, 5%), 10%);
+
+$custom-control-active-border: #ff893c;
+$custom-control-active-shadow: null;// 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+$custom-control-disabled-border: #ccc;
+$custom-control-disabled-bg: #eee;
+
+$custom-control-transition: 80ms;
+
+
+$custom-control-checked-color: #32a3ce;//checked color for default radio and checkbox elements
+
+//custom checkbox
+$custom-checkbox-svg-icon-path: "M 7.564,1.75 l -3.59,3.612 -1.538,-1.55 L 1,5.26 3.974,8.25 9,3.193 z";
+$custom-checkbox-icon-checked:  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3e%3cpath fill='#{$custom-control-checked-color}' d='#{$custom-checkbox-svg-icon-path}'/%3e%3c/svg%3e"), "#", "%23");
+
+//checkbox bgc-*
+$custom-control-checked-color2: #fff;
+$custom-checkbox-icon-checked-bgc: str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3e%3cpath fill='#{$custom-control-checked-color2}' d='#{$custom-checkbox-svg-icon-path}'/%3e%3c/svg%3e"), "#", "%23");
+
+//checkbox text-*
+$custom-checkbox-text-fill: #fff;
+$custom-checkbox-icon-text-color: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cmask id='mask'%3E%3Crect fill='white' width='100%25' height='100%25' fill-opacity='1' stroke-width='0' /%3E%3Cpath d='#{$custom-checkbox-svg-icon-path}' /%3E%3C/mask%3E%3Crect mask='url(%23mask)' fill='white' width='100%25' height='100%25' fill-opacity='1'/%3E%3C/svg%3E");
+
+//disabled checkbox
+$custom-control-disabled-color: #aaa;
+$custom-checkbox-icon-checked-disabled:  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3e%3cpath fill='#{$custom-control-disabled-color}' d='#{$custom-checkbox-svg-icon-path}'/%3e%3c/svg%3e"), "#", "%23");
+
+
+//custom switch
+$custom-switch-bg: #9ea7ae;
+$custom-switch-checked-bg: #468fcc;
+
+$custom-switch-knob-bg: #fff;
+
+$custom-switch-bars-color: #999;
+$custom-switch-disabled-bars-color: #bbb;
+
+$custom-switch-disabled-bg:#d0d0d0;
+$custom-switch-checked-disabled-bg:#c6c6c6;
+
+$custom-switch-icon-color: #fff;
+$custom-switch-icon-check:  $custom-checkbox-icon-checked-bgc;//str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1792'%3e%3cpath fill='#{$custom-switch-icon-color}' d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/%3e%3c/svg%3e"), "#", "%23");
+$custom-switch-icon-times:  str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3e%3cpath fill='none' stroke='#{$custom-switch-icon-color}' stroke-width='1.75px' d='M 2.5,2.5 L 7.5,7.5  M 7.5,2.5 L 2.5,7.5'/%3e%3c/svg%3e"), "#", "%23");//str-replace(url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1792 1792'%3e%3cpath fill='#{$custom-switch-icon-color}' d='M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z'/%3e%3c/svg%3e"), "#", "%23");
+
+
+
+$switch-sizes: (
+  'default',
+  'lg',
+  'sm'
+);
+$switch-width: (
+  'default': 2.75rem,
+  'lg': 4.25rem,
+  'sm': 2.25rem
+);
+$switch-height: (
+  'default': 1.5rem,
+  'lg': 2rem,
+  'sm': 1.25rem
+);
+$switch-knob: (
+  'default': 1.125rem,
+  'lg': 1.5rem,
+  'sm': 0.875rem
+);
+$switch-border-width: 0.125rem;//2px
+
+
+// custom file input
+$file-input-name-color:#888;
+$file-input-selected-name-color:#666;
+
+$file-input-disabled-bg: #eee;
+$file-input-disabled-border: #d5d5d5;
+$file-list-border: bgc-color('grey', 'l2');
+
+
+//buttons
+$btn-focus-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12), inset 0 -8em 0 rgba(0, 0, 0, 0.07);
+$btn-outline-focus-shadow: $btn-focus-shadow;
+
+$btn-a-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);//, inset 0 -8em 0 rgba(0, 0, 0, 0.07);
+
+$btn-transition:  color .15s, background-color .15s, border-color .15s, box-shadow .15s, opacity .15s;
+$action-btn-transition: .12s;
+$btn-slide-transition: .12s;
+$btn-slide2-transition: .25s;
+
+$btn-raised-shadow: inset 0px -2px 1px 0px rgba(0,0,0,0.1);
+
+
+//dropdown
+$dropdown-transition: 150ms;
+
+$dropdown-text: rgba(67, 72, 77, 0.93);
+$dropdown-hover-text: rgba(67, 72, 77, 0.93);
+
+$dropdown-hover-bg: lighten(bgc-color('secondary', 'l2'), 2%);
+
+$dropdown-active-bg: darken(bgc-color('primary', 'l2'), 0.5%);
+$dropdown-active-text: rgba(67, 72, 77, 0.96);
+
+$dropdown-hover-transition: 150ms;
+$dropdown-hover-delay: 350ms;
+
+
+
+//cards
+$card-expanding-transition: .2s;
+$toolbar-btn-transition: .15s;
+
+$card-header-color: text-color('blue', 'd2');
+
+
+
+//modal & aside
+$modal-footer-border: #e4e9ee;
+$modal-footer-bg: #eff3f8;
+$modal-header-border: #e4e9ee;
+$modal-header-bg: #eff3f8;
+
+$aside-width: 500px;
+$aside-maxwidth: calc(100vw - 1rem);
+
+$aside-duration: 250ms;
+$aside-header: 3rem;
+
+$aside-hover-delay-out: 500ms;
+$aside-hover-delay-in: 100ms;
+
+
+// tables
+$table-header-bg: #307ecc;
+$table-labels-grad-color1:#f8f8f8;
+$table-labels-grad-color2:#ececec;
+$table-sort-active:#307ecc;
+$table-sort-hover:#547ea8;
+
+$table-border: rgba(0, 0, 0, 0.075);
+$table-hover-text: text-color('dark', 'm1');
+$table-hover-bg: rgba(0, 0, 0, 0.05);
+
+$table-header-text: text-color('grey', 'd1');
+
+
+$table-striped: bgc-color('grey', 'l4');
+$table-striped-danger: bgc-color('danger', 'l4');
+$table-striped-success: bgc-color('success', 'l4');
+$table-striped-warning: bgc-color('warning', 'l3');
+$table-striped-info: bgc-color('info', 'l4');
+
+$table-responsive-bg: bgc-color('primary', 'm1');
+
+
+//Tabs
+
+$tab-border-color: #c5d0dc;
+$tab-text-color: #7c8087;
+$tab-bg-color: #f8f8f8;
+
+$tab-link-font-size: 0.95rem; 
+
+$tab-hover-bg-color: #fff;
+$tab-hover-border-color: tint($tab-border-color, 20%);
+
+$tab-active-highlight-border-color: #85afe2;
+$tab-active-border-color: $tab-border-color;
+$tab-active-text-color: #6494b8;
+$tab-active-bg-color: #fff;
+
+$nav-tab-border-color: bgc-color('secondary', 'l1');
+
+//simple tabs
+$simple-tabs-text-color: $tab-text-color;
+$simple-tabs-hover-text-color: #586670;
+
+$simple-tabs-active-text-color: #4881ac;
+$simple-tabs-active-bg: transparent;
+
+$simple-tabs-active-highlight-border-color: #8eb0df;
+$double-tabs-active-bg: rgba(255, 255, 255, 0.87);
+
+
+//page tabs
+$page-tabs-simple-active-highlight-border-color: #a9c1d7;
+$page-tabs-simple-active-bg-color: #f6f8f9;
+
+$page-tabs-double-bg: #f4f5f7;
+$page-tabs-double-hover-bg: rgba(255, 255, 255, 0.85);
+
+$page-tabs-boxed-nav-bg: #f7f8fa;
+$page-tabs-boxed-border: rgba(0, 0, 0, 0.075);
+$page-tabs-boxed-hover-bg: #f4f4f5;
+$page-tabs-boxed-hover-border: #f4f4f5;
+$page-tabs-boxed-active-border: #bad0ea;
+$page-tabs-boxed-active-higlight-border: #85afe2;
+$page-tabs-boxed-active-bg-text-color: #6097c0;
+$page-tabs-boxed-active-bg: #fff;
+
+
+$tab-link-transition: 120ms;
+$tab-highlight-width: 2px;
+
+$sliding-tab-duration: 350ms;
+
+
+//colored tabs
+$tabs-blue-bg: #eff3f8;
+$tabs-blue-active-text-color: #6494b8;
+$tabs-blue-item-bg: #7db4d8;
+
+
+
+//accordion
+
+$accordion-border-color: bgc-color('default', 'm4');
+$accordion-text-color: text-color('blue', 'd1');
+$accordion-bg-color: bgc-color('primary', 'l4');
+
+$accordion-collapsed-text-color: text-color('default', 'd1');
+$accordion-collapsed-bg-color: bgc-color('grey', 'l5');
+
+$accordion-collapsed-hover-text-color: text-color('blue', 'd1');
+$accordion-collapsed-hover-bg-color: bgc-color('blue', 'l4');
+
+$accordion-toggle-transition: $transition-general;
+
+
+//alert
+$alert-text-color: text-color('dark', 'm2');
+
+$alert-collapse-transition: 150ms;
+$toast-collapse-transition: 250ms;

@@ -1,0 +1,22 @@
+<div class="sidebar-inner">
+
+ <div class="ace-scroll flex-grow-1" ace-scroll>
+  
+  <div class="sidebar-section sidebar-header my-2">
+   {{> layout/layout-3/sidebar-header}}
+  </div>
+
+  <ul class="nav flex-column has-active-border active-on-right" role="navigation" aria-label="Main">
+   {{#each sidebarItems}}
+     {{> layout/sidebar-item}}
+   {{/each}}
+  </ul>
+
+ </div><!-- .sidebar scroll -->
+
+ 
+ <div class="sidebar-section sidebar-footer">
+   {{> layout/layout-3/sidebar-footer}}
+ </div>
+
+</div>

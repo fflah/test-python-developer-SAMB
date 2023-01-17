@@ -1,0 +1,35 @@
+{{#each (get "conversations")}}
+<div class="px-3 conversation">
+ <div class="media mt-2 mb-3">
+    
+    <div class="d-flex flex-grow-1">
+        <div class="avatar align-self-end pos-rel">
+            {{#if color}}
+            <span class="d-inline-flex align-items-center justify-content-center radius-round bgc-{{color}} text-white font-bolder w-5 h-5 text-80">
+                <span>{{avatar}}</span>
+            </span>
+            {{else}}
+            <img src="assets/image/avatar/{{avatar}}" class="radius-round border-1 p-1px brc-primary w-5 h-5" />
+            {{/if}}
+
+            <span class="bgc-{{status}}-tp2 radius-round border-1 brc-white p-1 position-tr mt-2px mr-n2px"></span>
+        </div>
+
+        {{#if (odd @index)}}
+         <div class="media-body bgc-default-d2 text-white py-2 px-3 col-10 col-sm-8 col-md-6">
+            <div class="text-90">
+                {{{message}}}
+            </div>
+         </div>
+        {{else}}
+         <div class="media-body bgc-white py-2 px-3 col-10 col-sm-8 col-md-6">
+            <div class="text-dark-m2 text-90">
+                {{{message}}}
+            </div>
+         </div>
+        {{/if}}
+    </div>
+  
+ </div>
+</div>
+{{/each}}

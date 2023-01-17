@@ -1,0 +1,644 @@
+
+.tab-content {
+    border: 1px solid $tab-border-color;
+    padding: 1rem;
+}
+
+
+//sliding tabs
+.tab-sliding {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    .tab-pane {
+        max-width: 100%;
+        flex: 1 0 auto;
+        display: block !important;
+
+        transform: none;
+
+        visibility: hidden;
+        max-height: 0;
+
+        @include transition(margin-left, margin-right, transform, max-height, visibility);
+        transition-duration: $sliding-tab-duration, $sliding-tab-duration, $sliding-tab-duration, $sliding-tab-duration, 0s;
+        transition-delay: 0s, 0s, 0s, 0s, $sliding-tab-duration - 10;//hide it a bit faster        
+
+        
+        &:not(.active) {
+            pointer-events: none;
+        }
+    }
+    .tab-pane {
+        margin-left: -100%;
+    }
+    .tab-pane.active {
+        transform: translateX(100%);
+        visibility: visible;
+        max-height: 100%;// 2000px
+
+        transition-delay: 0s;
+    }
+
+    //// adding `mh-none` to `.tab-pane` disables animated (delayed) max-height change
+    .tab-pane.mh-none:not(.active) {
+        max-height: 0 !important;
+    }
+
+    .tab-pane.active ~ .tab-pane {
+        margin-left: 100%;
+        margin-right: -200%;//this is needed for tab-panes to be on the same place (therefore smoother transitions)
+    }
+}
+
+.tab-pane.tab-swiping.active {
+    overflow: hidden;
+    transition: none;
+    touch-action: none;
+}  
+.tab-pane.tab-swiping:not(.active) {
+    transition: none;
+    visibility: visible;
+    max-height: none;
+}
+
+//otherwise (visibile:visible) will make them interactable
+.dropdown-menu:not(.show) .tab-sliding .tab-pane.active {
+    visibility: hidden;
+}
+.dropdown-hover:hover .tab-sliding .tab-pane.active {
+    visibility: visible;
+}
+
+
+
+//scrollable tab buttons
+.nav-tabs-scroll {
+    white-space: nowrap;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+    &:not([class*="sticky-nav"]) {
+        position: relative;// so that `LI` item's offset is calculated relative to parent `ul.nav`
+    }
+
+    @supports (overflow: overlay) or (scrollbar-width: none) {
+         &.is-scrollable {
+            overflow-x: scroll;
+
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0px;
+            }
+        }
+    }
+}
+
+
+
+
+
+.nav-tabs {
+    border-width: 0;
+    border-color: $nav-tab-border-color;
+
+    .nav-item {
+        display: flex;//so that all elements have the same height
+    }
+
+    .nav-link {
+        width: 100%;
+        height: calc(100% - 1px);
+
+        box-shadow: none !important;
+
+        border: 1px solid lighten($tab-border-color, 10%);
+  
+        font-size: $tab-link-font-size;        
+
+        &:not([class*="btn-"]) {
+            color: $tab-text-color;
+            background-color: $tab-bg-color;
+        }
+
+        &:not([class*="btn-"]):hover {
+            background-color: $tab-hover-bg-color;
+            border-color: $tab-hover-border-color;
+        }
+
+        @at-root .nav-tabs .nav-item.show .nav-link,
+        &.active {
+            height: calc(100% + #{$tab-highlight-width - 1});
+        }
+        @at-root .nav-tabs .nav-item.show .nav-link,
+        &.active {
+            &:not([class*="btn-"]) {
+                color: $tab-active-text-color;
+                background-color: $tab-active-bg-color;
+                border-color: $tab-active-border-color;
+
+                font-weight: $font-semibold;
+            }
+        }
+    }
+}
+
+
+$tabs-above-selector: ".tabs-above > .nav-tabs:not(.simple-tabs)";
+@if $tabs-below != true and $tabs-left != true and $tabs-right != true {
+    $tabs-above-selector: ".nav-tabs:not(.simple-tabs))";
+}
+#{$tabs-above-selector} {
+    border-width: 0;
+
+    .nav-link {
+        border-width: 1px 1px 0;
+        
+        @at-root .nav-tabs .nav-item.show .nav-link,
+        &.active,
+        &.btn:active {
+            margin-top: -($tab-highlight-width - 1);
+            border-width: $tab-highlight-width 1px 1px;
+        }
+        @at-root .nav-tabs .nav-item.show .nav-link,
+        &.active {    
+            border-bottom-color: transparent;
+            &:not([class*="btn-"]) {
+                border-top-color: $tab-active-highlight-border-color;
+            }
+        }
+    }
+}
+
+//simple tabs
+.nav-tabs.nav-tabs-simple {
+    .nav-link {
+        border-width: 0;
+
+        margin-right: 0.5rem;
+        padding-left: 0.25rem;
+
+        background-color: transparent;
+        color: $simple-tabs-text-color;
+
+        height: calc(100% - 1px);
+
+        &:not(.active):hover {
+            color: $simple-tabs-hover-text-color;
+            background-color: transparent;
+        }
+    
+
+        @at-root .nav-tabs-simple .nav-item.show .nav-link,
+        &.active
+        {
+            //height: 100%;
+
+            border-width: 0 0 $tab-highlight-width 0;
+            color: $simple-tabs-active-text-color;
+            font-weight: $font-semibold;
+            background-color: $simple-tabs-active-bg;
+
+            &:not([class*="btn-"]) {
+                border-bottom-color: $simple-tabs-active-highlight-border-color;
+            }
+        }
+
+    }
+
+    + .tab-content {
+        border-width: 0;
+        padding: 0.75rem;
+    }
+
+
+    &.nav-tabs-double {
+        background-color: $page-tabs-double-bg;
+        border-width: 1px 0;
+        border-style: solid;
+        
+        .nav-link.active,
+        .nav-item.show .nav-link {
+            background-color: $double-tabs-active-bg;
+        }
+    }
+}
+
+
+
+@if $tabs-below == true {
+.tabs-below {
+    display: flex;
+    flex-direction: column-reverse;
+
+    > .nav-tabs {
+        .nav-item {
+            margin-bottom: 0;
+        }
+
+        .nav-link {
+            border-width: 0 1px 1px;
+            border-radius: 0 0 0.25rem 0.25rem;
+
+            @at-root .tabs-below .nav-tabs .nav-item.show .nav-link,
+            &.active,
+            &.btn:active {
+                margin-top: -($tab-highlight-width - 1);
+                border-width: 1px 1px $tab-highlight-width;
+            }
+            @at-root .tabs-below .nav-tabs .nav-item.show .nav-link,
+            &.active {
+                border-top-color: transparent;
+                position: relative;
+                &:not([class*="btn-"]) {
+                    border-bottom-color: $tab-active-highlight-border-color;
+                }
+            }
+        }
+    }//.nav-tabs
+}//.tabs-below
+
+}
+
+
+@if $tabs-left == true {
+.tabs-left {
+    display: flex;
+    flex-direction: row;
+
+    > .tab-content {
+        flex-grow: 1;
+    }
+
+    > .nav-tabs {
+        flex-direction: column;
+
+        .nav-item {
+            margin-bottom: 0;
+            margin-top: 0;
+
+            display: list-item;
+        }
+
+        .nav-link {
+            border-width: 1px 0 1px 1px;
+            border-radius: 0.25rem 0 0 0.25rem;
+            margin: 0 0 -1px 0;
+
+            width: auto;
+            height: auto;
+
+            @at-root .tabs-left .nav-tabs .nav-item.show .nav-link,
+            &.active,
+            &.btn:active {
+                font-weight: $font-normal;
+                margin: 0 (-1*($tab-highlight-width - 1)) -1px -1px;
+                border-width: 1px 1px 1px $tab-highlight-width;
+            } 
+            @at-root .tabs-left .nav-tabs .nav-item.show .nav-link,
+            &.active {
+                border-right-color: transparent;
+                position: relative;
+                &:not([class*="btn-"]) {
+                    border-left-color: $tab-active-highlight-border-color;
+                }
+            }
+        }
+
+    }//.nav-tabs
+}//.tabs-left
+
+}
+
+
+@if $tabs-right == true {
+.tabs-right {
+    display: flex;
+    flex-direction: row-reverse;
+
+    > .tab-content {
+        flex-grow: 1;
+    }
+
+    > .nav-tabs {
+        flex-direction: column;
+
+        .nav-item {
+            margin-bottom: 0;
+            margin-top: 0;
+
+            display: list-item;
+        }
+
+        .nav-link {
+            border-width: 1px 1px 1px 0;
+            border-radius: 0 0.25rem 0.25rem 0;
+
+            margin: 0 0 -1px 0;
+
+            width: auto;
+            height: auto;
+
+            @at-root .tabs-right .nav-tabs .nav-item.show .nav-link,
+            &.active,
+            &.btn:active {
+                font-weight: $font-normal;
+                margin: 0 (-1*($tab-highlight-width - 1)) -1px -1px;
+                border-width: 1px $tab-highlight-width 1px 1px;
+            } 
+            @at-root .tabs-right .nav-tabs .nav-item.show .nav-link,
+            &.active {
+                border-left-color: transparent;
+                position: relative;
+                &:not([class*="btn-"]) {
+                    border-right-color: $tab-active-highlight-border-color;
+                }
+            }
+        }
+
+    }//.nav-tabs
+}//.tabs-right
+
+}
+
+
+
+//larger tabs
+.nav-tabs-lg {
+    .nav-item {
+       margin-left: 0.25rem;
+       margin-right: 0.25rem;
+
+       .nav-link {
+           width: 100%;
+       }
+   }
+
+   .nav-link {
+        border-radius: 0.25rem 0.25rem 0 0;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+   }
+}//.nav-tabs-lg
+
+.nav-tabs-lg.nav-tabs-compact.nav-tabs {
+   .nav-item {
+       margin: 0 -1px -1px 0;
+   }
+   .nav-link {
+       border-radius: 0;
+   }
+   .nav-item:first-child .nav-link {
+       border-top-left-radius: 0.25rem;
+   }
+   .nav-item:last-child .nav-link {
+       border-top-right-radius: 0.25rem;
+   }
+}//.nav-tabs-lg.nav-tabs-compact
+
+
+
+////////////
+
+
+
+//page tabs
+@if $page-tabs == true {
+.nav-tabs.page-nav-tabs {
+    margin: 0 -1*$page-content-padding-x;
+    padding: 0 $page-content-padding-x;
+
+    + .tab-content {
+        border-width: 1px 0 0;
+        //margin: 0 -1*$page-content-padding-x;//as much as page-content
+        //padding: 1rem $page-content-padding-x+0.25rem;
+    }
+  
+    .nav-item {
+        .nav-link {
+            width: 100%;
+
+            @include transition(background-color $tab-link-transition, border-color $tab-link-transition, color $tab-link-transition);
+        
+            font-weight: $font-semibold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+    //based on simple tabs    
+    &.nav-tabs-simple {
+
+        .nav-item {
+            margin: 0 1px -1px 0;
+        }
+    
+        .nav-link {
+            font-weight: $font-semibold;
+            border-bottom: 2px solid;
+
+            padding: 0.75rem 0.5rem;
+            margin-right: 2px;
+           
+    
+            &:hover {
+                background-color: $page-tabs-simple-active-bg-color;
+            }
+            &:not(.active) {
+                border-bottom-color: transparent !important;
+            }
+            &:not(.active):hover {
+                border-bottom: 2px solid $page-tabs-simple-active-highlight-border-color;
+            }
+        }
+    
+        .nav-link.active,
+        .nav-item.show .nav-link {
+            border-bottom-width: 3px;
+        }
+    
+        + .tab-content {
+            border-top-width: 0;
+        }
+
+
+        &.nav-tabs-double {
+            .nav-link:hover {
+                background-color: $page-tabs-double-hover-bg;
+            }
+
+            .nav-link.active,
+            .nav-item.show .nav-link {
+                border-bottom-width: 2px;
+            }
+        }
+    }//nav tabs simple
+    
+    /////////////
+
+    &.nav-tabs-boxed {
+        background-color: $page-tabs-boxed-nav-bg;
+        border-width: 0;
+        margin: 0;
+        padding: 0;
+   
+        .nav-item {
+            //margin: 0 -1px -1px 0;
+            margin: 0 -1px 0 0;
+            display: flex;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        
+        .nav-link {
+            border-radius: 0;
+           
+            padding: 0.875rem 0.75rem;
+            height: 100%;
+
+            font-size: 0.925rem;
+            border: 1px solid;
+            
+            &:not([class*="btn-"]) {
+                background-color: transparent;
+            }
+                    
+            &:not(.active) {
+                border-color: $page-tabs-boxed-border !important;
+            }
+            &:not([class*="btn-h-"]):not(.active):hover {
+                background-color: $page-tabs-boxed-hover-bg;
+            }
+            &[class*="btn-h-"]:hover {
+                z-index: 1;
+            }
+            //}
+        }
+    
+        .nav-item:first-child .nav-link {
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+        .nav-item:last-child .nav-link {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+
+    
+        .nav-link.active,
+        .nav-item.show .nav-link {
+            margin-top: 0;
+            margin-bottom: 0;
+    
+            border-bottom-width: 3px;
+            font-weight: 0.95rem;
+
+            z-index: 2;
+            background-color: $page-tabs-boxed-active-bg;
+    
+            &:not([class*="btn-a-"]) {  
+                color: $page-tabs-boxed-active-bg-text-color;                
+                border-color: $page-tabs-boxed-active-border $page-tabs-boxed-active-border $page-tabs-boxed-active-higlight-border;
+            }
+        }
+    }//nav-tabs-boxed
+
+}//.page-tabs
+
+}//@if $page-tabs
+
+
+
+
+
+//colored tabs
+@if $tabs-color == true {
+
+.nav-tabs[class*="nav-tabs-color-"] {
+    padding: 0.325rem 0.75rem 0;
+
+    border-style: solid;
+    border-width: 1px 1px 0;
+
+    .nav-link {
+        color: #FFF;
+        border-color: transparent;
+        margin-right: 3px;
+
+        &:last-child .nav-link {
+            margin-right: 0;
+        }
+    }
+    .nav-link.active, .nav-item.show .nav-link {
+        background-color: #FFF;
+        font-weight: $font-normal;
+        color: $tabs-blue-active-text-color;
+    }
+}
+
+.tabs-below .nav-tabs[class*="nav-tabs-color-"] {
+    padding: 0 0.75rem 0.325rem;
+    border-width: 0 1px 1px;
+
+    .nav-link.active, .nav-item.show .nav-link {
+        border-color: transparent $tabs-blue-item-bg $tabs-blue-item-bg;
+    }
+}
+
+.tabs-left .nav-tabs[class*="nav-tabs-color-"] {
+    padding: 0.125rem 0 0.325rem 0.325rem;
+
+    border-width: 1px 0 1px 1px;
+
+    .nav-link {
+        margin-right: 0;
+        margin-top: 3px;
+    }
+
+    .nav-link.active, .nav-item.show .nav-link {
+        margin-right: -1px;
+        border-color: $tabs-blue-item-bg transparent $tabs-blue-item-bg $tabs-blue-item-bg;
+    }
+}
+.tabs-right .nav-tabs[class*="nav-tabs-color-"] {
+    padding: 0.125rem 0.325rem 0.325rem 0;
+
+    border-width: 1px 1px 1px 0;
+
+    .nav-link {
+        margin-right: 0;
+        margin-top: 3px;
+    }
+
+    .nav-link.active, .nav-item.show .nav-link {
+        margin-left: -1px;
+        margin-right: -1px;
+
+        border-color: $tabs-blue-item-bg $tabs-blue-item-bg $tabs-blue-item-bg transparent;
+    }
+}
+
+.nav-tabs.nav-tabs-color-blue {
+    background-color: $tabs-blue-bg;
+    border-color: $tab-border-color;
+
+    .nav-link {
+        &, &:not(.active):hover {
+            background-color: $tabs-blue-item-bg;
+            border-color: transparent;
+        }
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $tabs-blue-active-text-color;
+        border-color: $tabs-blue-item-bg $tabs-blue-item-bg transparent;
+    }
+}
+
+
+}//@if $tabs-color

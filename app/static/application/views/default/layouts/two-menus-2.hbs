@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> layout/_head}}
+    {{{include-css files="dist/css/ace-themes.css@ace"}}}
+  </head>
+
+  <body>
+   <div class="body-container">
+      {{> layout/two-menus-2/navbar}}
+
+      <div id="sidebar2" class="sidebar sidebar-fixed sidebar-hover sidebar-h sidebar-darkslateblue sidebar-color">
+        {{> layout/two-menus-2/sidebar2}}
+      </div><!-- /#sidebar -->
+
+      <div class="main-container">
+        <div id="sidebar1" class="sidebar expandable sidebar-fixed sidebar-lightpurple sidebar-spaced collapsed" data-pullup="true">
+         {{> layout/two-menus-2/sidebar1}}
+        </div><!-- /#sidebar -->
+
+         <div role="main" class="main-content">
+
+          <div class="page-content container px-xl-5">
+           {{{body}}}
+          </div><!-- /.page-content -->
+
+          {{> layout/footer}}
+         </div><!-- /main -->
+      
+        {{!> layout/settings-box}}
+      </div><!-- /.main-container -->
+
+
+      {{> layout/_tail}}
+
+   </div><!-- /.body-container -->
+  </body>
+</html>

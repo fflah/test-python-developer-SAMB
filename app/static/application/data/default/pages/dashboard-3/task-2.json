@@ -1,0 +1,30 @@
+[
+    {
+       "color" : "success",
+       "content" : "Add new features",
+       "avatar": "avatar1.jpg",
+       "progress": 70,
+       "time": "1h"
+    } ,
+    {
+       "color" : "danger",
+       "title" : "Upgrade everything",
+       "avatar": "avatar2.jpg",
+       "progress": 30,
+       "time": "2d"
+    } ,
+    {
+       "color" : "blue",
+       "content" : "Purchase new hardware",
+       "avatar": "avatar3.jpg",
+       "progress": 55,
+       "time": "6h"
+    } ,
+    {
+       "color" : "purple",
+       "content" : "Follow up on clients",
+       "avatar": "avatar2.jpg",
+       "progress": 40,
+       "time": "2d"
+    }
+]

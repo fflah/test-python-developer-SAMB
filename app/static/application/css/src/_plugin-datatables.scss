@@ -1,0 +1,101 @@
+$dataTablesHeaderBg: bgc-color('primary', 'l4');
+$dataTablesFooterBg: bgc-color('primary', 'l4');
+$dataTablesFooterBorder: bgc-color('grey', 'l2');
+$dataTablesSelectedBg: bgc-color('success', 'l3');
+
+@if $plugin-datatables == true {
+
+.table.dataTable {
+    margin: auto !important;
+}
+.dataTables_wrapper {
+    > .row:first-of-type {
+        padding: 1.25rem 0.5rem 0.75rem;
+        margin: auto;
+        background-color: $dataTablesHeaderBg;
+    }
+
+    > .row:last-of-type {
+        padding: 0.75rem 0.5rem 1.25rem;
+        margin: auto;
+        background-color: $dataTablesFooterBg;
+        border-bottom: 1px solid $dataTablesFooterBorder;
+    }
+
+    div.dataTables_length select.form-control {
+        width: 4rem;
+        margin: 0 0.125rem;
+    }  
+}
+
+
+.dataTable tr.selected {
+    background-color: $dataTablesSelectedBg;
+}
+
+//the "`n` row(s) selected" text
+.dataTables_info .select-item {
+    font-size: 90%;
+    opacity: 0.9;
+    margin-left: 0.5rem;
+}
+
+
+
+// Floating table, dragged with the mouse
+table.DTCR_clonedTable.dataTable {
+    position: absolute !important;
+    background-color:transparent;
+    z-index: 202;
+}
+div.DTCR_pointer{
+    width: 0.125rem;//2px
+    background-color: $bgc-primary;
+    z-index: 201;
+}
+
+
+
+//the caret sorting icons in table header
+@if $plugin-datatables-sorticonsize != null {
+
+    $sort-caret-size: $plugin-datatables-sorticonsize;
+    .dataTable th {
+        &::after, &::before {
+            content: "" !important;
+            right:  1.5 * $sort-caret-size !important;
+        }
+    }
+    .dataTable th[class*=sorting]:not(.sorting_disabled) {
+        &::before, &::after {
+            width: 0;
+            height: 0;
+
+            color: inherit;
+
+            border-right: $sort-caret-size solid transparent;
+            border-left: $sort-caret-size solid transparent;
+
+            top: 50% !important;
+            bottom: auto !important;
+        }
+
+        &::before {
+            border-bottom: $sort-caret-size solid currentColor;
+            border-top: none;    
+            
+            margin-top: -$sort-caret-size;
+        }
+
+        &::after {
+            border-top: $sort-caret-size solid currentColor;
+            border-bottom: none;
+            
+            margin-top: 0.125rem;//2px
+        }
+    }
+
+}//$plugin-datatables-sorticonsize
+
+
+}//@if plugin

@@ -1,0 +1,24 @@
+[
+ {
+    "color" : "purple",
+    "title" : "Answer customer questions",
+    "badge" : "<span class='badge badge-danger'>urgent</span>"
+ } ,
+ {
+    "color" : "danger",
+    "content" : "Fix compatibility issues"
+ } ,
+ {
+    "color" : "blue",
+    "content" : "Clean up"
+ } ,
+ {
+    "color" : "secondary",
+    "content" : "Set up board meeting"
+ } ,
+ {
+    "color" : "default",
+    "title" : "Follow up on clients",
+    "badge" : "<span class='badge badge-warning'>important</span>"
+ }
+]

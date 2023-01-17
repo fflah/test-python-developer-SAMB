@@ -1,0 +1,130 @@
+<div class="pos-abs" id="scroll-down"></div>
+
+<nav class="navbar navbar-fixed navbar-expand-lg navbar-white2">
+ <div class="navbar-inner shadow-sm border-b-1 brc-grey-l1"><div class="container">
+
+
+    <button type="button" class="navbar-toggler btn btn-burger burger-times static collapsed d-flex d-lg-none ml-2" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navbar menu">
+        <span class="bars text-dark-tp3"></span>
+    </button><!-- mobile navbar toggler button -->
+
+
+    <div class="navbar-intro w-auto justify-content-xl-between border-0">
+        <a class="navbar-brand text-dark-tp3 text-180" href="#">
+            <i class="fa fa-plane rotate-n45 text-105 text-blue2 mr-1"></i>
+            <span>ACE</span>
+            <span class="text-70">Travel</span>            
+        </a><!-- /.navbar-brand -->  
+    </div><!-- /.navbar-intro -->
+
+
+
+    <div class="navbar-menu collapse navbar-collapse navbar-backdrop ml-auto mr-lg-4" id="navbarMenu">
+      
+      <div class="navbar-nav">
+        <ul class="nav nav-compact-3">
+
+            <li class="nav-item dropdown dropdown-mega dropdown-hover">
+                <a class="btn btn-outline-grey btn-h-default btn-a-default dropdown-toggle border-0" href="#" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-list-alt mr-2 d-lg-none"></i>
+                    Mega
+                    <i class="caret fa fa-angle-down d-none d-lg-block"></i>
+                    <i class="caret fa fa-angle-left d-block d-lg-none"></i>
+                </a>
+                <div class="p-0 dropdown-menu bgc-light-m1 brc-primary-m2 border-1 border-b-2 ace-scrollbar">
+                    {{> layout/navbar-megamenu}}
+                </div>
+            </li>
+
+            <li class="nav-item dropdown mx-1px">
+                <a class="btn btn-outline-dark btn-h-default btn-a-default border-0" href="#">
+                    <i class="fa fa-map fa-flip-horizontal mr-1 text-success bgc-white-tp1 radius-1 p-1"></i>
+                    Explorations
+                </a>
+            </li>
+
+            <li class="nav-item dropdown mx-1px">
+                <a class="btn btn-outline-grey btn-h-default btn-a-default border-0" href="#">
+                    <i class="fa fa-phone fa-flip-horizontal mr-1 text-default-d2 bgc-white-tp1 radius-1 p-1"></i>
+                    Contact
+                </a>
+            </li>
+
+            <li class="nav-item ml-xl-2">
+                <a class="btn btn-light-warning border-1 text-orange-d2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fire-alt mr-2"></i>
+                    Hot Deals
+                </a>
+            </li>
+        </ul><!-- /.navbar-nav menu -->
+      </div><!-- /.navbar-nav -->
+
+    </div><!-- /.navbar-menu.navbar-collapse -->
+
+
+
+    <button type="button" class="d-style mr-2 px-4 navbar-toggler btn btn-burger static collapsed d-flex d-lg-none" data-toggle="collapse" data-target="#navbarMenu2" aria-controls="navbarMenu2" aria-expanded="false" aria-label="Toggle navbar menu">
+        <i class="fa fa-caret-down d-collapsed text-grey-m1 text-80"></i>
+        <i class="fa fa-caret-up d-n-collapsed text-grey-m1 text-80"></i>
+
+        <i class="fa fa-user text-orange-d1 ml-2"></i>        
+    </button><!-- mobile navbar toggler button -->
+
+    <div class="navbar-menu collapse navbar-collapse navbar-backdrop " id="navbarMenu2">
+      <div class="navbar-nav">
+        <ul class="nav">
+
+            <li class="nav-item dropdown px-lg-2 d-lg-flex flex-column justify-content-center">
+                <a class="d-none d-lg-block h-auto btn btn-outline-blue btn-bold radius-round border-2 dropdown-toggle px-2 px-xl-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">          
+                    Login
+                </a>
+
+                <a class="d-lg-none nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-caret-right bgc-blue radius-round text-white py-2 px-4 mr-2"></i>
+                    Login
+                </a>
+
+                <div style="width: 20rem;" data-display="static" class="shadow radius-1 p-0 dropdown-menu dropdown-menu-right dropdown-animated animated-2 brc-primary-m3 mt-lg-n1 mr-lg-n2 dropdown-caret">
+                    <h4 class="text-120 mb-3 text-default-d3 px-3 mt-3 mb-2">Please enter your details</h4>
+                    <hr class="border-dotted brc-default-m3" />
+                    <form class="dropdown-clickable text-grey-d2">
+                        <div class="dropdown-body my-25">
+                            <div class="form-group mx-3">
+                                <div class="d-flex align-items-center input-floating-label text-blue-m1 brc-blue-m2">
+                                    <input type="text" class="form-control pr-4 shadow-none" id="id-login-username" autocomplete="off" />
+                                    <i class="fa fa-user text-grey-m2 ml-n4"></i>
+                                    <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-login-username">Username</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mx-3">
+                                <div class="d-flex align-items-center input-floating-label text-blue-m1 brc-blue-m2">
+                                    <input type="text" class="form-control pr-4 shadow-none" id="id-login-password" autocomplete="off" />
+                                    <i class="fa fa-key text-grey-m2 ml-n4"></i>
+                                    <label class="floating-label text-grey-l1 text-100 ml-n3" for="id-login-password">Password</label>
+                                </div>
+                            </div>
+
+                            <div class="mx-3">
+                                <label class="d-inline-block mt-2 text-secondary-d2">
+                                    <input type="checkbox" class="mr-1" id="id-remember-me">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer py-2 bgc-default-l4 text-center pos-rel border-t-1 brc-default-l2">
+                            <button type="button" class="btn px-4 btn-smd btn-blue btn-bold" data-dismiss="dropdown">Login</button>
+                            <button type="button" class="btn btn-smd btn-outline-success btn-bold">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </li>
+
+
+        </ul>
+      </div>
+    </div>
+
+ </div></div><!-- /.navbar-inner -->
+</nav>

@@ -1,0 +1,42 @@
+<div class="sidebar-inner">
+
+  <!-- .navbar-brand inside sidebar, only show in desktop view -->
+  <div class="d-none d-xl-flex sidebar-section-item m-0 fadeable-left fadeable-top">
+    <div class="fadeinable">
+      <div class="py-2 mx-1 border-b-1 brc-secondary-l1" id="sidebar-header-brand1">
+          <a class="navbar-brand text-140">
+            <i class="fa fa-leaf text-success"></i>
+          </a>
+        </div>
+    </div>
+
+    <div class="fadeable w-100 ">
+      <div class="py-2 text-center mx-3 border-b-1 brc-secondary-l1" id="sidebar-header-brand2">
+
+        <a class="navbar-brand ml-n2 text-140 text-grey-d2" href="#">
+          <i class="fa fa-leaf mr-1 text-success"></i>
+          ACE <span>App</span>
+        </a>
+      
+      </div>
+    </div>
+  </div><!-- /.sidebar-section-item  -->
+
+
+  <div class="pt-2 flex-grow-1 ace-scroll" ace-scroll>
+      {{> layout/layout-2/sidebar-header}}
+
+      <div class="nav flex-column mt-2 has-active-border" role="navigation" aria-label="Main">
+      {{#each sidebarItems}}
+        {{> layout/sidebar-item}}
+      {{/each}}
+      </div>
+
+  </div><!-- /.ace-scroll -->
+
+
+  <div class="sidebar-section sidebar-footer">
+    {{> layout/layout-2/sidebar-footer}}
+  </div>
+
+</div>

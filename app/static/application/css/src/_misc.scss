@@ -1,0 +1,39 @@
+//
+.icon-glossy {
+    position: relative;
+    display: inline-block;
+
+    text-align: center;
+    line-height: normal;
+
+    &::before {
+        content: "";
+        display: block;
+
+        border-radius: inherit;
+        background-color: rgba(255, 255, 255, 0.15);
+
+        position: absolute;
+        left: 1px;
+        right: 2px;
+        top: 0;
+        bottom: 5px;
+
+        z-index: 0;
+    }
+}
+
+// progress bars
+.progress {
+    border-radius:  0.125rem;
+}
+
+// shadow
+.shadow-md {
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+//
+.c-pointer {
+    cursor: pointer;
+}

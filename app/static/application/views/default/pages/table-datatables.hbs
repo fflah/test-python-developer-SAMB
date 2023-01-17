@@ -1,0 +1,72 @@
+<div class="page-header pb-2 flex-column flex-sm-row align-items-start align-items-sm-center">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+         <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            table plugin for jQuery
+        </small>
+    </h1>
+    
+    <div class="page-tools mt-3 mt-sm-0 mb-sm-n1"></div>
+</div>
+
+<div class="mt-4 mx-md-2 border-t-1 brc-secondary-l1">
+   <div id="table-header" class="d-none justify-content-between px-2 py-25 border-b-1 brc-secondary-l1">
+        <div>
+            Results for <span class="text-600 text-primary-d1">"Latest Employees"</span>
+            <small class="text-grey-m2">(with reorderable columns)</small>
+        </div>
+   </div>
+
+   <div class="table-responsive-md">
+    <table id="datatable" class="table table-border-y text-dark-m2 text-95 border-y-1 brc-secondary-l1">
+        <thead class="text-secondary-m2 text-uppercase text-85">
+            <tr>
+                <th class="border-0"><input type="checkbox" autocomplete="off" /></th>
+                <th class="border-0 bgc-h-default-l3">Name</th>
+                <th class="border-0 bgc-h-default-l3">Office</th>
+                <th class="border-0 bgc-h-default-l3">Age</th>
+                <th class="border-0 bgc-h-default-l3">Start date</th>
+                <th class="border-0 bgc-h-default-l3">Salary</th>
+                <th class="border-0" width="20"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each (get "employees")}}
+            <tr class="d-style bgc-h-default-l4">
+                <td class="pos-rel">
+                    <input type="checkbox" autocomplete="off" />
+                    {{#if highlight}}
+                        <div class="position-lc h-75 border-l-3 brc-{{highlight}}"></div>
+                    {{/if}}
+                </td>
+                <td>
+                    <span class="text-105">{{name}}</span>
+                    <div class="text-95 text-secondary">
+                        {{position}}
+                    </div>                    
+                </td>
+                <td class="text-grey">
+                    {{location}}
+                    {{#if badge}}
+                        <div>{{{badge}}}</div>
+                    {{/if}}
+                </td>
+                <td class="text-600 text-grey-d1">{{age}}</td>
+                <td class="text-grey">{{date}}</td>
+                <td>
+                    {{#if stat}}
+                        <i class="fa fa-{{stat}}"></i>
+                    {{/if}}
+                    {{salary}}
+                </td>
+                <td>
+                    <a data-rel="tooltip" data-action="edit" title="Edit" href="#" class="v-hover"><i class="fa fa-edit text-blue-m1 text-120"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+   </div>
+
+</div>

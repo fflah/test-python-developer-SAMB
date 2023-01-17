@@ -1,0 +1,149 @@
+{% extends 'base.html' %} {% block content %}
+<div style="min-height: 300px;" class="page-content container">
+    <div class="page-header">
+        <h1 class="page-title text-primary-d2">
+            Barang Masuk
+            <small class="page-info text-secondary-d2">
+                <i class="fa fa-angle-double-right text-80"></i>
+                Pencatantan transaksi barang masuk
+            </small>
+        </h1>
+    </div>
+    
+    <button style="margin-bottom: 20px;" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary"><i
+            class="fa fa-pencil-alt text-110 mr-1"></i> Tambah Barang Masuk</button>
+    <table id="datatable" class="table table-border-y text-dark-m2 text-95 border-y-1 brc-secondary-l1">
+        <thead class="text-secondary-m2 text-uppercase text-85">
+            <tr>
+                <th>No</th>
+                <th>No Transaksi</th>
+                <th>Warehouse</th>
+                <th>Tanggal Transaksi</th>
+                <th>Supplier</th>
+                <th>Catatan</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for data in barang_masuk %}
+
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{data.TrxInNo}}</td>
+                    <td>{{data.WhsName}}</td>
+                    <td>{{data.TrxInDate}}</td>
+                    <td>{{data.SupplierName}}</td>
+                    <td>{{data.TrxInNotes}}</td>
+                    
+                </tr>
+             {% endfor %}
+        </tbody>
+    </table>
+    
+    <style>
+        .modal-lg {
+            max-width: 55%;
+        }
+    </style>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Form Penerimaan Barang</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="">
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                                <label style="font-weight: bold;" for="id-form-field-1" class="mb-0">Nomor Transaksi IN</label>
+                            </div>
+    
+                            <div class="col-sm-9">
+                                <input name="TrxInNo" value="" required type="number"
+                                    class="form-control col-sm-8 col-md-10" id="id-form-field-1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                                <label style="font-weight: bold;" for="id-form-field-1" class="mb-0">Warehouse</label>
+                            </div>
+    
+                            <div class="col-sm-9">
+                                <select name="WhsIdf" class="form-control col-sm-8 col-md-10" id="form-field-select-1">
+                                    <option value="">Choose..</option>
+                                    {% for data in warehouse %}
+                                    
+                                    <option value="{{data.WhsPK}}">{{data.WhsName}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                                <label style="font-weight: bold;" for="id-form-field-1" class="mb-0">Tanggal Transaksi IN</label>
+                            </div>
+    
+                            <div class="col-sm-9">
+                                <input name="TrxInDate" value="" required type="date"
+                                    class="form-control col-sm-8 col-md-10" id="id-form-field-1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                                <label style="font-weight: bold;" for="id-form-field-1" class="mb-0">Supplier</label>
+                            </div>
+
+                            <div class="col-sm-9">
+                                <select name="TrxInSuppIdf" class="form-control col-sm-8 col-md-10"
+                                    id="form-field-select-1">
+                                    <option value="">Choose..</option>
+                                    {% for data in supplier %}
+
+                                    <option value="{{data.SupplierPK}}">{{data.SupplierName}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-form-label text-sm-right pr-0">
+                                <label style="font-weight: bold;" for="id-form-field-1" class="mb-0">Catatan</label>
+                            </div>
+    
+                            <div class="col-sm-9">
+                                <textarea name="TrxInNotes" value="" required type="text"
+                                    class="form-control col-sm-8 col-md-10" id="id-form-field-1"></textarea>
+                            </div>
+                        </div>
+    
+                        <div class="my-2 border-t-1 brc-grey-l1 bgc-grey-l3 py-3">
+                            <div class="offset-md-3 col-md-9">
+                                <button class="btn btn-info" type="submit">
+                                    <i class="fa fa-check mr-1"></i>
+                                    Submit
+                                </button>
+    
+                                <button class="btn btn-secondary ml-3" type="reset">
+                                    <i class="fa fa-undo mr-1"></i>
+                                    Reset
+                                </button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+    });
+</script>
+<!-- /.page-content -->
+{% endblock %}

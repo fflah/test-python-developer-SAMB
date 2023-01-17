@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> layout/_head}}
+  </head>
+
+  <body>
+   <div class="body-container">
+      {{> layout/navbar}}
+
+      <div class="main-container">
+        
+         <div id="sidebar" class="sidebar sidebar-fixed expandable sidebar-default d-none d-xl-block">
+          {{> layout/sidebar}}
+         </div><!-- /#sidebar -->
+
+         <div role="main" class="main-content">
+          <div class="d-none content-nav mb-1 bgc-grey-l4">
+           {{> layout/content-nav}}
+          </div><!-- breadcrumbs -->
+
+          <div class="page-content container">
+           {{{body}}}
+          </div><!-- /.page-content -->
+
+          {{> layout/footer}}
+         </div><!-- /main -->
+      
+        {{> layout/settings-box}}
+      </div><!-- /.main-container -->
+
+
+      {{> layout/_tail}}
+
+   </div><!-- /.body-container -->
+  </body>
+</html>

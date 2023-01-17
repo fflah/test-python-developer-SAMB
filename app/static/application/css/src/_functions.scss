@@ -1,0 +1,164 @@
+$light-color-count: 5;
+$medium-color-count: 4;
+$dark-color-count: 2;
+$transparent-color-count: 4;
+$dark-borders: false;
+
+$_lights: (
+  1: 44.5,
+  2: 49,
+  3: 52.5,
+  4: 55,
+  5: 57.5
+);
+$_mediums: (
+  1: 9,
+  2: 18,
+  3: 27,
+  4: 36
+);
+
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+@function tone($color, $percentage) {
+  @return mix(grey, $color, $percentage);
+}
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+
+@mixin iefix($property1, $value1, $property2:null, $value2:null, $property3:null, $value3:null) {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #{$property1}: $value1;
+    #{$property2}: $value2;
+    #{$property3}: $value3;
+  }
+}
+
+
+
+
+//text color functions
+@function text-color($name, $lightness) {
+  $type: str-slice($lightness, 1, 1);
+  $index: map-get($_toNumber, str-slice($lightness, 2, 2));
+  @if $type == 'l' {
+      @return  light-text-color($name, $index);
+  }
+  @else if $type == 'm' {
+      @return  medium-text-color($name, $index);
+  }
+  @else if $type == 'd' {
+      @return  dark-text-color($name, $index);
+  }
+}
+
+@function light-text-color($name, $index) {
+  $color: map-get($text-colors, $name);
+  @return tint( $color , 31 + 9 * $index );
+}
+@function medium-text-color($name, $index) {
+  $color: map-get($text-colors, $name);
+  @return tint( $color , 9 * $index );
+}
+@function dark-text-color($name, $index) {
+  $color: map-get($text-colors, $name);
+
+  $val: shade( $color , 10 * ($index - 1) );
+  @if $index == 1 {
+      $val: tone( $color , 15 );
+  }
+  @return $val;
+}
+
+
+//background/border color functions
+$_multipliers: ();
+
+@function multiplier-color($name, $value) {
+    $steps: 60;
+    $increment: 1.5;
+    
+    $maxIndex: null;
+    $multiplier: null;
+    @for $i from 1 through $steps {
+        @if $maxIndex == null {
+            $lightness: lightness( adjust-color($value, $lightness: $i * $increment) );
+            @if $lightness > 99.5  and $maxIndex == null {
+                $maxIndex: $i;
+                $multiplier: ($maxIndex * $increment) / $steps;
+            }
+        }
+    }
+
+    @return $multiplier;
+}
+
+$_toNumber: (
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5
+);
+
+@function bgc-color($name, $lightness) {
+    $type: str-slice($lightness, 1, 1);
+    $index: map-get($_toNumber, str-slice($lightness, 2, 2));
+    @if $type == 'l' {
+        @return  light-bgc-color($name, $index);
+    }
+    @else if $type == 'm' {
+        @return  medium-bgc-color($name, $index);
+    }
+    @else if $type == 'd' {
+        @return  dark-bgc-color($name, $index);
+    }
+}
+
+@function light-bgc-color($name, $index) {
+    $color: map-get($background-colors, $name);
+    $multiplier: map-get($_multipliers, $name);
+
+    $_lightness: map-get($_lights, $index);
+    @return adjust-color($color, $lightness: $multiplier * $_lightness);
+}
+@function medium-bgc-color($name, $index) {
+    $color: map-get($background-colors, $name);
+    $multiplier: map-get($_multipliers, $name);
+
+    $_mediumness: map-get($_mediums, $index);
+    @return adjust-color($color, $lightness: $multiplier * $_mediumness);
+}
+@function dark-bgc-color($name, $index) {
+    $color: map-get($background-colors, $name);
+    @return adjust-color($color, $lightness: -3.5 * $index);
+}
+
+
+@each $name, $value in $background-colors {
+  $m:  multiplier-color($name, $value);
+  $_multipliers: map-merge($_multipliers, (
+      $name: $m
+  ));
+}
+
+///////////
+

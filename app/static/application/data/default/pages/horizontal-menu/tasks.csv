@@ -1,0 +1,6 @@
+title,status,progress,textColor
+"Perform analysis",done,100,success
+"Team meeting",doing,70,default
+"Office redesign",pending,40,default
+"Unnecessary task",cancelled,20,default
+"Customer followup",done,95,success

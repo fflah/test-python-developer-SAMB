@@ -1,0 +1,7 @@
+name,avatar,color,time,status
+"Bob Doe","user.jpg",,"20 min",pending
+"John Smith","JS","purple","1 hour",pending
+"Jim Doe","avatar.png",,"2 hour",pending
+"Alex Doe","avatar5.png",,"3 hour",blocked
+"Bob Doe","BD","success","6 hour",approved
+"Susan","avatar3.png",,"yesterday",approved

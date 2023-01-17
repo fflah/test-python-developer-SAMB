@@ -1,0 +1,23 @@
+<table class="table table-striped-info table-borderless border-0">
+    <tbody>
+        <tr></tr>
+        {{#each (get "members")}}
+        <tr>
+            <td class="text-grey-d2 pl-2 pl-lg-4">
+                {{#if color}}
+                    <span class="mr-2 pb-1 align-middle d-inline-flex align-items-center justify-content-center radius-round bgc-primary-l2 text-primary font-bolder text-90 w-5 h-5">
+                        <span>{{color}}</span>
+                    </span>
+                {{/if}}
+                {{#if avatar}}
+                <img src="assets/image/avatar/{{avatar}}" class="radius-round border-2 p-2px brc-default-m1 mr-2 w-5 h-5" />
+                {{/if}}
+                {{name}}
+            </td>
+            <td class="text-secondary-m1 text-85 font-bolder">{{role}}</td>
+            <td class="text-grey-m1 text-85">{{location}}</td>
+                
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

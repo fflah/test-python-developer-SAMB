@@ -1,0 +1,26 @@
+[
+    {
+        "color" : "grey",
+        "content" : "Add new skins",
+        "avatar": "avatar6.jpg",
+        "done": "3d ago"
+    } ,
+    {
+        "color" : "success",
+        "content" : "Update server software up",
+        "avatar": "avatar4.jpg",
+        "done": "4h ago"
+    } ,
+    {
+        "color" : "warning",
+        "title" : "Purchase new hardware",
+        "avatar": "avatar1.jpg",
+        "done": "1d ago"
+    },
+    {
+        "color" : "warning",
+        "content" : "Design new logo",
+        "avatar": "avatar3.jpg",
+        "done": "21h ago"
+    }
+]

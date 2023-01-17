@@ -1,0 +1,306 @@
+<div class="row">
+  <div class="col-12 col-lg-6 order-last order-lg-first">
+    <hr class="d-lg-none" />
+
+    <h5 class="text-blue-m1 mb-3 my-3 mt-lg-0">Custom Color Dropdowns</h5>
+
+    <div class="dropdown-menu d-block position-static radius-2 brc-info-m3 p-1 m-2">
+        <span class="dropdown-item-text text-grey-m2 my-1 text-95">Dropdown item text</span>
+        <a class="dropdown-item btn btn-outline-primary btn-h-light-primary btn-a-primary my-1 radius-1" href="#">Action</a>
+        <a class="dropdown-item btn btn-outline-primary btn-h-light-primary btn-a-primary my-1 radius-1" href="#">Another action</a>
+        <a class="dropdown-item btn btn-outline-warning btn-h-light-warning btn-a-warning my-1 radius-1" href="#">Something else here</a>
+    </div>
+
+    <div class="dropdown-menu d-block position-static radius-1 brc-success-tp2 border-t-3 p-1 m-2">        
+        <a class="dropdown-item btn btn-outline-success btn-h-light-success btn-a-light-success my-1 text-90 font-bolder text-uppercase" href="#">
+            <i class="fas fa-tools text-warning-d1 text-140 w-3 mr-2px"></i>
+            Action
+        </a>
+
+        <div class="dropdown-divider m-1"></div>
+
+        <a class="dropdown-item btn btn-outline-success btn-h-light-success btn-a-light-success my-1 text-90 font-bolder text-uppercase" href="#">                        
+            <i class="far fa-address-book text-blue text-140 w-3 mr-2px"></i>
+            Another action
+        </a>
+
+        <div class="dropdown-divider m-1"></div>
+
+        <a class="dropdown-item btn btn-outline-success btn-h-light-success btn-a-light-success my-1 text-90 font-bolder text-uppercase" href="#">
+            <i class="fas fa-bug text-success-m2 text-140 w-3 mr-2px"></i>
+            More actions
+        </a>
+
+        <div class="dropdown-divider m-1"></div>
+
+        <a class="dropdown-item btn btn-outline-purple btn-h-light-purple btn-a-light-purple my-1 text-90 font-bolder text-uppercase" href="#">
+            <i class="far fa-calendar-check text-purple text-140 w-3 mr-2px"></i>
+            Something else here
+        </a>
+    </div>
+
+    <div class="dropdown-menu d-block position-static radius-1 bgc-info-l4 p-1 m-2 border-2 brc-info-m3">
+        <a class="dropdown-item btn btn-outline-dark btn-h-info btn-a-info my-1 radius-2px" href="#">Action</a>
+        <a class="dropdown-item btn btn-outline-dark btn-h-info btn-a-info my-1 radius-2px" href="#">Another action</a>
+        <a class="dropdown-item btn btn-outline-dark btn-h-info btn-a-info my-1 radius-2px" href="#">More actions</a>
+        <a class="dropdown-item btn btn-outline-dark btn-h-info btn-a-info my-1 radius-2px" href="#">Something else here</a>
+    </div>
+
+
+    <ul class="dropdown-menu d-block position-static mx-2 px-2px radius-1">
+        
+        <li class="dropdown-hover dropdown-item btn btn-outline-warning btn-h-warning btn-a-warning dropright">
+            <a class="d-flex align-items-center justify-content-between" href="#">
+                <span>Hover Submenu</span>
+                <i class="fa fa-caret-right"></i>
+            </a>
+            <div class="dropdown-menu mt-n1 ml-1px radius-1">
+               <a class="dropdown-item" href="#">Action</a>
+               <a class="dropdown-item" href="#">Another Action</a>
+               <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+
+        <li class="my-1 dropdown-hover dropleft dropup dropdown-item btn btn-outline-info btn-h-info btn-a-info">
+            <a class="d-flex align-items-center justify-content-between" href="#">
+                <i class="fa fa-caret-left"></i>
+                <span>Another Action</span>                
+            </a>
+            <div class="dropdown-menu mb-n1 mr-1px radius-1">
+               <a class="dropdown-item" href="#">Action</a>
+               <a class="dropdown-item" href="#">Another Action</a>
+               <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="col-12 col-lg-6">
+    <h5 class="text-success-m1 mb-3">With Backdrop</h5>
+
+    <div class="dropdown dd-backdrop d-inline-block">
+        <a class="btn btn-primary btn-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Default
+        </a>
+
+        <div class="dropdown-menu dropdown-caret" aria-labelledby="dropdownMenuLink1">
+            <h6 class="dropdown-header">Dropdown header</h6>
+            <a class="dropdown-item active" href="#">This Week</a>
+            <a class="dropdown-item" href="#">Last Week</a>
+            
+            <a class="dropdown-item" href="#">This Month</a>
+            <a class="dropdown-item" href="#">Last Month</a>
+        </div>
+    </div>
+
+
+    <div class="dropdown dd-backdrop d-inline-block">
+        <a class="btn btn-primary btn-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Slide from Bottom
+        </a>
+
+        <div class="dropdown-menu dd-slide-up" aria-labelledby="dropdownMenuLink2">
+         <div class="dropdown-inner">
+            <h6 class="dropdown-header">Dropdown header</h6>
+            <a class="dropdown-item active" href="#">This Week</a>
+            <a class="dropdown-item" href="#">Last Week</a>
+            
+            <a class="dropdown-item" href="#">This Month</a>
+            <a class="dropdown-item" href="#">Last Month</a>
+         </div>
+        </div>
+    </div>
+
+
+    <div></div>
+    <div class="dropdown d-inline-block dd-backdrop dd-backdrop-none-md mt-3">
+        <a class="btn btn-primary btn-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Only on small device
+        </a>
+
+        <div class="dropdown-menu dropdown-caret dropdown-animated dd-slide-up dd-slide-none-md radius-1" aria-labelledby="dropdownMenuLink3">
+            <div class="dropdown-inner">
+                <a class="dropdown-item" href="#">This Week</a>
+                <a class="dropdown-item" href="#">Last Week</a>
+                
+                <a class="dropdown-item" href="#">This Month</a>
+                <a class="dropdown-item" href="#">Last Month</a>
+            </div>
+        </div>
+    </div>
+
+    <div></div>
+    <div class="dropdown d-inline-block dd-backdrop dd-backdrop-none-md mt-3">
+        <a class="btn btn-primary btn-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Center (small device)
+        </a>
+
+        <div class="dropdown-menu dropdown-caret dd-slide-center dd-slide-none-md  dropdown-animated animated-2" aria-labelledby="dropdownMenuLink4">
+          <div class="dropdown-inner">
+            <a class="dropdown-item" href="#">This Week</a>
+            <a class="dropdown-item" href="#">Last Week</a>
+            
+            <a class="dropdown-item" href="#">This Month</a>
+            <a class="dropdown-item" href="#">Last Month</a>
+          </div>
+        </div>
+    </div>
+
+    <div></div>
+    <div class="dropdown d-inline-block dd-backdrop dd-backdrop-none-sm mt-3">
+        <a class="btn btn-info btn-xs dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           On a very small device
+        </a>
+
+        <div class="dropdown-menu dropdown-caret dd-slide-up dd-slide-none-sm mx-2 mx-sm-4 mx-md-0 radius-1">
+            <div class="dropdown-inner">
+                <a class="dropdown-item" href="#">This Week</a>
+                <a class="dropdown-item" href="#">Last Week</a>
+                
+                <a class="dropdown-item" href="#">This Month</a>
+                <a class="dropdown-item" href="#">Last Month</a>
+            </div>
+        </div>
+    </div>
+
+    <div></div>
+    <div class="d-inline-flex mt-4 dropdown dd-backdrop dd-backdrop-none-lg" data-display="static">        
+        <input type="text" class="form-control mr-n3 pr-5" placeholder="Filtered search dropdown" />
+        <a data-display="static" href="#" class="align-self-center btn border-0 btn-outline-default py-1 px-2 btn-h-light-primary btn-a-light-primary radius-1 ml-n4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-filter"></i>
+        </a>
+
+        <div style="width: 24rem; max-width: 90vw;" data-display="static" class="shadow radius-1 p-0 dropdown-menu dropdown-animated animated-2 dd-slide-up dd-slide-none-lg dropdown-menu-right brc-primary-m3 mt-lg-1 mr-lg-n2 dropdown-caret">
+         <div class="dropdown-inner">
+            <h5 class="bgc-secondary-l3 text-secondary-d2 d-md-none text-center mb-2 py-25">Search Filters</h5>
+
+            <form class="dropdown-clickable text-grey-d2">
+                <div class="dropdown-body my-25">
+                    <div class="px-2 px-md-3">
+                        <input type="text" class="form-control" placeholder="Enter Keywords ..." />
+                    </div>
+                    <hr class="brc-default-l1" />
+                    <div class="d-flex align-items-center px-2 px-md-3">
+                        <div class="mr-4">Size:</div>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-sm btn-wide btn-lighter-default btn-a-blue border-2 radius-round">
+                                <input type="radio" name="size" autocomplete="off"> S
+                            </label>
+                            <label class="btn btn-sm btn-wide btn-lighter-default btn-a-blue border-2 radius-round">
+                                <input type="radio" name="size" autocomplete="off"> M
+                            </label>
+                            <label class="btn btn-sm btn-wide btn-lighter-default btn-a-blue border-2 radius-round">
+                                <input type="radio" name="size" autocomplete="off"> L
+                            </label>
+                        </div>
+                    </div>
+                    <hr class="brc-default-l1" />
+                    <div class="d-flex align-items-center px-2 px-md-3">
+                        <div class="mr-4">Type:</div>
+                        <select class="form-control">
+                            <option>----</option>
+                            <option value="1">Type 1</option>
+                            <option value="2">Type 2</option>
+                            <option value="3">Type 3</option>
+                            <option value="4">Type 4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dropdown-footer py-2 bgc-secondary-l4 text-center position-relative border-t-1 brc-secondary-l2">
+                    <button type="button" class="btn px-4 btn-smd btn-info btn-bold" data-dismiss="dropdown">Apply filters</button>
+                    <button type="reset" class="btn btn-smd btn-outline-default btn-bold">Reset</button>
+                </div>
+            </form>
+          </div><!-- .dropdown-inner -->
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+<hr class="mx-2 my-4" />
+
+<div class="row">
+  <div class="col-7 col-lg-5">
+        <h4 class="text-purple-m1 mb-4 text-140">Progressbar</h4>
+
+        <div class="progress">
+            <div class="progress-bar bgc-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="progress mt-3">
+            <div class="progress-bar bgc-success font-bolder" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        </div>
+
+        <div class="progress mt-3" style="height: 20px;">
+            <div class="progress-bar bgc-warning" role="progressbar" style="width: 45%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="progress mt-3">
+            <div class="progress-bar bgc-purple" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bgc-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bgc-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="progress mt-3">
+            <div class="progress-bar progress-bar-striped bgc-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <div class="progress mt-3">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bgc-pink" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+        </div>
+
+        <div class="progress mt-3">
+            <div class="progress-bar progress-bar-striped bgc-dark" role="progressbar" style="width: 33%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+  </div>
+
+  <div class="col-5 col-lg-3 offset-lg-2">
+        <h4 class="text-warning-d2 text-center mb-3">Loaders</h4>
+        <div class="row">
+            <div class="col-6">
+
+                <div class=" d-flex flex-column justify-content-between align-items-center">
+                    <i class="fas fa-sync fa-spin text-success-m2 text-170 mb-3"></i>
+
+                    <div class="fas fa-spinner fa-spin text-purple-m1 fa-2x mb-3"></div>
+
+                    <div class="pos-rel my-3" style="width: 2.85rem; height: 2.25rem;">
+                        <i class="fas fa-cog fa-spin text-secondary fa-2x position-tl" style="animation-duration:4s;"></i>
+                        <i class="fas fa-cog fa-spin text-brown-m2 position-tr mr-2px" style="animation-direction:reverse; animation-duration:2s;"></i>
+                        <i class="fas fa-cog fa-spin text-dark-m2 text-90 mr-1 position-rc" style="animation-direction:reverse ;animation-duration:2s;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class=" d-flex flex-column justify-content-between align-items-center">
+                    <div class="typing-dots bg-transparent text-purple text-75 mt-3 mb-4">
+                        <span class="typing-dot fas fa-circle mx-1 text-warning"></span>
+                        <span class="typing-dot fas fa-circle mx-1 text-success"></span>
+                        <span class="typing-dot fas fa-circle mx-1 text-danger"></span>
+                    </div>
+
+                    <div class="spinner-border text-warning mb-3" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                    <div class="spinner-grow text-success mb-3" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>         
+                </div>
+
+            </div>
+        </div>
+  </div>
+</div>
+
+

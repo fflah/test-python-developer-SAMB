@@ -1,0 +1,37 @@
+<div class="page-header pb-0">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+         <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            Two styles
+        </small>
+    </h1>
+
+    <div class="page-tools">
+        <ul id="pricing-tabs" class="border-0 nav nav-tabs-scroll nav-tabs nav-tabs-simple" role="tablist">
+            <li class="nav-item">
+                <a class="d-style nav-link active p-3 brc-blue" data-toggle="tab" href="#pricing-1" role="tab" aria-selected="true">
+                    <span class="d-n-active">Style 1</span>
+                    <span class="d-active text-dark-tp4">Style 1</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="d-style nav-link p-3 brc-blue" data-toggle="tab" href="#pricing-2" role="tab" aria-selected="false">
+                    <span class="d-n-active">Style 2</span>
+                    <span class="d-active text-dark-tp4">Style 2</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="tab-content px-0 border-0">
+    <div class="tab-pane show active  fade  px-1 px-md-2 px-lg-3" id="pricing-1">
+        {{> page/style1}}
+    </div>
+
+    <div class="tab-pane fade px-1 px-md-2 px-lg-3" id="pricing-2">
+        {{> page/style2}}
+    </div>
+</div>

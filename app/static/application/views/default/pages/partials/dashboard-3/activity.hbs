@@ -1,0 +1,20 @@
+{{#each (get "activity")}}
+    <div class="mb-4 text-grey-m1 text-95">
+        <div class="d-flex align-items-start">
+            <span class="d-inline-flex align-items-center justify-content-center radius-round mr-2px bgc-{{color}}-tp1 text-white w-5 h-5">
+                <i class="{{icon}}"></i>
+            </span>
+
+            <div class="mx-2">
+                <div class="font-bolder text-{{textColor}}">
+                    {{name}}
+                </div>
+                {{summary}}
+            </div>
+
+            <span class="text-90 text-secondary-m1 ml-auto text-nowrap">
+                {{time}}
+            </span>
+        </div>
+    </div>    
+{{/each}}

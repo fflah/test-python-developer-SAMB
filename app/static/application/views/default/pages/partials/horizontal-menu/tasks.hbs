@@ -1,0 +1,37 @@
+<table class="table brc-grey-l3 mb-2">
+	<thead class="bgc-transparent">
+		<tr class="border-0 bg-transparent">
+			<th class="border-0 text-secondary-m3">Title</th>
+			<th class="border-0 text-secondary-m3">Status</th>
+			<th class="border-0 text-secondary-m3">Progress</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		{{#each (get "tasks")}}
+		<tr class="bgc-h-default-l4 c-pointer">
+			<td class="text-dark-tp3 text-95">{{title}}</td>
+			<td>
+				{{#if done}}
+				 <span class="badge text-80 border-l-3 brc-black-tp8 bgc-green text-white">complete</span>
+				{{/if}}
+				{{#if doing}}
+				 <span class="badge text-80 border-l-3 brc-black-tp8 bgc-blue text-white">in progress</span>
+				{{/if}}
+				{{#if pending}}
+				 <span class="badge text-80 border-l-3 brc-black-tp7 bgc-warning text-white">pending</span>
+				{{/if}}
+				 {{#if cancelled}}
+				<span class="badge text-80 border-l-3 brc-black-tp7 bgc-red text-white">cancelled</span>
+				{{/if}}
+			</td>
+			<td class="text-dark-m1" width="80">
+				<div class="align-self-center pos-rel text-{{textColor}}">
+					<canvas class="task-progress" height="50" width="80" data-percent="{{progress}}"></canvas>
+					<span class="position-center text-80">{{progress}}%</span>
+				</div>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

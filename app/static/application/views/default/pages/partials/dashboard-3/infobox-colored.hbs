@@ -1,0 +1,39 @@
+<div class="col-12 col-sm-6 col-lg-3 p-0 p-md-1 my-2 my-sm-0">
+ <div class="px-1 py-2 d-flex align-items-center pos-rel bgc-{{color}}-tp1 rounded-lg">
+
+	{{#if icon}}
+	<div class="pl-1 mr-1">
+		<span class="d-inline-block p-2 radius-round text-center">
+        	<span class="text-200 bgc-white-tp9 ml-1 p-2 radius-2"><i class="{{icon}} text-white text-100 w-6"></i></span>
+        </span>
+	</div>
+	{{/if}}
+	
+	<div class="flex-grow-1 pl-1">
+		{{#if number}}
+		<div class="d-flex align-items-center justify-content-between justify-content-md-start">
+			<span class="text-white text-180 mr-4">{{number}}</span>
+			{{#if stat-success}}
+			<div class="position-tr m-1 text-white text-90 radius-1 px-1 py-0 font-bolder">
+				{{stat-success}}
+				<i class="fas fa-level-up-alt text-180"></i>
+			</div>
+			{{/if}}	
+			{{#if stat-important}}
+			<div class="position-tr m-1 text-white text-90 radius-1 px-1 py-0 font-bolder">
+				{{stat-important}}
+				<i class="fas fa-long-arrow-alt-down text-180"></i>
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+		{{#if text}}
+		 <div class="text-blue-d2 text-105">{{text}}</div>
+		{{/if}}
+
+		{{#if content}}{{! sometimes we have two content texts like in smaller infoboxes, so use a loop }}
+		 <div class="text-nowrap text-white text-100">{{#each content}}{{{this}}}{{/each}}</div>
+		{{/if}}
+	</div>
+ </div>
+</div>

@@ -1,0 +1,356 @@
+<div class="page-header">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+         <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            simple tables
+        </small>
+    </h1>
+</div>
+
+<div class="row">
+	<div class="col-12">
+		<table id="simple-table" class="table table-bordered table-bordered-x table-hover text-dark-m2">
+			<thead class="text-dark-m3 bgc-grey-l4">
+				<tr>
+					<th class="text-center pr-0">
+						<label>
+                    		<input type="checkbox" class="align-bottom" autocomplete="off" />
+                		</label>
+					</th>
+					<th class="text-center pr-0">
+						<span class="d-md-none"><i class="fa fa-plus text-sm"></i></span>
+						<span class="d-none d-md-inline-block">Details</span>
+					</th>
+					<th>Domain</th>
+					<th>Price</th>
+					<th class="d-none d-sm-table-cell">Clicks</th>
+					<th class='d-none d-sm-table-cell'><i class="far fa-clock text-110 text-success-d1"></i> Update</th>
+					<th class="d-none d-sm-table-cell">Status</th>
+					<th></th>
+				</tr>
+			</thead>
+									
+			<tbody>
+				{{#each (get "domains1")}}
+				<tr class="bgc-h-default-l3 d-style">
+					<td class='text-center pr-0 pos-rel'>
+						<div class="position-tl h-100 ml-n1px border-l-4 brc-info-m1 v-hover"></div>
+						<div class="position-tl h-100 ml-n1px border-l-4 brc-success-m1 v-active"></div>
+
+						<label>
+                    		<input type="checkbox" class="align-middle" autocomplete="off" />
+                		</label>
+					</td>
+					<td class='text-center pr-0'>
+						<div class="action-buttons">
+							<a href="#" data-toggle="collapse" data-target="#table-detail-{{@index}}" class="text-success text-110 px-2" title="Show Details"><i class="fa fa-angle-double-down"></i> <span class="sr-only">Details</span></a>
+						</div>
+					</td>
+
+					<td><a href='#' class='text-blue-d2'>{{name}}</a></td>
+					<td>{{price}}</td>
+					<td class='d-none d-sm-table-cell'>{{clicks}}</td>
+					<td class='d-none d-sm-table-cell'>{{update}}</td>
+					<td class='d-none d-sm-table-cell'>
+						{{#expiring}}
+						<span class='badge badge-sm bgc-warning-l2 text-orange-d3 border-1 brc-warning-m2'>Expiring</span>
+						{{/expiring}}
+						{{#registered}}
+						<span class='badge badge-sm bgc-success-l2 text-success-d2 border-1 brc-success-m3'>Registered</span>
+						{{/registered}}
+						{{#flagged}}
+						<span class='badge badge-sm bgc-danger-l2 text-danger-d2 border-1 brc-danger-m3'>Flagged</span>
+						{{/flagged}}
+						{{#sold}}
+						<span class='badge badge-sm bgc-info-l2 text-info-d2 border-1 brc-info-m2'>Sold</span>
+						{{/sold}}
+					</td>
+					<td>
+						<div class='d-none d-lg-flex text-muted'>
+							<a href="#" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-primary btn-a-outline-primary btn-text-primary"><i class="fa fa-pencil-alt"></i></a>
+							<a href="#" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-danger btn-a-outline-danger btn-text-danger"><i class="fa fa-trash-alt"></i></a>
+							{{#if flagged}}								
+							{{else}}
+								<a href="#" class="btn radius-1 btn-sm btn-brc-tp btn-outline-default btn-h-outline-warning btn-a-outline-warning btn-text-warning"><i class="fa fa-flag"></i></a>
+							{{/if}}
+						</div>
+
+						<div class='dropdown d-inline-block d-lg-none dd-backdrop dd-backdrop-none-md'>
+							<a href='#' class='btn btn-outline-warning btn-xs radius-round dropdown-toggle' data-toggle="dropdown"><i class="fa fa-cog text-110"></i></a>
+							<div class="dropdown-menu dd-slide-up dd-slide-none-md"><div class="dropdown-inner">
+								<a href="#" class="dropdown-item"><i class="fa fa-pencil-alt text-blue-m1 mr-1 bgc-white-tp1 radius-round p-2 w-4"></i> Edit</a>
+								<a href="#" class="dropdown-item"><i class="fa fa-trash text-danger-m1 mr-1 bgc-white-tp1 radius-round p-2 w-4"></i> Delete</a>
+								<a href="#" class="dropdown-item"><i class="fa fa-flag text-warning-d1 mr-1 bgc-white-tp1 radius-round p-2 w-4"></i> Flag</a>
+							</div></div>
+						</div>
+						
+					</td>
+				</tr>
+
+				<tr class="border-0 detail-row bgc-white">
+					<td colspan="8" class="p-0 border-none">
+						<div class="table-detail collapse" id="table-detail-{{@index}}">
+							<div class="row">
+								<div class="col-12 col-md-10 offset-md-1 p-4">
+									<div class="alert bgc-grey-l4 border-none border-l-4 brc-primary-m1 radius-0 mb-0">
+										<h4 class="text-primary-m2">Row Details</h4>
+										 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis. 
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+
+			<tfoot class="text-dark-m3 bgc-grey-l4">
+				<tr>
+					<th colspan="2" class="pr-0 border-0"></th>
+					<th colspan="2" class="pr-0 font-normal border-0">
+						Total
+					</th>
+					<th class='d-none d-sm-table-cell border-0'></th>
+					<th class='d-none d-sm-table-cell border-0'></th>
+					<th class='d-none d-sm-table-cell border-0'></th>
+					<th colspan="1" class="border-0">
+						$1,000
+					</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+
+<hr class="border-double my-4 brc-secondary-l2" />
+
+
+<div class="row">
+	<div class="col-md-6">
+		<h5 class="text-purple-d2 mb-3">
+			Contextual
+		</h5>
+
+		<div>
+			<table id="simple-table" class="table table-hover">
+				<thead>
+					<tr class="bgc-purple-tp2 text-white">
+						<th>Domain</th>
+						<th>Price</th>
+						<th class="d-none d-sm-table-cell">Clicks</th>
+						<th><i class="far fa-clock text-110"></i> Update</th>
+					</tr>
+				</thead>
+									
+				<tbody>
+					<tr>
+						<td><a href='#' class='text-blue-d2'>ace.com</a></td>
+						<td>$45</td>
+						<td class='d-none d-sm-table-cell'>3,330</td>
+						<td class="bgc-purple-l3">Feb 12</td>
+				</tr>
+					<tr class="bgc-success-tp2 text-white">
+						<td class="bgc-success-l3"><a href='#' class='text-success-d2'>base.com</a></td>
+						<td>$35</td>
+						<td class='d-none d-sm-table-cell'>2,595</td>
+						<td>Feb 18</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-blue-d2'>max.com</a></td>
+						<td class='bgc-pink-l3'>$60</td>
+						<td class='d-none d-sm-table-cell'>4,400</td>
+						<td class="bgc-warning-l3">Mar 11</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-blue-d2'>best.com</a></td>
+						<td>$75</td>
+						<td class='d-none d-sm-table-cell'>6,500</td>
+						<td>Apr 03</td>
+					</tr>
+
+					<tr class="bgc-info-l3">
+						<td><a href='#' class='text-blue-d2'>pro.com</a></td>
+						<td>$55</td>
+						<td class='d-none d-sm-table-cell'>4,250</td>
+						<td>Jan 21</td>
+					</tr>
+				</tbody>
+		  </table>
+		</div>
+
+	</div>
+
+
+	<div class="col-md-6">
+		<hr class="d-lg-none" />
+		
+		<h5 class="text-blue-d2 mb-3">
+			Striped
+		</h5>
+		<table id="simple-table" class="table table-striped text-dark-m1">
+				<thead>
+					<tr class="bgc-primary-tp2 text-white">
+						<th>Domain</th>
+						<th>Price</th>
+						<th class="d-none d-sm-table-cell">Clicks</th>
+						<th><i class="far fa-clock text-110"></i> Update</th>
+					</tr>
+				</thead>
+									
+				<tbody>
+					<tr>
+						<td><a href='#' class='text-blue-d2'>ace.com</a></td>
+						<td>$45</td>
+						<td class='d-none d-sm-table-cell'>3,330</td>
+						<td>Feb 12</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-blue-d2'>base.com</a></td>
+						<td>$35</td>
+						<td class='d-none d-sm-table-cell'>2,595</td>
+						<td>Feb 18</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-blue-d2'>max.com</a></td>
+						<td>$60</td>
+						<td class='d-none d-sm-table-cell'>4,400</td>
+						<td>Mar 11</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-blue-d2'>best.com</a></td>
+						<td>$75</td>
+						<td class='d-none d-sm-table-cell'>6,500</td>
+						<td>Apr 03</td>
+					</tr>
+
+					<tr>
+						<td><a href='#' class='text-danger-m1'>pro.com</a></td>
+						<td>$55</td>
+						<td class='d-none d-sm-table-cell'>4,250</td>
+						<td>Jan 21</td>
+					</tr>
+				</tbody>
+		  </table>
+
+	</div>
+</div>
+
+
+<div class="h-1 my-1"></div>
+
+<div class="row">
+	<div class="col-lg-6 mt-lg-2">
+		<hr class="d-lg-none" />
+
+		<h5 class="text-grey-d2 mb-3">
+			Bootstrap Responsive
+		</h5>
+
+	  	<div class="table-responsive-md">
+			<table class="table table-bordered text-dark-m1">
+				<thead>
+					<tr class="bgc-secondary-l3">
+						<th>Name</th>
+						<th>Age</th>
+						<th>Height</th>
+						<th>Sport</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>Jill Smith</td>
+						<td>25</td>
+						<td>5'4</td>
+						<td>Volleyball</td>
+					</tr>
+					<tr>
+						<td>John Stone</td>
+						<td>30</td>
+						<td>5'9</td>
+						<td>Badminton</td>
+					</tr>
+					<tr>
+						<td>Jane Strip</td>
+						<td>29</td>
+						<td>5'6</td>
+						<td>Hockey</td>
+					</tr>
+					<tr>
+						<td>Gary Mountain</td>
+						<td>21</td>
+						<td>5'8</td>
+						<td>Curling</td>
+					</tr>
+					<tr>
+						<td>James Camera</td>
+						<td>31</td>
+						<td>6'1</td>
+						<td>Hiking</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+
+	<div class="mt-4 mt-lg-2 col-lg-6">
+		<hr class="d-lg-none" />
+		<h5 class="text-success-d2 mb-3">
+			Responsive Table with "basictable" plugin
+		</h5>
+		<div>
+			<table class="table table-striped-success table-borderless text-dark-m1" id="responsive-table">
+				<thead>
+					<tr class="bgc-success-m1 text-white">
+						<th>Name</th>
+						<th>Age</th>
+						<th>Height</th>
+						<th>Sport</th>
+					</tr>
+				</thead>
+				<tbody class="bgc-success-m1">
+					<tr>
+						<td>Jill Smith</td>
+						<td>25</td>
+						<td>5'4</td>
+						<td>Volleyball</td>
+					</tr>
+					<tr>
+						<td>John Stone</td>
+						<td>30</td>
+						<td>5'9</td>
+						<td>Badminton</td>
+					</tr>
+					<tr>
+						<td>Jane Strip</td>
+						<td>29</td>
+						<td>5'6</td>
+						<td>Hockey</td>
+					</tr>
+					<tr>
+						<td>Gary Mountain</td>
+						<td>21</td>
+						<td>5'8</td>
+						<td>Curling</td>
+					</tr>
+					<tr>
+						<td>James Camera</td>
+						<td>31</td>
+						<td>6'1</td>
+						<td>Hiking</td>
+					</tr>
+				</tbody>
+		</table>
+
+		</div>
+	</div>
+</div>

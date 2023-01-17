@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <base href="../" />
+
+    <title>Test Python Developer - Zulfa Fajrul Falah</title>
+
+    <!-- include common vendor stylesheets -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/fontawesome.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/regular.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/brands.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/@fortawesome/fontawesome-free/css/solid.css') }}" />
+
+    <!-- include vendor stylesheets used in "Form Elements" page. see "application/views/default/pages/partials/form-elements/@vendor-stylesheets.hbs" -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/nouislider/distribute/nouislider.min.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/ion-rangeslider/css/ion.rangeSlider.min.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/tiny-date-picker/tiny-date-picker.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/tiny-date-picker/date-range-picker.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css') }}" />
+
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css') }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/css/ace-font.css') }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dist/css/ace.css') }}" />
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/favicon.png') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css') }}">
+
+    <!-- "Form Elements" page styles specific to this page for demo purposes -->
+    <script type="text/javascript" src="{{ url_for('static', filename='node_modules/jquery/dist/jquery.js') }}">
+    </script>
+
+    <!-- script for datatabel -->
+    <script type="text/javascript"
+        src="{{ url_for('static', filename='node_modules/datatables/media/js/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static', filename='node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js') }}"></script>
+    <script type="text/javascript"
+        src="{{ url_for('static', filename='node_modules/datatables.net-colreorder/js/dataTables.colReorder.js') }}">
+    </script>
+    <script type="text/javascript"
+        src="{{ url_for('static', filename='node_modules/datatables.net-select/js/dataTables.select.js') }}"></script>
+
+    <!-- css and js for toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <style>
+        .toast {
+            margin-top: 75px !important;
+        }
+    </style>
+
+    <script>
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="body-container">
+        <nav class="navbar navbar-expand-lg navbar-fixed navbar-default">
+            <div class="navbar-inner">
+                <div class="navbar-intro justify-content-xl-between">
+                    <button type="button" class="btn btn-burger burger-arrowed static collapsed ml-2 d-flex d-xl-none"
+                        data-toggle-mobile="sidebar" data-target="#sidebar" aria-controls="sidebar"
+                        aria-expanded="false" aria-label="Toggle sidebar">
+                        <span class="bars"></span></button><!-- mobile sidebar toggler button -->
+
+                    <a class="navbar-brand text-white" href="#">
+                        <i class="fa fa-leaf"></i>
+                        <span>Gudang ABC</span>
+                        <span></span> </a><!-- /.navbar-brand -->
+
+                    <button type="button" class="btn btn-burger mr-2 d-none d-xl-flex" data-toggle="sidebar"
+                        data-target="#sidebar" aria-controls="sidebar" aria-expanded="true" aria-label="Toggle sidebar">
+                        <span class="bars"></span></button><!-- sidebar toggler button -->
+                </div>
+                <!-- /.navbar-intro -->
+
+
+                <!-- .navbar-content -->
+
+                <!-- mobile #navbarMenu toggler button -->
+                <button class="navbar-toggler ml-1 mr-2 px-1" type="button" data-toggle="collapse"
+                    data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false"
+                    aria-label="Toggle navbar menu">
+                    <span class="pos-rel">
+                        <img class="border-2 brc-white-tp1 radius-round" width="36"
+                            src="{{ url_for('static', filename='assets/image/user.jpg')  }}" alt="Jason's Photo" />
+                        <span class="bgc-warning radius-round border-2 brc-white p-1 position-tr mr-1px mt-1px"></span>
+                    </span>
+                </button>
+
+                <div class="navbar-menu collapse navbar-collapse navbar-backdrop" id="navbarMenu">
+                    <div class="navbar-nav">
+                        <ul class="nav">
+                            <li class="nav-item dropdown order-first order-lg-last">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <img id="id-navbar-user-image"
+                                        class="d-none d-lg-inline-block radius-round border-2 brc-white-tp1 mr-2"
+                                        src="{{ url_for('static', filename='assets/image/user.jpg')  }}"
+                                        alt="Jason's Photo" />
+                                    <span class="d-inline-block d-lg-none d-xl-inline-block">
+                                        <span class="text-90" id="id-user-welcome">Welcome,</span>
+                                        <span class="nav-user-name">Jason</span>
+                                    </span>
+
+                                    <i class="caret fa fa-angle-down d-none d-xl-block"></i>
+                                    <i class="caret fa fa-angle-left d-block d-lg-none"></i>
+                                </a>
+
+                                <div
+                                    class="dropdown-menu dropdown-caret dropdown-menu-right dropdown-animated brc-primary-m3">
+                                    <div class="d-none d-lg-block d-xl-none">
+                                        <div class="dropdown-header">Welcome, Jason</div>
+                                        <div class="dropdown-divider"></div>
+                                    </div>
+                                    <div class="dropdown-divider brc-primary-l2"></div>
+
+                                    <a class="dropdown-item btn btn-outline-grey btn-h-lighter-secondary btn-a-lighter-secondary"
+                                        href="html/page-login.html">
+                                        <i class="fa fa-power-off text-warning-d1 text-105 mr-1"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                            <!-- /.nav-item:last -->
+                        </ul>
+                        <!-- /.navbar-nav menu -->
+                    </div>
+                    <!-- /.navbar-nav -->
+                </div>
+                <!-- /.navbar-menu.navbar-collapse -->
+            </div>
+            <!-- /.navbar-inner -->
+        </nav>
+        <div class="main-container">
+            <div id="sidebar" class="sidebar sidebar-fixed expandable sidebar-default d-none d-xl-block">
+                <div class="sidebar-inner">
+                    <div class="ace-scroll flex-grow-1" ace-scroll>
+                        <div class="sidebar-section my-2">
+                            <div class="sidebar-section-item fadeable-left">
+                                <div class="fadeinable sidebar-shortcuts-mini">
+                                    <span class="btn btn-success p-0"></span>
+                                    <span class="btn btn-info p-0"></span>
+                                    <span class="btn btn-warning p-0"></span>
+                                    <span class="btn btn-danger p-0"></span>
+                                </div>
+
+                                <div class="fadeable">
+                                    <div class="sub-arrow"></div>
+                                    <div>
+                                        <button class="btn btn-smd btn-success">
+                                            <i class="fa fa-signal"></i>
+                                        </button>
+
+                                        <button class="btn btn-smd btn-info">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+
+                                        <button class="btn btn-smd btn-warning">
+                                            <i class="fa fa-users"></i>
+                                        </button>
+
+                                        <button class="btn btn-smd btn-danger">
+                                            <i class="fa fa-cogs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <ul class="nav nav-parent has-active-border" role="navigation" aria-label="Main">
+                            <li class="nav-item-caption">
+                                <span class="fadeable pl-3">DATA MASTER</span>
+                                <span class="fadeinable mt-n2 text-125">&hellip;</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/product" class="nav-link">
+                                    <i class="nav-icon fa fa-flask"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Product</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/supplier" class="nav-link">
+                                    <i class="nav-icon fa fa-cube"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Supplier</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/warehouse" class="nav-link">
+                                    <i class="nav-icon fa fa-list"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Warehouse</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/customer" class="nav-link">
+                                    <i class="nav-icon fa fa-users"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Customer</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+
+                            <li class="nav-item-caption">
+                                <span class="fadeable pl-3">TRANSAKSI</span>
+                                <span class="fadeinable mt-n2 text-125">&hellip;</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/" class="nav-link">
+                                    <i class="nav-icon fa  fa-star"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Barang Masuk</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/barang-keluar" class="nav-link">
+                                    <i class="nav-icon fa fa-lightbulb"></i>
+                                    <span class="nav-text fadeable">
+                                        <span>Barang Keluar</span>
+                                    </span>
+                                </a>
+
+                                <b class="sub-arrow"></b>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.sidebar scroll -->
+
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-item fadeable-bottom">
+                            <div class="fadeinable">
+                                <div class="pos-rel">
+                                    <img src="assets/image/avatar/avatar4.jpg" width="42"
+                                        class="radius-round float-left mx-2 border-2 px-1px brc-secondary-m2" />
+                                    <span
+                                        class="bgc-success-tp2 radius-round border-2 brc-white p-1 position-tr mr-1"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#sidebar -->
+
+            <div role="main" class="main-content">
+                <div class="d-none content-nav mb-1 bgc-grey-l4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <ol class="breadcrumb pl-2">
+                            <li class="breadcrumb-item active text-grey">
+                                <i class="fa fa-home text-dark-m3 mr-1"></i>
+                                <a class="text-blue" href="#"> Home </a>
+                            </li>
+
+                            <li class="breadcrumb-item">
+                                <a class="text-blue" href="#">Forms &amp; Elements</a>
+                            </li>
+                            <li class="breadcrumb-item active text-grey-d1">
+                                Form Elements
+                            </li>
+                        </ol>
+
+                        <div class="nav-search">
+                            <form class="form-search">
+                                <span class="d-inline-flex align-items-center">
+                                    <input type="text" placeholder="Search ..."
+                                        class="form-control pr-4 form-control-sm radius-1 brc-info-m2 text-grey"
+                                        autocomplete="off" />
+                                    <i class="fa fa-search text-info-m1 ml-n4"></i>
+                                </span>
+                            </form>
+                        </div>
+                        <!-- /.nav-search -->
+                    </div>
+                </div>
+                <!-- breadcrumbs -->
+
+                {% block content %} {% endblock %}
+
+                <footer class="footer d-none d-sm-block">
+                    <div class="footer-inner bgc-white-tp1">
+                        <div class="pt-3 border-none border-t-3 brc-grey-l1 border-double">
+                            <span class="text-primary-m2 font-bolder text-120">Ace</span>
+                            <span class="text-muted">Application &copy; 2020</span>
+
+                            <span class="mx-3 action-buttons">
+                                <a href="#" class="text-blue2-m3 text-140"><i class="fab fa-twitter-square"></i></a>
+                                <a href="#" class="text-blue-d1 text-140"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-orange text-140"><i class="fa fa-rss-square"></i></a>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- .footer-inner -->
+
+                    <div class="footer-tools">
+                        <a id="btn-scroll-up" href="#" class="btn-scroll-up btn btn-dark btn-smd mb-2 mr-2">
+                            <i class="fa fa-angle-double-up mx-1"></i>
+                        </a>
+                    </div>
+                </footer>
+
+                <!-- footer toolbox for mobile view -->
+                <footer class="d-sm-none footer footer-sm footer-fixed">
+                    <div class="footer-inner">
+                        <div
+                            class="btn-group d-flex h-100 mx-2 border-x-1 border-t-2 brc-primary-m3 bgc-default-l4 radius-t-1 shadow">
+                            <button
+                                class="btn btn-outline-primary btn-h-lighter-primary btn-a-lighter-primary border-0">
+                                <i class="fas fa-sliders-h text-blue-m1 text-120"></i>
+                            </button>
+
+                            <button class="btn btn-outline-purple btn-h-lighter-purple btn-a-lighter-purple border-0">
+                                <i class="fa fa-plus-circle text-purple-m2 text-120"></i>
+                            </button>
+
+                            <button class="btn btn-outline-warning btn-h-lighter-warning btn-a-lighter-warning border-0"
+                                data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch"
+                                aria-expanded="false" aria-label="Toggle navbar search">
+                                <i class="fa fa-search text-warning text-120"></i>
+                            </button>
+
+                            <button class="btn btn-outline-brown btn-h-lighter-brown btn-a-lighter-brown border-0 mr-0">
+                                <i class="fa fa-bell text-brown-m1 text-120"></i>
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /main -->
+        </div>
+        <!-- /.main-container -->
+
+        <!-- include common vendor scripts used in demo pages -->
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/popper.js/dist/umd/popper.js') }}"></script>
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.js') }}"></script>
+
+        <!-- include vendor scripts used in "Form Elements" page. see "application/views/default/pages/partials/form-elements/@vendor-scripts.hbs" -->
+        <script type="text/javascript" src="{{ url_for('static', filename='node_modules/autosize/dist/autosize.js') }}">
+        </script>
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/bootstrap-maxlength/bootstrap-maxlength.js') }}"></script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/inputmask/dist/jquery.inputmask.js') }}"></script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/nouislider/distribute/nouislider.js') }}"></script>
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/ion-rangeslider/js/ion.rangeSlider.js') }}"></script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/bootstrap-touchspin/dist/jquery.bootstrap-tou') }}chspin.js">
+        </script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/tiny-date-picker/dist/date-range-picker.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='node_modules/moment/moment.js') }}"></script>
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js') }}">
+        </script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js') }}">
+        </script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/es6-object-assign/dist/object-assign-auto.js') }}">
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='node_modules/@jaames/iro/dist/iro.js') }}">
+        </script>
+
+        <script type="text/javascript"
+            src="{{ url_for('static', filename='node_modules/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+
+        <!-- include Ace script -->
+        <script type="text/javascript" src="{{ url_for('static', filename='dist/js/ace.js') }}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/demo.js') }}"></script>
+        <!-- this is only for Ace's demo and you don't need it -->
+
+        <!-- "Form Elements" page script to enable its demo functionality -->
+        </script>
+    </div>
+    <!-- /.body-container -->
+</body>
+
+</html>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for category, message in messages %}
+{% if category == 'success' %}
+<script>
+    toastr.success('{{message}}')
+</script>
+{% elif category == 'info' %}
+<script>
+    toastr.info('{{message}}')
+</script>
+{% elif category == 'warning' %}
+<script>
+    toastr.warning('{{message}}')
+</script>
+{% else %}
+<script>
+    toastr.error('{{message}}')
+</script>
+{% endif %}
+{% endfor %}
+{% endwith %}
+
+<script>
+    //cek aktif link sidebar
+    $('.nav-parent').each(function () {
+        const navItem = $(this);
+        const li = navItem.find("li")
+        const location_url = location.pathname
+        li.each(function () {
+            const liItem = $(this)
+            const url = liItem.find("a").attr("href")
+            console.log(location_url)
+
+            if (url == location_url) {
+                liItem.addClass('active');
+            } else {
+                if (url == '#') {
+                    $('.submenu').each(function () {
+                        const subMenu = $(this)
+                        const subLi = subMenu.find("li")
+                        subLi.each(function () {
+                            liSubItem = $(this)
+                            const urlSubItem = liSubItem.find("a").attr("href")
+                            if (urlSubItem == location_url) {
+                                liItem.addClass('active open');
+                                subMenu.addClass("show");
+                                liSubItem.addClass("active");
+                            }
+                        })
+
+                    })
+                }
+            }
+
+        });
+    })
+    //end cek aktif link sidebar
+</script>

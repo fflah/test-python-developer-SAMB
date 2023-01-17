@@ -1,0 +1,111 @@
+<div class="card radius-2 bg-transparent overflow-hidden border-1 brc-info-m2">
+    <div class="card-header  bgc-info-tp1 ">
+        <h6 class="card-title text-white font-normal">
+            <i class="far fa-comment-dots text-130 mr-1"></i>
+            <span class="text-110">Live Support</span>
+        </h6>
+
+        <div class="mr-3">
+            <span class="text-white text-95">
+                Alex is typing a reply
+                <div class="typing-dots text-white text-150">
+                    <span class="typing-dot">.</span>
+                    <span class="typing-dot">.</span>
+                    <span class="typing-dot">.</span>
+                </div>
+            </span>
+        </div>
+
+        <div class="card-toolbar align-self-center">            
+            <a href="#" class="card-toolbar-btn text-white" data-dismiss="modal"><i class="fas fa-window-minimize"></i></a>
+        </div>
+    </div>
+
+    <div class="bgc-white-tp1 card-body border-0 px-1px py-0 pos-rel">
+        {{#each (get "conversations")}}
+            <div class="px-3">
+                <div class="media mt-1 mb-2">
+                    <div class="d-flex flex-grow-1">
+                        <div class="mr-1 align-self-center pos-rel">
+                            {{#if color}}
+                            <span class="d-inline-flex align-items-center justify-content-center radius-round bgc-{{color}} text-white font-bolder w-6 h-6">
+                                <span>{{avatar}}</span>
+                            </span>
+                            {{else}}
+                            <img src="assets/image/avatar/{{avatar}}" class="radius-round border-2 p-1px brc-primary-m2 w-6 h-6" />
+                            {{/if}}
+                        </div>
+
+                        <div class="conversation media-body py-2 px-3 radius-1 flex-grow-1">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-blue-d1">{{name}}</span>
+                                <span class="text-90">
+                                    <i class="far fa-clock mr-1 text-{{color}}-m2"></i><span class="text-grey-m2">{{time}}</span>
+                                </span>
+                            </div>
+                            <div class="text-dark-m3 text-90">
+                                {{message}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+
+    <div class="card-footer p-0 bg-white border-0">
+
+        <div class="py-2 px-3 bg-white border-t-1 brc-info-m2">
+            <div class="input-group input-group-fade">
+                <textarea class="form-control form-control-lg text-110 shadow-none border-0 bg-transparent" placeholder="Type something ..."></textarea>
+                <div class="input-group-append align-self-center">
+                    <button class="btn btn-outline-info btn-h-outline-info btn-a-outline-info border-0 radius-round btn-sm px-2" type="button">
+                        <i class="fas fa-share text-130 mx-1"></i>
+                    </button>
+
+                    <div class="btn-group ml-2 dropdown">
+                        <button type="button" class="btn btn-xs px-0 btn-lighter-yellow dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle text-dark fa-stack-1x text-120"></i>
+                                <i class="fas fa-smile text-warning-m3 text-150 fa-stack-1x"></i>
+                            </span>
+                        </button>
+
+                        <div class="dropdown-menu p-1">
+                            <div class="d-flex ">
+                                <a class="dropdown-item px-25" href="#">
+                                    <span class="fa-stack w-auto">
+                                        <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                        <i class="fas fa-smile text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item px-25" href="#">
+                                    <span class="fa-stack w-auto">
+                                        <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                        <i class="fas fa-smile-beam text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item px-25" href="#">
+                                    <span class="fa-stack w-auto">
+                                        <i class="fas fa-circle text-dark fa-stack-1x text-100"></i>
+                                        <i class="fas fa-smile-wink text-warning-m3 text-125 fa-stack-1x pos-rel"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-xs btn-lighter-primary">
+                            <i class="fas fa-paperclip text-140"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> 

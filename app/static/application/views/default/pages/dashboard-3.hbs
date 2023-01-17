@@ -1,0 +1,282 @@
+<div class="page-header">
+    <h1 class="page-title text-primary-d2">
+        {{title}}
+        <small class="page-info text-secondary-d2">
+            <i class="fa fa-angle-double-right text-80"></i>
+            overview &amp; stats
+        </small>
+    </h1>
+
+    <div class="page-tools d-flex align-items-end btn-group">
+        <button type="button" class="btn btn-smd btn-lighter-default btn-h-lighter-purple btn-a-lighter-purple border-b-2">
+            <i class="fa fa-save text-120 text-purple-m1"></i>
+        </button>
+        <button type="button" class="btn btn-smd btn-lighter-default btn-h-lighter-success btn-a-lighter-success border-b-2">
+            <i class="fa fa-undo text-110 text-success-m1"></i>
+        </button>
+
+        <div class="btn-group dropdown dd-backdrop dd-backdrop-none-md">
+			<button type="button" class="btn btn-smd btn-lighter-info btn-a-outline-info dropdown-toggle border-b-2" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-search text-110"></i>
+			</button>
+			<div class="dropdown-menu dropdown-menu-right dropdown-caret dropdown-animated animated-2 dd-slide-up dd-slide-none-md"><div class="dropdown-inner">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Separated link</a>
+			</div></div>
+		</div>
+    </div>
+</div>
+
+
+<div class="h-1 my-2"></div>
+
+
+
+<div class="px-2 border-1 brc-secondary-l1 radius-3px shadow-md bgc-grey-l5">
+    <div class="row">
+      {{#each (get "stats1")}}
+	    {{> page/infobox}}
+	  {{/each}}
+    </div>
+</div>
+
+<div class="px-2 d-none">
+    <div class="row">
+      {{#each (get "stats1")}}
+	    {{> page/infobox-colored}}
+	  {{/each}}
+    </div>
+</div>
+
+
+<div class=" mt-3 mt-lg-4 border-1 radius-3px brc-grey-l1 pt-35 pb-25 px-2 shadow-md bgc-grey-l5">
+
+ <div class="row">
+  <div class="col-12 col-lg-6">
+    <div class="row mx-0 h-100">
+      <div class="col-12">
+        <div class="d-flex border-b-1 brc-secondary-l2 mb-425">
+            <h4 class="d-inline-block flex-grow-1 mr-3 text-secondary-d1 text-120 px-2 pt-2 pb-2">Revenue <span class="text-grey-m1 text-80">vs</span> Expense</h4>
+            <button class="ml-auto align-self-start btn btn-outline-blue btn-h-outline-primary btn-a-outline-primary d-inline-flex align-items-center pr-3 pl-1px py-1px btn-bold">
+                <span class="bgc-blue-l2 h-4 px-25 pt-1 mr-25 border-1">
+					<i class="fa fa-copy text-110 mt-3px"></i>
+				</span>
+                View Report
+			</button>
+        </div>
+        
+        <div class="row mb-3 mx-2 px-0 border-b-11 brc-grey-l3">
+            <div class="col-6 px-0">
+                <span class="text-120 opacity-2">$</span>
+                <span class="text-secondary-d3 text-160">
+                    426,412
+                </span>
+                <span class="text-grey-m1 ml-1">revenue</span>
+                <span class="d-block d-sm-inline text-success ml-2 mt-2 text-600">(+9.75% <i class="fas fa-caret-up text-120"></i>)</span>
+            </div>
+            
+            <div class="col-6 px-0 text-right">
+                <span class="text-120 opacity-2">$</span>
+                <span class="text-secondary-d2 text-140">
+                    52,846
+                </span>
+                <span class="text-grey-m1 ml-1">expense</span>
+                <span class="d-block d-sm-inline text-orange-d1 ml-2 mt-2 text-600 text-95">(+1.26% <i class="fas fa-caret-up text-120"></i>)</span>
+            </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 px-0 px-md-3">
+        <div>
+            <canvas class="mw-100 mt-3" id="saleschart" height="150"></canvas>
+        </div>
+      </div>
+    </div>
+ </div>
+
+ <div class="col-12 col-lg-6">
+    <div class="py-25 px-1 mb-2 pos-rel mt-4 mt-lg-0">
+        <div class="d-none d-lg-block position-tl h-100 border-l-1 brc-grey-l2 py-1px"></div>
+        <div class="d-lg-none position-tl w-100 border-t-1 brc-grey-l2 py-1px"></div>
+
+        <div class="d-flex px-2 border-b-1 brc-secondary-l2 mb-425">
+            <h4 class="text-secondary-d1 text-125 mb-25">Pageviews
+                <span class="d-block d-sm-inline text-success text-75">~ 30k today</span>
+            </h4>
+            <div class="ml-auto">
+                <div data-toggle="buttons" class="btn-group  btn-group-toggle">
+                    <label class="btn btn-xs btn-brc-tp btn-outline-default btn-h-outline-default active radius-1">
+                        <input name="pageview" type="radio" value="1" checked autocomplete="off" />
+                        Day
+                    </label>
+
+                    <label class="btn btn-xs btn-brc-tp btn-outline-default btn-h-outline-default radius-1">
+                        <input name="pageview" type="radio" value="2" autocomplete="off" />
+                        Week
+                    </label>
+
+                    <label class="btn btn-xs btn-brc-tp btn-outline-default btn-h-outline-default radius-1">
+                        <input name="pageview" type="radio" value="3" autocomplete="off" />
+                        Month
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <canvas id="pageviewschart" style="height: 160px; width: 100%;"></canvas>
+    </div>
+
+    <div class="w-100 border-t-1 brc-grey-l2"></div>
+
+    <div class="px-3 mt-2 pos-rel">
+        <div class="d-none d-lg-block position-tl h-100 border-l-1 brc-grey-l2 py-1px"></div>
+        <div class="row">        
+            <div class="col-12 col-md-6 py-25 pos-rel">
+                <div class="mx-2 text-secondary-d1 mb-2 text-right">
+                    <i class="fa fa-arrow-down rotate-45"></i>
+                    Traffic Sources
+                </div>
+                <canvas id="piechart" height="170"></canvas>
+            </div>
+            <div class="col-12 col-md-6 py-25 pos-rel">
+                <div class="mx-2 text-secondary-d1 mb-2">                    
+                    User Devices
+                    <i class="fa fa-arrow-down rotate-n45"></i>
+                </div>
+                <canvas id="piechart2" height="170"></canvas>                
+            </div>           
+        </div>
+    </div>
+  </div>
+ </div>
+
+</div>
+
+
+
+<div class="row mt-45">
+    <div class="col-12 col-xl-8">
+        <div class="card border-0  h-100">
+            <div class="card-header bg-transparent border-0 pl-0">
+                <h5 class="card-title  mb-2 mb-md-0">
+                    <i class="fa fa-clipboard-check text-orange mr-1 text-105"></i>
+                    Task Board <span class="text-80 text-grey-m2">(sortable)</span>
+                </h5>
+            </div>
+
+			<div class="card-body bg-white p-0">
+                <div class="row">
+                    {{> page/tasks}}
+                </div>
+			</div><!-- /.card-body -->
+
+        </div>
+    </div>
+
+
+
+    <div class="col-12 col-xl-4">
+        <div class="card bg-transparent border-0">
+
+            <div class="card-header bg-transparent border-0 pl-0">
+                <h5 class="card-title  mb-2 mb-md-0">
+                    <i class="far fa-comment-dots text-success-d1 mr-1 text-105"></i>
+                    Live Discussion
+                </h5>
+            </div>
+
+            <div class="card-body border-1 border-b-0 brc-default-m4 radius-t-2 bgc-default-l2 px-1px py-0" ace-scroll='{"height": 400, "smooth":true}'>
+                {{> page/conversation}}
+            </div>
+
+            <div class="card-footer p-0 bgc-white border-1 border-t-1 brc-default-m4 radius-b-1">      
+                <div class="p-3">
+                    <div class="input-group">
+                        <input type="text" class="shadow-none form-control form-control-lg brc-info-m3 border-0 border-b-1 pl-1 text-100" placeholder="Type your message ..." />
+                        <div class="input-group-append">
+                            <button class="btn btn-white border-0 btn-sm radius-3px py-2 px-2 ml-2" type="button">
+                                <span class="fa-stack w-auto"> <i class="fas fa-circle text-dark fa-stack-1x text-140"></i> <i class="fas fa-smile text-warning-m3 text-160 fa-stack-1x pos-rel"></i> </span>
+                            </button>
+                            <button class="btn btn-outline-info btn-sm radius-3px p-2 ml-2" type="button"><i class="fa fa-paper-plane text-150 w-3"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+
+<hr class="brc-white my-4" />
+
+<div class="row mt-2">
+    <div class="col-lg-4 border-0 border-r-1 radius-0 brc-grey-l2">
+        <div class="card pt-2 border-0 h-100">
+            <div class="card-header bg-transparent border-0 brc-primary-l1 pl-1">
+                <h5 class="card-title">
+                    Popular Pages
+                </h5>
+            </div>
+            <div class="card-body p-0 d-flex flex-column">
+                <div class="flex-grow-1">
+                    {{> page/pages}}
+                </div>
+                 <div>
+
+                    <div class="my-25 mx-4 text-center">
+                        <button type="button" class="btn w-50 btn-sm btn-bold btn-lighter-purple">More Pages</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 border-0 border-r-1 radius-0 brc-grey-l2">
+        <div class="card pt-2 border-0 h-100">
+            <div class="card-header mb-2 bg-transparent border-0 brc-primary-l1 pl-1">
+                <h5 class="card-title">
+                    Activity Feed
+                </h5>
+            </div>
+            <div class="card-body p-0 d-flex flex-column">
+                <div class="flex-grow-1">
+                    {{> page/activity}}
+                </div>
+                <div>
+
+                    <div class="my-25 mx-4 text-center">
+                        <button type="button" class="btn w-50 btn-sm btn-bold btn-lighter-success">All Activities</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card pt-2 border-0 h-100">
+            <div class="card-header bg-transparent border-0 brc-primary-l1 pl-1">
+                <h5 class="card-title">
+                    Latest Members
+                </h5>
+            </div>
+            <div class="card-body p-0 d-flex flex-column">
+                <div class="flex-grow-1">
+                    {{> page/members}}
+                </div>
+                <div>
+
+                    <div class="my-25 mx-4 text-center">
+                        <button type="button" class="btn w-50 btn-sm btn-bold btn-lighter-blue">All Members</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

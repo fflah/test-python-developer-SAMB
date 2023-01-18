@@ -48,6 +48,7 @@ class ApiCustomer(Resource):
                 'CustomerName': item['CustomerName']
             }
             data.append(buff)
+        data = sorted(data, key=lambda d: d['id']) 
         # response
         return {
             'data': data,

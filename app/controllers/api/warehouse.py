@@ -48,6 +48,8 @@ class ApiWarehouse(Resource):
                 'WhsName': item['WhsName']
             }
             data.append(buff)
+
+        data = sorted(data, key=lambda d: d['id']) 
         # response
         return {
             'data': data,

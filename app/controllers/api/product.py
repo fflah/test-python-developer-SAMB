@@ -48,6 +48,8 @@ class ApiProduct(Resource):
                 'ProductName': item['ProductName']
             }
             data.append(buff)
+
+        data = sorted(data, key=lambda d: d['id']) 
         # response
         return {
             'data': data,
